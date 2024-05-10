@@ -1,19 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
+import logo from "../assets/images/logo.png";
 
-const navItems = ["Home", "About", "Contact"];
+const pages = ["Projects", "About", "Contact"];
 
-function SimpleNavBar() {
+function Navbar() {
   return (
-    <AppBar position="static" sx={{ padding: 0 }}>
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          My Site
-        </Typography>
+    <AppBar position="static" sx={{ padding: 0, alignItems: "space-between" }}>
+      <Toolbar sx={{ justifyContent: "space-between" }}>
         <Box>
-          {navItems.map((item) => (
-            <Button key={item} sx={{ color: "#fff" }}>
-              {item}
+          <Link to="/" className="nav-link">
+            <img src={logo} className="logo"></img>
+          </Link>
+        </Box>
+
+        <Box>
+          {pages.map((page) => (
+            <Button key={page} sx={{ color: "#fff" }}>
+              <Link to={`/${page}`} className="nav-link">
+                {page}
+              </Link>
             </Button>
           ))}
         </Box>
@@ -22,4 +29,4 @@ function SimpleNavBar() {
   );
 }
 
-export default SimpleNavBar;
+export default Navbar;
