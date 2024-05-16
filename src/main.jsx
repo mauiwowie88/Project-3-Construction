@@ -11,24 +11,6 @@ const theme = createTheme({
     primary: { main: "#013e87" },
     secondary: { main: "#2e74c9" },
   },
-  typography: {
-    fontFamily: ["Roboto", "sans-serif"].join(","),
-    h1: {
-      fontSize: "3rem",
-      fontWeight: 600,
-    },
-    h2: {
-      fontSize: "1.75rem",
-      fontWeight: 600,
-    },
-    h3: {
-      fontSize: "1.5rem",
-      // fontWeight: 600,
-    },
-  },
-  body1: {
-    fontSize: "1rem", // Adjust the font size as needed
-  },
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(

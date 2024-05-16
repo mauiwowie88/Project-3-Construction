@@ -1,99 +1,52 @@
-import { Typography, Box, Container, Grid } from "@mui/material";
+import React from "react";
+import { Typography, Box, Grid, IconButton } from "@mui/material";
 import { Facebook, Instagram, LinkedIn } from "@mui/icons-material";
 
 function Footer() {
   return (
-    <footer>
-      <Container>
-        <Grid
-          container
-          className="footer-box
-        "
-        >
-          <Grid item>
-            <Box sx={{ flex: 1 }}>
-              <Typography sx={{ fontSize: "3rem" }}>JSM</Typography>
-              <br />
-              <Typography>
-                1125 Lincoln Avenue #400
-                <br />
-                Steamboat Springs, CO 80487
-              </Typography>
-              <br />
-              <Typography variant="body1">
-                info@jsmbuilders.com
-                <br />
-                970.871.4899
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid item>
-            <Box
-              sx={{
-                gap: 2,
-                flex: 1,
-                display: "flex",
-                justifyContent: "space-around",
-              }}
-            >
-              <Box>
-                <Typography variant="h6">Hours</Typography>
-                <Typography>
-                  Monday – Friday
-                  <br />9 AM – 5 PM
-                </Typography>
-              </Box>
-              <Box>
-                <Typography variant="h6">Follow Us</Typography>
-                <Box sx={{ display: "flex" }}>
-                  <Facebook sx={{ marginRight: 1 }} />
-                  <Instagram sx={{ marginRight: 1 }} />
-                  <LinkedIn />
-                </Box>
-              </Box>
-            </Box>
-          </Grid>
+    <Box sx={{ backgroundColor: "black", color: "white", p: 6 }}>
+      <Grid container>
+        {/* JSM Details */}
+        <Grid item xs={12} sm={6} md={3}>
+          <Typography variant="h2" sx={{ fontWeight: "bold" }}>
+            GB
+          </Typography>
+          <p>
+            1125 Lincoln Avenue #400
+            <br />
+            Steamboat Springs, CO 80487
+          </p>
+          <p>
+            info@jsmbuilders.com
+            <br />
+            970.871.4899
+          </p>
         </Grid>
-      </Container>
-    </footer>
+        {/* Hours */}
+        <Grid item xs={12} sm={6} md={4}>
+          <Typography variant="h6">Hours</Typography>
+          <Typography>
+            Monday – Friday
+            <br />9 AM – 5 PM
+          </Typography>
+        </Grid>
+
+        {/* Social Media Links */}
+        <Grid item xs={12} md={4}>
+          <Typography variant="h6">Follow Us</Typography>
+          <IconButton color="inherit">
+            <Facebook />
+          </IconButton>
+          <IconButton color="inherit">
+            <Instagram />
+          </IconButton>
+          <IconButton color="inherit">
+            <LinkedIn />
+          </IconButton>
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
 
 export default Footer;
-
-/*
-<Container sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Box sx={{ flex: 1 }}>
-          <Typography variant="h4" component="div" gutterBottom>
-            JSM
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            1125 Lincoln Avenue #400
-            <br />
-            Steamboat Springs, CO 80487
-          </Typography>
-          <Typography variant="body1">
-            info@jsmbuilders.com
-            <br />
-            970.871.4899
-          </Typography>
-        </Box>
-        <Box sx={{ flex: 1, display: "flex", justifyContent: "space-around" }}>
-          <Box>
-            <Typography variant="h6">Hours</Typography>
-            <Typography>
-              Monday – Friday
-              <br />9 AM – 5 PM
-            </Typography>
-          </Box>
-          <Box>
-            <Typography variant="h6">Follow Us</Typography>
-            <Box sx={{ display: "flex" }}>
-              <Facebook sx={{ marginRight: 1 }} />
-              <Instagram sx={{ marginRight: 1 }} />
-              <LinkedIn />
-            </Box>
-          </Box>
-        </Box>
-      </Container>
-*/

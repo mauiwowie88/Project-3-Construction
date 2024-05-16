@@ -1,53 +1,47 @@
 import { Box, Container, Typography, Button } from "@mui/material";
-import hero from "../assets/images/k.jpg";
+import hero from "../assets/images/dope.jpg";
+import { BlackButton } from "./Extra";
+import { Link } from "react-router-dom";
+import { intro } from "../assets/db";
 
 function Mission() {
   return (
-    <Box>
-      <Box className="mission-box" sx={{ backgroundImage: `url(${hero})` }}>
-        <Box sx={{ zIndex: 2 }}>
-          <Typography sx={{ fontSize: 120 }}>JSM</Typography>
-          <Typography sx={{ aligntItems: "center" }}>
-            A New Culture Of Builders
+    <>
+      <Box className="box" sx={{ backgroundImage: `url(${hero})` }}>
+        <Box
+          sx={{
+            zIndex: 2,
+            textAlign: "center",
+          }}
+        >
+          <Typography sx={{ fontSize: "5rem" }}>GB</Typography>
+          <Typography
+            sx={{
+              display: "flex",
+              fontSize: "1rem",
+            }}
+          >
+            A NEW CULTURE OF BUILDERS.
           </Typography>
         </Box>
       </Box>
-      <Box className="mission-container">
-        <Typography variant="h4"> Our Mission</Typography>
-        <Typography className="mission-text">
-          A culture where our team members are empowered to do what they do best
-          because they ARE the best at what they do.
+      <Container sx={{ p: "3rem 3rem 0 3rem", textAlign: "center" }}>
+        <Typography variant="h4">Kyle Custom Home Builder</Typography>
+        <Typography variant="h6" sx={{ p: 3, fontWeight: "bold" }}>
+          Top Choice for a Luxury Home Builder in Kyle, TX
         </Typography>
-        <Typography className="mission-text">
-          A culture where people matter, are respected, and aren’t just used as
-          a means to an end.
-        </Typography>
-        <Typography className="mission-text">
-          A culture where honesty, transparency, and forthrightness are defining
-          characteristics of our process and all our relationships.
-        </Typography>
-        <Typography className="mission-text">
-          A culture where our team members are empowered to do what they do best
-          because they ARE the best at what they do.
-        </Typography>
-        <Typography className="mission-text">
-          A culture where our client’s goals are championed over our
-          bottom-line.
-        </Typography>
-        <Typography className="mission-text">
-          A culture that is collaborative, efficient, and smart.
-        </Typography>
-        <Typography className="mission-text">
-          A culture that is constantly learning, adapting, and growing.
-        </Typography>
-        <Box>
-          <Typography variant="h5" sx={{ margin: 3 }}>
-            This Is JMS
+        {intro.map((thing, index) => (
+          <Typography key={index} sx={{ color: "#424242", mt: 2.5 }}>
+            {thing}
           </Typography>
-          <Button className="mission-btn">Learn More</Button>
-        </Box>
+        ))}
+      </Container>
+      <Box sx={{ textAlign: "center" }}>
+        <Link to={"About"} style={{ textDecoration: "none" }}>
+          <BlackButton p="Learn More" />
+        </Link>
       </Box>
-    </Box>
+    </>
   );
 }
 

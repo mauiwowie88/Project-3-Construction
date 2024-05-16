@@ -14,31 +14,34 @@ body {
   object-fit: cover;
 }
 
-.mission-box {
+.box {
   display: flex;
   position: relative;
-  height: 600px;
+  height: 400px;
   color: #fff;
   background: center / cover no-repeat;
   justify-content: center;
   align-items: center;
 }
 
-.mission-box::after {
+.box::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* z-index: 1; */
+}
+.box .md {
+  height: 400px;
 }
 
 .big-img-box {
   display: flex;
   position: relative;
-  height: 500px;
+  height: 400px;
   color: #fff;
   background: center / cover no-repeat;
   justify-content: center;
@@ -67,18 +70,8 @@ body {
 }
 
 .mission-container {
-  max-width: 800px;
-  margin: 3rem auto;
+  margin: 3rem 7rem;
   text-align: center;
-}
-
-.mission-text {
-  margin-bottom: 10px;
-}
-
-.mission-btn {
-  color: white !important;
-  background-color: black !important;
 }
 
 .nav-link {
@@ -90,26 +83,8 @@ body {
   width: 7rem;
 }
 
-.job-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  margin-top: 50px;
-}
-
 .job-pic {
   width: 100%;
   height: 200px;
   object-fit: cover;
-}
-
-footer {
-  background-color: black;
-  color: white;
-  padding: 20px;
-}
-
-.footer-box {
-  justify-content: space-between;
 }

@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import History from "./History";
+import History from "../components/History";
 
 function Projects() {
   return (

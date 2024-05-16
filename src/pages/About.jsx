@@ -14,14 +14,22 @@ import carpenter from "../assets/images/carpentry.jpg";
 import { Link } from "react-router-dom";
 import { characteristics } from "../assets/db";
 import handleClick from "../assets/utils";
+import { BlackButton, WhiteButton } from "../components/Extra";
 
-const Item = ({ job }) => {
+const Item = ({ skill }) => {
   return (
-    <Grid item xs={12} sm={6} md={4} xl={3}>
+    <Grid item xs={12} sm={6} md={4}>
       <Box className="job-box">
-        {console.log(job)}
-        {/* {job.image && <img src={job.image} alt="Project" className="job-pic" />}
-        <Typography>{job.title}</Typography> */}
+        {skill.image && (
+          <img src={skill.image} alt="Project" className="job-pic" />
+        )}
+        <Typography
+          variant={"h6"}
+          sx={{ margin: "10px 0", fontWeight: "bold" }}
+        >
+          {skill.title}
+        </Typography>
+        <Typography>{skill.description}</Typography>
       </Box>
     </Grid>
   );
@@ -29,27 +37,28 @@ const Item = ({ job }) => {
 
 function About() {
   return (
-    <Box>
+    <>
+      {/* Hero Picture */}
       <Box
         className="img-box"
         sx={{
           backgroundImage: `url(${bg})`,
           height: 300,
-          // backgroundPosition: "center top",
         }}
       ></Box>
+      {/* Difference Statement */}
       <Container
         sx={{
+          padding: "2rem 4rem",
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
-          padding: "2rem",
         }}
       >
         <Typography variant="h4" sx={{ margin: "1rem" }}>
           The JSM Difference
         </Typography>
-        <Typography>
+        <Typography sx={{ textAlign: "center" }}>
           You have a lot of builders to choose from these days and you likely
           have a lot of ideas of what an ideal builder would bring to the table
           for your home. As a team who has spent the last two and a half decades
@@ -59,44 +68,42 @@ function About() {
           general contractors in our industry.
         </Typography>
       </Container>
-      <Box sx={{ backgroundColor: "#dfe0e1", padding: "3rem " }}>
+      {/* Defining Characteristics  */}
+      <Box sx={{ backgroundColor: "#dfe0e1" }}>
         <Container
           sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
         >
-          <Typography variant="h3">Our Recent Work</Typography>
+          <Typography
+            sx={{ fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" } }}
+          >
+            Our Defining Characteristics
+          </Typography>
           <Grid container spacing={2}>
             {characteristics.map((skill, index) => (
               <Item key={index} skill={skill} />
             ))}
           </Grid>
-          <Button
-            className="mission-btn"
-            sx={{ marginTop: 3 }}
-            onClick={handleClick}
-          >
-            Back to Top
-          </Button>
+          <BlackButton p="Back to Top" />
         </Container>
       </Box>
+      {/* Give Us A Call */}
       <Box
-        className="big-img-box"
+        className="box md"
         sx={{
           backgroundImage: `url(${carpenter})`,
-          display: "flex",
-          flexWrap: "wrap",
+          textAlign: "center",
         }}
       >
-        <Box>
-          <Typography>Ready to get started? Give us a call today.</Typography>
-        </Box>
-        <Box>
-          {" "}
-          <Link>
-            <Button>Contact Us</Button>
+        <Box sx={{ zIndex: 2 }}>
+          <Typography sx={{ fontSize: 40 }}>
+            Ready to get started? Give us a call today.
+          </Typography>
+          <Link to="../Contact" style={{ textDecoration: "none" }}>
+            <BlackButton p="Contact Us" />
           </Link>
         </Box>
       </Box>
-    </Box>
+    </>
   );
 }
 export default About;
