@@ -19,7 +19,7 @@ function History() {
           Our Recent Work
         </Typography>
 
-        <Grid container spacing={1.6}>
+        <Grid container spacing={2.2}>
           {portfolio.map((job, index) => (
             <PortfolioItem key={index} job={job} />
           ))}

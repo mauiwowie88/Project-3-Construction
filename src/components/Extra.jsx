@@ -5,8 +5,8 @@ import handleClick from "../assets/utils";
 const PortfolioItem = ({ job }) => {
   return (
     <Grid item xs={12} sm={6} md={4} xl={3}>
-      <Link className="nav-link">
-        <Card>
+      <Link className="nav-link" to="/Job" state={{ job }}>
+        <Card square>
           <img src={job.image} alt="Project" className="job-pic" />
           <Typography sx={{ display: "flex", justifyContent: "center" }}>
             {job.title}

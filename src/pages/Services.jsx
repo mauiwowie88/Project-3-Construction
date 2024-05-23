@@ -2,10 +2,11 @@ import { services } from "../assets/db";
 import { Grid, Typography, Box, Container, Button, Card } from "@mui/material";
 import { BlackButton, PortfolioItem } from "../components/Extra";
 import bg from "../assets/images/Construction.jpeg";
+import ImgBox from "../components/ImgBox";
 
 const Item = ({ service }) => {
   return (
-    <Grid item xs={12} sm={6} md={4} xl={3}>
+    <Grid item xs={12} sm={6} md={4}>
       <Box className="job-box" textAlign="center">
         <Typography
           variant={"h6"}
@@ -24,10 +25,7 @@ const Item = ({ service }) => {
 function Services() {
   return (
     <>
-      <Box
-        className="box"
-        sx={{ backgroundImage: `url(${bg})`, height: 300 }}
-      ></Box>
+      <ImgBox title="Services" />
       <Box sx={{ backgroundColor: "#dfe0e1", padding: "3rem " }}>
         <Container
           sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}

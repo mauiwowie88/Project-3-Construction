@@ -1,8 +1,9 @@
+/* Past Projects Images */
 import one from "./images/b.jpg";
 import two from "./images/c.jpg";
 import three from "./images/d.jpg";
 import four from "./images/d.webp";
-import five from "./images/e.jpeg";
+import five from "./images/ee.jpeg";
 import six from "./images/f.jpg";
 import seven from "./images/f.webp";
 import eight from "./images/g.jpg";
@@ -11,6 +12,7 @@ import ten from "./images/i.jpg";
 import eleven from "./images/j.jpg";
 import twelve from "./images/k.png";
 
+/* Our Services Images */
 import bathroom from "./images/bathroom.jpg";
 import livingRoom from "./images/living-room.jpg";
 import kitchen from "./images/kitchen.jpg";
@@ -18,26 +20,29 @@ import exterior from "./images/exterior.jpg";
 import deck from "./images/Deck.jpg";
 import interior from "./images/fancy.jpg";
 
+/* Our Definig Characteristics Images */
 import book from "./images/book.jpg";
 import development from "./images/development.jpg";
-import engineering from "./images/engineering.avif";
+import engineering from "./images/eee.jpg";
 import pricing from "./images/pricing.jpg";
 import trust from "./images/trust.jpg";
 import time from "./images/time.png";
 
-const quotes = [
-  `"Working with [Company Name] was an absolute delight! Their professionalism and attention to detail exceeded my expectations. From start to finish, the team demonstrated a deep understanding of our needs and delivered exceptional results. I highly recommend their services to anyone seeking top-notch quality and expertise."`,
-  `"I can't thank [Company Name] enough for their outstanding work. Their dedication to excellence and commitment to customer satisfaction are truly commendable. The entire process was seamless, and the final outcome exceeded our wildest expectations. I wouldn't hesitate to collaborate with them again in the future."`,
-  `"Choosing [Company Name] was one of the best decisions I've made for my business. Their team of experts went above and beyond to ensure our project's success. Their innovative solutions and strategic approach helped us achieve remarkable results in record time. I'm grateful for their partnership and highly recommend their services to others."`,
-  `"I've had the pleasure of working with [Company Name] on multiple projects, and each time, they've delivered nothing short of excellence. Their professionalism, creativity, and attention to detail set them apart from the rest. I'm continually impressed by their ability to turn our ideas into reality and would recommend them to anyone seeking top-tier quality and service."`,
-  `"I couldn't be happier with the results [Company Name] delivered. Their team's expertise and dedication to our project were evident from day one. They took the time to understand our goals and vision, and their strategic guidance was invaluable. Thanks to their efforts, we were able to achieve remarkable success and elevate our brand to new heights. I highly recommend [Company Name] to anyone looking for exceptional service and results."`,
-];
+/* Section Images */
+import introImg from "../assets/images/theone.jpg";
+import testimonialsImg from "../assets/images/k.jpg";
+import aboutImg from "../assets/images/dope.jpg";
+import callUsImg from "../assets/images/carpentry.jpg";
+import servicesImg from "../assets/images/good.jpg";
+import contactImg from "../assets/images/p.jpg";
 
+/* Introduction Paragraph */
 const intro = [
   "Owning a home embodies the quintessential American Dream, yet locating the perfect home contractor to materialize your design aspirations can seem like an insurmountable challenge. You seek someone who comprehends your distinct requirements and delivers top-notch craftsmanship at an accessible cost, all while ensuring your project progresses smoothly and remains within budget.",
-  "Your Company is a premier custom home builder, based in Austin, TX. Our contemporary and lavish home constructions, such as our renowned Modern Victorian, exude sophistication. As full-service custom home builders and general contractors, we adeptly manage every facet of home construction and eagerly guide you through the personalized home building journey. Your Company is unwaveringly dedicated to client contentment and the creation of unparalleled luxury custom home constructions.",
+  "Your Company is a premier custom home builder, based in Austin, TX. As full-service custom home builders and general contractors, we adeptly manage every facet of home construction and eagerly guide you through the personalized home building journey.",
 ];
 
+/* Our Mission Statement */
 const mission = [
   "A culture where our team members are empowered to do what they do best because they ARE the best at what they do.",
   "A culture where people matter, are respected, and aren’t just used as a means to an end.",
@@ -46,6 +51,56 @@ const mission = [
   "A culture that is constantly learning, adapting, and growing.",
 ];
 
+/* Customer Testimonials */
+const quotes = [
+  `"Working with [Company Name] was an absolute delight! Their professionalism and attention to detail exceeded my expectations. From start to finish, the team demonstrated a deep understanding of our needs and delivered exceptional results. I highly recommend their services to anyone seeking top-notch quality and expertise."`,
+  `"I can't thank [Company Name] enough for their outstanding work. Their dedication to excellence and commitment to customer satisfaction are truly commendable. The entire process was seamless, and the final outcome exceeded our wildest expectations. I wouldn't hesitate to collaborate with them again in the future."`,
+  `"Choosing [Company Name] was one of the best decisions I've made for my business. Their team of experts went above and beyond to ensure our project's success. Their innovative solutions and strategic approach helped us achieve remarkable results in record time. I'm grateful for their partnership and highly recommend their services to others."`,
+  `"I've had the pleasure of working with [Company Name] on multiple projects, and each time, they've delivered nothing short of excellence. Their professionalism, creativity, and attention to detail set them apart from the rest. I'm continually impressed by their ability to turn our ideas into reality and would recommend them to anyone seeking top-tier quality and service."`,
+  `"I couldn't be happier with the results [Company Name] delivered. Their team's expertise and dedication to our project were evident from day one. They took the time to understand our goals and vision, and their strategic guidance was invaluable. Thanks to their efforts, we were able to achieve remarkable success and elevate our brand to new heights. I highly recommend [Company Name] to anyone looking for exceptional service and results."`,
+];
+
+/* Section Pictures */
+const sectionImgs = [
+  {
+    title: "Intro",
+    image: introImg,
+    size: "700",
+    dark: true,
+  },
+  {
+    title: "Testimonials",
+    image: testimonialsImg,
+    size: "300",
+    dark: true,
+  },
+  {
+    title: "About",
+    image: aboutImg,
+    size: "300",
+    dark: false,
+  },
+  {
+    title: "Call Us",
+    image: callUsImg,
+    size: "350",
+    dark: true,
+  },
+  {
+    title: "Services",
+    image: servicesImg,
+    size: "300",
+    dark: true,
+  },
+  {
+    title: "Contact",
+    image: contactImg,
+    size: "300",
+    dark: false,
+  },
+];
+
+/* Our Services */
 const services = [
   {
     title: "Kitchen",
@@ -85,6 +140,7 @@ const services = [
   },
 ];
 
+/* Our Defining Characteristics */
 const characteristics = [
   {
     title: "Trust",
@@ -124,6 +180,7 @@ const characteristics = [
   },
 ];
 
+/* Our Past Projects */
 const portfolio = [
   {
     title: "Elkins Meadows Retreat",
@@ -131,7 +188,8 @@ const portfolio = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit quis purus condimentum fermentum.",
     dateStarted: "May 24 2022",
     dateFinished: "October 8 2023",
-    payRange: "22-24",
+    payRange: "2,000 k",
+    location: "Austin, TX",
     image: one,
   },
   {
@@ -140,7 +198,8 @@ const portfolio = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit quis purus condimentum fermentum.",
     dateStarted: "May 24 2022",
     dateFinished: "October 8 2023",
-    payRange: "22-24",
+    payRange: "2,000 k",
+    location: "Austin, TX",
     image: two,
   },
   {
@@ -149,7 +208,8 @@ const portfolio = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit quis purus condimentum fermentum.",
     dateStarted: "May 24 2022",
     dateFinished: "October 8 2023",
-    payRange: "22-24",
+    payRange: "2,000 k",
+    location: "Austin, TX",
     image: three,
   },
   {
@@ -158,7 +218,8 @@ const portfolio = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit quis purus condimentum fermentum.",
     dateStarted: "May 24 2022",
     dateFinished: "October 8 2023",
-    payRange: "22-24",
+    payRange: "2,000 k",
+    location: "Austin, TX",
     image: four,
   },
   {
@@ -167,7 +228,8 @@ const portfolio = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit quis purus condimentum fermentum.",
     dateStarted: "May 24 2022",
     dateFinished: "October 8 2023",
-    payRange: "22-24",
+    payRange: "2,000 k",
+    location: "Austin, TX",
     image: five,
   },
   {
@@ -176,7 +238,8 @@ const portfolio = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit quis purus condimentum fermentum.",
     dateStarted: "May 24 2022",
     dateFinished: "October 8 2023",
-    payRange: "22-24",
+    payRange: "2,000 k",
+    location: "Austin, TX",
     image: six,
   },
   {
@@ -185,7 +248,8 @@ const portfolio = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit quis purus condimentum fermentum.",
     dateStarted: "May 24 2022",
     dateFinished: "October 8 2023",
-    payRange: "22-24",
+    payRange: "2,000 k",
+    location: "Austin, TX",
     image: seven,
   },
   {
@@ -194,7 +258,8 @@ const portfolio = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit quis purus condimentum fermentum.",
     dateStarted: "May 24 2022",
     dateFinished: "October 8 2023",
-    payRange: "22-24",
+    payRange: "2,000 k",
+    location: "Austin, TX",
     image: eight,
   },
   {
@@ -203,7 +268,8 @@ const portfolio = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit quis purus condimentum fermentum.",
     dateStarted: "May 24 2022",
     dateFinished: "October 8 2023",
-    payRange: "22-24",
+    payRange: "2,000 k",
+    location: "Austin, TX",
     image: nine,
   },
   {
@@ -212,7 +278,8 @@ const portfolio = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit quis purus condimentum fermentum.",
     dateStarted: "May 24 2022",
     dateFinished: "October 8 2023",
-    payRange: "22-24",
+    payRange: "2,000 k",
+    location: "Austin, TX",
     image: ten,
   },
   {
@@ -221,7 +288,8 @@ const portfolio = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit quis purus condimentum fermentum.",
     dateStarted: "May 24 2022",
     dateFinished: "October 8 2023",
-    payRange: "22-24",
+    payRange: "2,000 k",
+    location: "Austin, TX",
     image: eleven,
   },
   {
@@ -230,9 +298,18 @@ const portfolio = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit quis purus condimentum fermentum.",
     dateStarted: "May 24 2022",
     dateFinished: "October 8 2023",
-    payRange: "22-24",
+    payRange: "2,000 k",
+    location: "Austin, TX",
     image: twelve,
   },
 ];
 
-export { portfolio, characteristics, quotes, mission, services, intro };
+export {
+  portfolio,
+  characteristics,
+  quotes,
+  mission,
+  services,
+  intro,
+  sectionImgs,
+};

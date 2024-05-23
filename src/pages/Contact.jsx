@@ -10,14 +10,12 @@ import {
   Container,
 } from "@mui/material";
 import bg from "../assets/images/mmm.jpg";
+import ImgBox from "../components/ImgBox";
 
 function Contact() {
   return (
     <Box>
-      <Box
-        className="img-box"
-        sx={{ backgroundImage: `url(${bg})`, height: 300 }}
-      ></Box>
+      <ImgBox title="Contact" />
       <Box sx={{ padding: 3 }}>
         <Typography variant="h4" sx={{ justifyContent: "center" }}>
           Contact Us
