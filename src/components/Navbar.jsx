@@ -2,12 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AppBar, Toolbar, Button, Box } from "@mui/material";
 import logo from "../assets/images/logo.png";
+import bLogo from "../assets/images/b-logo.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import NavigationDrawer from "./Drawer";
 
 const pages = ["About", "Services", "Gallery", "Contact"];
 
 function Navbar() {
+  const mdToLg = useMediaQuery((theme) => theme.breakpoints.up("md"));
   const smToLg = useMediaQuery((theme) => theme.breakpoints.up("sm"));
 
   return (
@@ -22,11 +24,11 @@ function Navbar() {
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Box>
-          <Link to="/" className="nav-link">
-            <img src={logo} className="logo"></img>
+          <Link to="/">
+            <img src={logo} className="logo" />
           </Link>
         </Box>
-        {smToLg ? (
+        {mdToLg ? (
           <Box>
             {pages.map((page) => (
               <Button key={page} sx={{ color: "#fff" }}>

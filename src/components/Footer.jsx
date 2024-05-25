@@ -68,7 +68,7 @@ function Footer() {
           {/* JSM Details */}
           <Grid item md sx={{ alignItems: "space-around" }}>
             <Typography variant="h2" sx={{ fontWeight: "bold" }}>
-              BG
+              Project 3
             </Typography>
             <br />
             <Typography variant="body2">

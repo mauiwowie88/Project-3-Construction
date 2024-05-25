@@ -20,7 +20,7 @@ function Mission() {
         </Typography>
       </ImgBox>
       <Box sx={{ p: "3rem", textAlign: "center" }}>
-        <Typography variant="h4">Kyle Custom Home Builder</Typography>
+        <Typography variant="h4">Project 3 Construction</Typography>
         <Typography variant="h6" sx={{ p: 3, fontWeight: "bold" }}>
           Top Choice for a Luxury Home Builder in Kyle, TX
         </Typography>

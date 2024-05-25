@@ -55,7 +55,9 @@ body,
 }
 
 .logo {
-  width: 7rem;
+  width: 4rem;
+  height: auto;
+  object-fit: contain;
 }
 
 .job-pic {
