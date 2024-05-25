@@ -8,7 +8,9 @@ function Mission() {
   return (
     <>
       <ImgBox title="Intro">
-        <Typography sx={{ fontSize: "5rem", color: "white" }}>GB</Typography>
+        <Typography sx={{ fontSize: "5rem", color: "white" }}>
+          Project 3 TX
+        </Typography>
         <Typography
           sx={{
             display: "flex",
