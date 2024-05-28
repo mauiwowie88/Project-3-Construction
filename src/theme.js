@@ -1,35 +1,8 @@
-// import { createTheme } from "@mui/material/styles";
-
-// const theme = createTheme({
-//   palette: {
-//     primary: {
-//       main: "#1976d2",
-//     },
-//     secondary: {
-//       main: "#dc004e",
-//     },
-//   },
-//   typography: {
-//     fontFamily: "Roboto, Arial, sans-serif",
-//     h4: {
-//       fontWeight: "bold",
-//       color: "#333",
-//     },
-//     subtitle1: {
-//       fontWeight: "bold",
-//       color: "#333",
-//     },
-//     body1: {
-//       color: "#555",
-//     },
-//   },
-// });
-
-// export default theme;
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   typography: {
+    fontFamily: "Open Sans, sans-serif, Roboto",
     h1: {
       fontSize: "2.5rem",
       "@media (min-width:600px)": {
@@ -94,12 +67,11 @@ const theme = createTheme({
       },
     },
     body2: {
-      fontSize: "0.875rem",
       "@media (min-width:600px)": {
-        fontSize: "1rem",
+        fontSize: "0.75rem",
       },
       "@media (min-width:900px)": {
-        fontSize: "1.1rem",
+        fontSize: "1.2rem",
       },
     },
   },

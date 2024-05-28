@@ -7,20 +7,18 @@ import {
   Grid,
   Checkbox,
   FormControlLabel,
-  Container,
 } from "@mui/material";
-import bg from "../assets/images/mmm.jpg";
-import ImgBox from "../components/ImgBox";
+import { SectionImg } from "../components/Extra";
 
 function Contact() {
   return (
     <Box>
-      <ImgBox title="Contact" />
+      <SectionImg title="Contact" />
       <Box sx={{ padding: 3 }}>
         <Typography variant="h4" sx={{ justifyContent: "center" }}>
           Contact Us
         </Typography>
-        <form>
+        <form action="https://formspree.io/f/mjvndzaw" method="POST">
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
               <TextField
@@ -28,6 +26,7 @@ function Contact() {
                 label="First Name"
                 variant="outlined"
                 required
+                name="first_name"
               />
             </Grid>
             <Grid item xs={12} md={6}>
@@ -35,21 +34,32 @@ function Contact() {
                 fullWidth
                 label="Last Name"
                 variant="outlined"
-                required
+                name="last_name"
               />
             </Grid>
-            <Grid item xs={12}>
-              <TextField fullWidth label="Email" variant="outlined" required />
+            <Grid item xs={12} md={6}>
+              <TextField
+                fullWidth
+                label="Email"
+                variant="outlined"
+                required
+                name="email"
+              />
             </Grid>
-            <Grid item xs={12}>
-              <TextField fullWidth label="Phone" variant="outlined" />
+            <Grid item xs={12} md={6}>
+              <TextField
+                fullWidth
+                label="Phone"
+                variant="outlined"
+                name="phone"
+              />
             </Grid>
             <Grid item xs={12}>
               <TextField
                 fullWidth
                 label="Subject"
                 variant="outlined"
-                required
+                name="subject"
               />
             </Grid>
             <Grid item xs={12}>
@@ -60,16 +70,19 @@ function Contact() {
                 multiline
                 rows={4}
                 required
+                name="message"
               />
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
-                control={<Checkbox />}
+                control={<Checkbox name="newsletter" />}
                 label="Sign up for news and updates"
               />
             </Grid>
             <Grid item xs={12}>
-              <Button variant="contained">Submit</Button>
+              <Button variant="contained" type="submit">
+                Submit
+              </Button>
             </Grid>
           </Grid>
         </form>

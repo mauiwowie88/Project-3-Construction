@@ -62,24 +62,21 @@ import { Facebook, Instagram, LinkedIn } from "@mui/icons-material";
 
 function Footer() {
   return (
-    <Box sx={{ backgroundColor: "black", color: "white", p: 6 }}>
+    <Box sx={{ backgroundColor: "black", color: "white", p: 8 }}>
       <Container>
         <Grid container spacing={10} justifyContent="center">
           {/* JSM Details */}
           <Grid item md sx={{ alignItems: "space-around" }}>
             <Typography variant="h2" sx={{ fontWeight: "bold" }}>
-              Project 3
+              Project 3 TX
             </Typography>
             <br />
             <Typography variant="body2">
-              1125 Lincoln Avenue #400
+              yussel@project3tx.com
               <br />
-              Steamboat Springs, CO 80487
+              info@project3tx.com
               <br />
-              <br />
-              info@jsmbuilders.com
-              <br />
-              970.871.4899
+              (512) 961 - 6042
             </Typography>
           </Grid>
           {/* Hours */}
@@ -101,22 +98,23 @@ function Footer() {
             <Typography
               variant="h5"
               sx={{ fontWeight: "bold", textAlign: "center" }}
+              gutterBottom
             >
               Follow Us
             </Typography>
             <IconButton color="inherit" aria-label="Facebook">
               <a href="https://www.linkedin.com/in/mauricio-garza-guzman/">
-                <Facebook />
+                <Facebook style={{ color: "white" }} />
               </a>
             </IconButton>
             <IconButton color="inherit" aria-label="Instagram">
               <a href="https://mauiwowie88.github.io/">
-                <Instagram />
+                <Instagram style={{ color: "white" }} />
               </a>
             </IconButton>
             <IconButton color="inherit" aria-label="LinkedIn">
               <a href="https://google.com">
-                <LinkedIn />
+                <LinkedIn style={{ color: "white" }} />
               </a>
             </IconButton>
           </Grid>

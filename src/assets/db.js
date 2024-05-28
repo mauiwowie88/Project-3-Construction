@@ -1,45 +1,65 @@
 /* Past Projects Images */
-import one from "./images/b.jpg";
-import two from "./images/c.jpg";
-import three from "./images/d.jpg";
-import four from "./images/d.webp";
-import five from "./images/ee.jpeg";
-import six from "./images/f.jpg";
-import seven from "./images/f.webp";
-import eight from "./images/g.jpg";
-import nine from "./images/h.jpg";
-import ten from "./images/i.jpg";
-import eleven from "./images/j.jpg";
-import twelve from "./images/k.png";
+import one from "./images/outside/b.jpg";
+import two from "./images/outside/c.jpg";
+import three from "./images/outside/d.jpg";
+import four from "./images/outside/d.webp";
+import six from "./images/outside/f.jpg";
+import seven from "./images/outside/f.webp";
+import eight from "./images/outside/g.jpg";
+import nine from "./images/outside/h.jpg";
+import ten from "./images/outside/i.jpg";
+import eleven from "./images/outside/j.jpg";
+import twelve from "./images/outside/k.png";
 
 /* Our Services Images */
-import bathroom from "./images/bathroom.jpg";
-import livingRoom from "./images/living-room.jpg";
-import kitchen from "./images/kitchen.jpg";
-import exterior from "./images/exterior.jpg";
-import deck from "./images/Deck.jpg";
-import interior from "./images/fancy.jpg";
+import bathroom from "./images/inside/bathroom.jpg";
+import livingRoom from "./images/inside/living-room.jpg";
+import kitchen from "./images/inside/kitchen.jpg";
+import exterior from "./images/outside/exterior.jpg";
+import deck from "./images/outside/Deck.jpg";
+import interior from "./images/inside/fancy.jpg";
 
-/* Our Definig Characteristics Images */
-import book from "./images/book.jpg";
-import development from "./images/development.jpg";
-import engineering from "./images/eee.jpg";
-import pricing from "./images/pricing.jpg";
-import trust from "./images/trust.jpg";
-import time from "./images/time.png";
+/* Our Defining Characteristics Images */
+import book from "./images/other/book.jpg";
+import development from "./images/other/development.jpg";
+import engineering from "./images/other/eee.jpg";
+import pricing from "./images/other/pricing.jpg";
+import trust from "./images/other/trust.jpg";
+import time from "./images/other/time.png";
 
 /* Section Images */
-import introImg from "../assets/images/theone.jpg";
-import testimonialsImg from "../assets/images/k.jpg";
-import aboutImg from "../assets/images/dope.jpg";
-import callUsImg from "../assets/images/carpentry.jpg";
-import servicesImg from "../assets/images/good.jpg";
-import contactImg from "../assets/images/p.jpg";
+import introImg from "../assets/images/outside/theone.jpg";
+import testimonialsImg from "../assets/images/outside/k.jpg";
+import aboutImg from "../assets/images/other/dope.jpg";
+import callUsImg from "../assets/images/other/carpentry.jpg";
+import servicesImg from "../assets/images/other/good.jpg";
+import contactImg from "../assets/images/outside/p.jpg";
+import galleryImg from "../assets/images/outside/wow.jpg";
+
+import iOne from "../assets/images/inside/i-2.jpg";
+import iTwo from "../assets/images/inside/i-2.jpg";
+import iThree from "../assets/images/inside/i-3.jpg";
+import iFour from "../assets/images/inside/i-3.jpg";
+
+import a from "./images/inside/1.jpg";
+import b from "./images/inside/2.webp";
+import c from "./images/inside/3.jpg";
+import d from "./images/inside/4.avif";
+import e from "./images/inside/5.avif";
+import f from "./images/inside/5.jpg";
+import g from "./images/inside/6.jpeg";
+import h from "./images/inside/7.avif";
+import i from "./images/inside/8.jpg";
+import j from "./images/inside/9.avif";
+import k from "./images/inside/10.png";
+import l from "./images/inside/11.jpg";
+import m from "./images/inside/11.webp";
+import n from "./images/inside/bg.jpg";
 
 /* Introduction Paragraph */
 const intro = [
-  "Owning a home embodies the quintessential American Dream, yet locating the perfect home contractor to materialize your design aspirations can seem like an insurmountable challenge. You seek someone who comprehends your distinct requirements and delivers top-notch craftsmanship at an accessible cost, all while ensuring your project progresses smoothly and remains within budget.",
-  "Your Company is a premier custom home builder, based in Austin, TX. As full-service custom home builders and general contractors, we adeptly manage every facet of home construction and eagerly guide you through the personalized home building journey.",
+  "Project 3 Construction is a San Marcos based commercial general contractor specializing in tenant improvements, renovations, additions, and ground-up construction projects.",
+  "As full-service custom home builders and general contractors, we adeptly manage every facet of home construction and guide you through the personalized home building journey.",
 ];
 
 /* Our Mission Statement */
@@ -53,50 +73,92 @@ const mission = [
 
 /* Customer Testimonials */
 const quotes = [
-  `"Working with [Company Name] was an absolute delight! Their professionalism and attention to detail exceeded my expectations. From start to finish, the team demonstrated a deep understanding of our needs and delivered exceptional results. I highly recommend their services to anyone seeking top-notch quality and expertise."`,
-  `"I can't thank [Company Name] enough for their outstanding work. Their dedication to excellence and commitment to customer satisfaction are truly commendable. The entire process was seamless, and the final outcome exceeded our wildest expectations. I wouldn't hesitate to collaborate with them again in the future."`,
-  `"Choosing [Company Name] was one of the best decisions I've made for my business. Their team of experts went above and beyond to ensure our project's success. Their innovative solutions and strategic approach helped us achieve remarkable results in record time. I'm grateful for their partnership and highly recommend their services to others."`,
-  `"I've had the pleasure of working with [Company Name] on multiple projects, and each time, they've delivered nothing short of excellence. Their professionalism, creativity, and attention to detail set them apart from the rest. I'm continually impressed by their ability to turn our ideas into reality and would recommend them to anyone seeking top-tier quality and service."`,
-  `"I couldn't be happier with the results [Company Name] delivered. Their team's expertise and dedication to our project were evident from day one. They took the time to understand our goals and vision, and their strategic guidance was invaluable. Thanks to their efforts, we were able to achieve remarkable success and elevate our brand to new heights. I highly recommend [Company Name] to anyone looking for exceptional service and results."`,
+  `"Working with Project 3 was an absolute delight! Their professionalism and attention to detail exceeded my expectations. From start to finish, the team demonstrated a deep understanding of our needs and delivered exceptional results. I highly recommend their services to anyone seeking top-notch quality and expertise."`,
+  `"I can't thank Project 3 enough for their outstanding work. Their dedication to excellence and commitment to customer satisfaction are truly commendable. The entire process was seamless, and the final outcome exceeded our wildest expectations. I wouldn't hesitate to collaborate with them again in the future."`,
+  `"Choosing Project 3 was one of the best decisions I've made for my business. Their team of experts went above and beyond to ensure our project's success. Their innovative solutions and strategic approach helped us achieve remarkable results in record time. I'm grateful for their partnership and highly recommend their services to others."`,
+  `"I've had the pleasure of working with Project 3 on multiple projects, and each time, they've delivered nothing short of excellence. Their professionalism, creativity, and attention to detail set them apart from the rest. I'm continually impressed by their ability to turn our ideas into reality and would recommend them to anyone seeking top-tier quality and service."`,
+  `"I couldn't be happier with the results Project 3 delivered. Their team's expertise and dedication to our project were evident from day one. They took the time to understand our goals and vision, and their strategic guidance was invaluable. Thanks to their efforts, we were able to achieve remarkable success and elevate our brand to new heights. I highly recommend [Company Name] to anyone looking for exceptional service and results."`,
+];
+
+const sections = [
+  {
+    title: "Building Dreams, One Home at a Time",
+    description:
+      "With over 25 years of experience, we are dedicated to turning your vision into reality with exceptional craftsmanship and attention to detail.",
+    image: d,
+    route: "About",
+    button: "About Us",
+  },
+  {
+    title: "Innovative Solutions for Modern Living",
+    description:
+      "From home technology to energy efficiency, we provide comprehensive services to bring your vision to life.",
+    image: m,
+    route: "Services",
+    button: "Our Services",
+  },
+  {
+    title: "Showcasing Excellence in Every Project",
+    description:
+      "Explore our portfolio of projects, each reflecting our commitment to quality and client satisfaction.",
+    image: g,
+    route: "Gallery",
+    button: "Past Projects",
+  },
+  {
+    title: "Start Your Journey with Us Today",
+    description:
+      "Ready to start your next construction project? Contact us for expert guidance and personalized service.",
+    image: n,
+    route: "Contact",
+    button: "Contact Us",
+  },
 ];
 
 /* Section Pictures */
 const sectionImgs = [
   {
     title: "Intro",
-    image: introImg,
-    size: "700",
-    dark: true,
+    image: galleryImg,
+    size: { xs: 300, sm: 350, md: 400, lg: 700 },
+    opacity: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1))",
   },
   {
     title: "Testimonials",
     image: testimonialsImg,
-    size: "300",
-    dark: true,
+    size: { xs: 300, sm: 300, md: 300, lg: 300 },
+    opacity: "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6))",
   },
   {
     title: "About",
-    image: aboutImg,
-    size: "300",
-    dark: false,
+    image: b,
+    size: { xs: 150, sm: 200, md: 250, lg: 500 },
+    opacity: false,
   },
   {
     title: "Call Us",
     image: callUsImg,
-    size: "350",
-    dark: true,
+    size: { xs: 200, sm: 300, md: 400, lg: 500 },
+    opacity: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))",
   },
   {
     title: "Services",
     image: servicesImg,
-    size: "300",
-    dark: true,
+    size: { xs: 200, sm: 250, md: 350, lg: 600 },
+    opacity: "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6))",
   },
   {
     title: "Contact",
     image: contactImg,
-    size: "300",
-    dark: false,
+    size: { xs: 300, sm: 350, md: 400, lg: 450 },
+    opacity: "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3))",
+  },
+
+  {
+    title: "Gallery",
+    image: galleryImg,
+    size: { xs: 300, sm: 350, md: 400, lg: 450 },
+    opacity: "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3))",
   },
 ];
 
@@ -137,6 +199,41 @@ const services = [
     description:
       "We can help add more space to your home through custom home additions, garage conversions, room additions, attic loft conversions and more.",
     image: interior,
+  },
+];
+
+const work = [
+  {
+    title: "Demolition",
+    image: livingRoom,
+  },
+  {
+    title: "Welding",
+    image: livingRoom,
+  },
+  {
+    title: "Grading",
+    image: livingRoom,
+  },
+  {
+    title: "Framing",
+    image: livingRoom,
+  },
+  {
+    title: "Painting",
+    image: livingRoom,
+  },
+  {
+    title: "Flooring",
+    image: livingRoom,
+  },
+  {
+    title: "Electrical",
+    image: livingRoom,
+  },
+  {
+    title: "Plumbing",
+    image: livingRoom,
   },
 ];
 
@@ -230,7 +327,7 @@ const portfolio = [
     dateFinished: "October 8 2023",
     payRange: "2,000 k",
     location: "Austin, TX",
-    image: five,
+    image: introImg,
   },
   {
     title: "Twenty Mile Ranch",
@@ -309,7 +406,9 @@ export {
   characteristics,
   quotes,
   mission,
+  sections,
   services,
+  work,
   intro,
   sectionImgs,
 };

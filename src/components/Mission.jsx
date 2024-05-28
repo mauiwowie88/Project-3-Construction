@@ -1,44 +1,68 @@
-import { Box, Container, Typography, Button } from "@mui/material";
-import { BlackButton } from "./Extra";
-import { Link } from "react-router-dom";
-import { intro } from "../assets/db";
-import ImgBox from "./ImgBox";
+import { Box, Container, Typography, Grid } from "@mui/material";
+
+import { intro, sections, work } from "../assets/db";
+import { SectionImg, MainItem } from "../components/Extra";
 
 function Mission() {
   return (
     <>
-      <ImgBox title="Intro">
-        <Typography sx={{ fontSize: "5rem", color: "white" }}>
-          Project 3 TX
-        </Typography>
-        <Typography
+      <Box position="relative">
+        <SectionImg title="Intro">
+          <Typography variant="body2">A NEW CULTURE OF BUILDERS.</Typography>
+        </SectionImg>
+        <Box
           sx={{
-            display: "flex",
-            fontSize: "1rem",
-            color: "white",
+            backgroundColor: "#b79f32",
+            position: "absolute",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "70%",
+            maxWidth: "600px",
           }}
         >
-          A NEW CULTURE OF BUILDERS.
+          <Box
+            sx={{
+              backgroundColor: "#cab13e",
+              m: 0.5,
+              p: 1,
+              textAlign: "center",
+            }}
+          >
+            <Typography variant="h1" color="white">
+              Project 3 TX
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+
+      <Box sx={{ p: "2rem", textAlign: "center" }}>
+        <Typography
+          variant="h6"
+          sx={{ p: 2, fontWeight: "bold", color: "#cfb13e" }}
+        >
+          THE PREMIER NEW HOME BUILDER OF
         </Typography>
-      </ImgBox>
-      <Box sx={{ p: "3rem", textAlign: "center" }}>
-        <Typography variant="h4">Project 3 Construction</Typography>
-        <Typography variant="h6" sx={{ p: 3, fontWeight: "bold" }}>
-          Top Choice for a Luxury Home Builder in Kyle, TX
-        </Typography>
-        <Container>
+        <Typography variant="h5">Austin and San Marcos, TX</Typography>
+
+        <Container maxWidth="md">
           {intro.map((text, index) => (
-            <Typography key={index} sx={{ color: "#424242", mt: 2.5 }}>
+            <Typography key={index} sx={{ color: "#424242", pt: 2.5 }}>
               {text}
             </Typography>
           ))}
         </Container>
       </Box>
-      <Box sx={{ textAlign: "center" }}>
-        <Link to={"About"} style={{ textDecoration: "none" }}>
-          <BlackButton p="Learn More" />
-        </Link>
-      </Box>
+
+      <Grid container sx={{ justifyContent: "center", p: 4 }}>
+        {sections.map((section, index) => (
+          <MainItem key={index} section={section} />
+        ))}
+      </Grid>
+      {/* <Grid container>
+        {work.map((section, index) => (
+          <SectionImg key={index} section={section} />
+        ))}
+      </Grid> */}
     </>
   );
 }

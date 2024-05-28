@@ -1,9 +1,8 @@
 import { services } from "../assets/db";
 import { Grid, Typography, Box, Container, Button, Card } from "@mui/material";
 import { BlackButton, PortfolioItem } from "../components/Extra";
-import bg from "../assets/images/Construction.jpeg";
-import ImgBox from "../components/ImgBox";
-
+import bg from "../assets/images/other/Construction.jpeg";
+import { SectionImg } from "../components/Extra";
 const Item = ({ service }) => {
   return (
     <Grid item xs={12} sm={6} md={4}>
@@ -25,7 +24,7 @@ const Item = ({ service }) => {
 function Services() {
   return (
     <>
-      <ImgBox title="Services" />
+      <SectionImg title="Services" />
       <Box sx={{ backgroundColor: "#dfe0e1", padding: "3rem " }}>
         <Container
           sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
@@ -36,7 +35,6 @@ function Services() {
               <Item key={index} service={service} />
             ))}
           </Grid>
-          <BlackButton p="Back to Top" />
         </Container>
       </Box>
     </>

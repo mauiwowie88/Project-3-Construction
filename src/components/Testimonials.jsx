@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Box, Typography, IconButton, Container } from "@mui/material";
-import ImgBox from "./ImgBox";
+import { SectionImg } from "../components/Extra";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { quotes } from "../assets/db";
-import bg from "../assets/images/k.jpg";
+// import bg from "../assets/images/k.jpg";
 
 function Testimonials() {
   const [index, setIndex] = useState(0);
@@ -17,7 +17,7 @@ function Testimonials() {
 
   return (
     <>
-      <ImgBox title="Testimonials">
+      <SectionImg title="Testimonials">
         <Container
           sx={{
             zIndex: 2,
@@ -27,18 +27,7 @@ function Testimonials() {
             pt: 5,
           }}
         >
-          <Typography
-            variant="h6"
-            sx={{
-              textAlign: "center",
-              fontSize: {
-                xs: "0.8rem",
-                sm: "0.9rem",
-                md: "1.12rem",
-                lg: "1.25rem",
-              },
-            }}
-          >
+          <Typography variant="body1" sx={{ textAlign: "center" }}>
             {quotes[index]}
           </Typography>
 
@@ -51,7 +40,7 @@ function Testimonials() {
             </IconButton>
           </Box>
         </Container>
-      </ImgBox>
+      </SectionImg>
     </>
   );
 }

@@ -5,19 +5,11 @@ import { BlackButton, PortfolioItem } from "../components/Extra";
 
 function History() {
   return (
-    <Box sx={{ backgroundColor: "#eef5f8" }}>
+    <Box sx={{ backgroundColor: "#f2f2f2" }}>
       <Container
         sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       >
-        <Typography
-          sx={{
-            fontWeight: "bold",
-            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
-            mt: 4,
-          }}
-        >
-          Our Recent Work
-        </Typography>
+        <Typography variant="h4">Our Recent Work</Typography>
 
         <Grid container spacing={2.2}>
           {portfolio.map((job, index) => (

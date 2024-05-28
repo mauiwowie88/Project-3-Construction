@@ -16,9 +16,11 @@ import {
   Pinterest,
   LinkedIn,
 } from "@mui/icons-material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 function NavigationDrawer() {
   const [open, setOpen] = useState(false);
+  const smallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -40,7 +42,12 @@ function NavigationDrawer() {
         aria-label="menu"
         onClick={toggleDrawer(true)}
       >
-        <Menu />
+        <Menu
+          style={{
+            color: "#77cbc7",
+            fontSize: smallScreen ? "1.7rem" : "2.2rem",
+          }}
+        />
       </IconButton>
       {/* Drop Down Menu */}
       <Drawer
