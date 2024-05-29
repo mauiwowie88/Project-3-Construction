@@ -1,6 +1,7 @@
 import { Box, Container, Typography, Grid } from "@mui/material";
+import Characteristics from "../components/Characteristics";
 
-import { intro, sections, work } from "../assets/db";
+import { intro, sections, work, yo } from "../assets/db";
 import { SectionImg, MainItem, MainTitle } from "../components/Extra";
 
 function Mission() {
@@ -36,6 +37,7 @@ function Mission() {
           <MainItem key={index} section={section} />
         ))}
       </Grid>
+      <Characteristics label={yo} />
     </>
   );
 }

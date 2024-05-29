@@ -4,6 +4,7 @@ import { Box, Typography, Grid, Paper, Container } from "@mui/material";
 import { characteristics } from "../assets/db";
 import { BlackButton, SectionImg, ImgBox } from "../components/Extra";
 import Characteristics from "../components/Characteristics";
+import Slanted from "../components/Slanted";
 function About() {
   return (
     <>
@@ -20,6 +21,7 @@ function About() {
           People, Passion, Process
         </Typography>
       </SectionImg>
+      <Slanted />
       <Characteristics label={characteristics} />
 
       {/* Give Us A Call */}

@@ -30,7 +30,7 @@ function Footer() {
               Hours
             </Typography>
             <br />
-            <Typography variant="body1" sx={{ textAlign: "center" }}>
+            <Typography variant="body2" sx={{ textAlign: "center" }}>
               Monday – Friday
               <br />9 AM – 5 PM
             </Typography>

@@ -84,11 +84,26 @@ const mission = [
 
 /* Customer Testimonials */
 const quotes = [
-  `"Working with Project 3 was an absolute delight! Their professionalism and attention to detail exceeded my expectations. From start to finish, the team demonstrated a deep understanding of our needs and delivered exceptional results. I highly recommend their services to anyone seeking top-notch quality and expertise."`,
-  `"I can't thank Project 3 enough for their outstanding work. Their dedication to excellence and commitment to customer satisfaction are truly commendable. The entire process was seamless, and the final outcome exceeded our wildest expectations. I wouldn't hesitate to collaborate with them again in the future."`,
-  `"Choosing Project 3 was one of the best decisions I've made for my business. Their team of experts went above and beyond to ensure our project's success. Their innovative solutions and strategic approach helped us achieve remarkable results in record time. I'm grateful for their partnership and highly recommend their services to others."`,
-  `"I've had the pleasure of working with Project 3 on multiple projects, and each time, they've delivered nothing short of excellence. Their professionalism, creativity, and attention to detail set them apart from the rest. I'm continually impressed by their ability to turn our ideas into reality and would recommend them to anyone seeking top-tier quality and service."`,
-  `"I couldn't be happier with the results Project 3 delivered. Their team's expertise and dedication to our project were evident from day one. They took the time to understand our goals and vision, and their strategic guidance was invaluable. Thanks to their efforts, we were able to achieve remarkable success and elevate our brand to new heights. I highly recommend [Company Name] to anyone looking for exceptional service and results."`,
+  {
+    label: `"Working with Project 3 was an absolute delight! Their professionalism and attention to detail exceeded my expectations. From start to finish, the team demonstrated a deep understanding of our needs and delivered exceptional results. I highly recommend their services to anyone seeking top-notch quality and expertise."`,
+    imgPath: testimonialsImg,
+  },
+  {
+    label: `"I can't thank Project 3 enough for their outstanding work. Their dedication to excellence and commitment to customer satisfaction are truly commendable. The entire process was seamless, and the final outcome exceeded our wildest expectations. I wouldn't hesitate to collaborate with them again in the future."`,
+    imgPath: testimonialsImg,
+  },
+  {
+    label: `"Choosing Project 3 was one of the best decisions I've made for my business. Their team of experts went above and beyond to ensure our project's success. Their innovative solutions and strategic approach helped us achieve remarkable results in record time. I'm grateful for their partnership and highly recommend their services to others."`,
+    imgPath: testimonialsImg,
+  },
+  {
+    label: `"I've had the pleasure of working with Project 3 on multiple projects, and each time, they've delivered nothing short of excellence. Their professionalism, creativity, and attention to detail set them apart from the rest. I'm continually impressed by their ability to turn our ideas into reality and would recommend them to anyone seeking top-tier quality and service."`,
+    imgPath: testimonialsImg,
+  },
+  {
+    label: `"I couldn't be happier with the results Project 3 delivered. Their team's expertise and dedication to our project were evident from day one. They took the time to understand our goals and vision, and their strategic guidance was invaluable. Thanks to their efforts, we were able to achieve remarkable success and elevate our brand to new heights."`,
+    imgPath: testimonialsImg,
+  },
 ];
 
 const sections = [
@@ -201,21 +216,21 @@ const yo = [
     description:
       "We build and renovate all types of outbuildings, including sheds, accessory dwelling units (ADUs), workshops, studios, garages and garage apartments.",
     image: exterior,
-    size: 4,
+    size: 12,
   },
   {
     title: "Exterior",
     description:
       "We do all types of exterior projects, including: decks and deck rebuilding, patio covers, sheds and outbuildings, concrete pads, stairs, sidewalks, wheelchair ramps, porch repairs and additions, catios, pergolas & arbors, siding & dry rot repairs.",
     image: deck,
-    size: 4,
+    size: 6,
   },
   {
     title: "Home Addition",
     description:
       "We can help add more space to your home through custom home additions, garage conversions, room additions, attic loft conversions and more.",
     image: interior,
-    size: 4,
+    size: 6,
   },
 ];
 

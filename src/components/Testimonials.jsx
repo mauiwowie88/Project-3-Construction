@@ -4,6 +4,7 @@ import { SectionImg } from "../components/Extra";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { quotes } from "../assets/db";
+import BoxSlider from "../components/BoxSlider";
 // import bg from "../assets/images/k.jpg";
 
 function Testimonials() {
@@ -16,9 +17,10 @@ function Testimonials() {
     setIndex((prevIndex) => (prevIndex - 1 + quotes.length) % quotes.length);
 
   return (
-    <>
+    <Box sx={{ pt: 3 }}>
       <SectionImg title="Testimonials">
-        <Container
+        <BoxSlider data={quotes} sideBySide={false} />
+        {/* <Container
           sx={{
             zIndex: 2,
             display: "flex",
@@ -28,7 +30,7 @@ function Testimonials() {
           }}
         >
           <Typography variant="body1" sx={{ textAlign: "center" }}>
-            {quotes[index]}
+            {quotes[index].label}
           </Typography>
 
           <Box sx={{ m: 1 }}>
@@ -39,9 +41,9 @@ function Testimonials() {
               <ArrowForwardIosIcon />
             </IconButton>
           </Box>
-        </Container>
+        </Container> */}
       </SectionImg>
-    </>
+    </Box>
   );
 }
 export default Testimonials;
