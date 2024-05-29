@@ -4,12 +4,18 @@ const theme = createTheme({
   typography: {
     fontFamily: "Open Sans, sans-serif, Roboto",
     h1: {
-      fontSize: "2.5rem",
+      fontSize: "1.2rem",
       "@media (min-width:600px)": {
-        fontSize: "3rem",
+        fontSize: "1.6rem",
       },
       "@media (min-width:900px)": {
-        fontSize: "3.5rem",
+        fontSize: "2rem",
+      },
+      "@media (min-width:1200px)": {
+        fontSize: "2.5rem",
+      },
+      "@media (min-width:1600px)": {
+        fontSize: "3rem",
       },
     },
     h2: {
@@ -40,12 +46,12 @@ const theme = createTheme({
       },
     },
     h5: {
-      fontSize: "1.25rem",
+      fontSize: "2.25rem",
       "@media (min-width:600px)": {
-        fontSize: "1.5rem",
+        fontSize: "2.25rem",
       },
       "@media (min-width:900px)": {
-        fontSize: "1.75rem",
+        fontSize: "3rem",
       },
     },
     h6: {

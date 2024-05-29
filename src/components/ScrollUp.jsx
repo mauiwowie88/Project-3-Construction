@@ -7,6 +7,7 @@ const ScrollTopButton = styled(Fab)(({ theme }) => ({
   position: "fixed",
   bottom: theme.spacing(2),
   right: theme.spacing(2),
+
   backgroundColor: "#d4af37", // Custom gold color
   color: "#fff",
   "&:hover": {

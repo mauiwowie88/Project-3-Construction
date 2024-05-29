@@ -56,6 +56,8 @@ import l from "./images/inside/11.jpg";
 import m from "./images/inside/11.webp";
 import n from "./images/inside/bg.jpg";
 
+import o from "./images/other/en.jpg";
+
 /* Introduction Paragraph */
 const intro = [
   "Project 3 Construction is a San Marcos based commercial general contractor specializing in tenant improvements, renovations, additions, and ground-up construction projects.",
@@ -132,25 +134,25 @@ const sectionImgs = [
   {
     title: "About",
     image: b,
-    size: { xs: 150, sm: 200, md: 250, lg: 500 },
-    opacity: false,
+    size: { xs: 200, sm: 250, md: 300, lg: 400 },
+    opacity: "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9))",
   },
   {
     title: "Call Us",
     image: callUsImg,
-    size: { xs: 200, sm: 300, md: 400, lg: 500 },
+    size: { xs: 185, sm: 250, md: 360, lg: 420 },
     opacity: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))",
   },
   {
     title: "Services",
-    image: servicesImg,
-    size: { xs: 200, sm: 250, md: 350, lg: 600 },
+    image: c,
+    size: { xs: 200, sm: 250, md: 350, lg: 400 },
     opacity: "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6))",
   },
   {
     title: "Contact",
-    image: contactImg,
-    size: { xs: 300, sm: 350, md: 400, lg: 450 },
+    image: d,
+    size: { xs: 300, sm: 350, md: 400, lg: 350 },
     opacity: "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3))",
   },
 
@@ -163,77 +165,83 @@ const sectionImgs = [
 ];
 
 /* Our Services */
-const services = [
+const yo = [
   {
     title: "Kitchen",
     description:
       "We build dream kitchens, including custom remodels, new tile and backsplashes, sink replacement, appliance installation, new flooring, and countertops.",
     image: kitchen,
+    size: 12,
   },
   {
     title: "Bathroom",
     description:
       "Let us build the bathroom you've been dreaming of, including tile work, new fixtures, bathtub and shower installation, painting, cabinets, sinks, countertops, lighting, and flooring.",
     image: bathroom,
+    size: 6,
   },
   {
     title: "Interior",
     description:
       "We are skilled at refreshing interiors, including trim & baseboards, flooring repair & replacement, painting, drywall repair and patching, tile work, and custom furniture & carpentry.",
     image: livingRoom,
+    size: 6,
   },
   {
     title: "Outbuilding",
     description:
       "We build and renovate all types of outbuildings, including sheds, accessory dwelling units (ADUs), workshops, studios, garages and garage apartments.",
     image: exterior,
+    size: 4,
   },
   {
     title: "Exterior",
     description:
       "We do all types of exterior projects, including: decks and deck rebuilding, patio covers, sheds and outbuildings, concrete pads, stairs, sidewalks, wheelchair ramps, porch repairs and additions, catios, pergolas & arbors, siding & dry rot repairs.",
     image: deck,
+    size: 4,
   },
   {
     title: "Home Addition",
     description:
       "We can help add more space to your home through custom home additions, garage conversions, room additions, attic loft conversions and more.",
     image: interior,
+    size: 4,
   },
 ];
 
 const work = [
   {
-    title: "Demolition",
-    image: livingRoom,
+    label: "Demolition",
+    imgPath: livingRoom,
   },
   {
-    title: "Welding",
-    image: livingRoom,
+    label: "Welding",
+    imgPath: livingRoom,
   },
   {
-    title: "Grading",
-    image: livingRoom,
+    label: "Grading",
+    imgPath: livingRoom,
   },
   {
-    title: "Framing",
-    image: livingRoom,
+    label: "Framing",
+    imgPath: livingRoom,
   },
   {
-    title: "Painting",
-    image: livingRoom,
+    label: "Painting",
+    imgPath: livingRoom,
   },
   {
-    title: "Flooring",
-    image: livingRoom,
+    label: "Flooring",
+    imgPath: livingRoom,
   },
   {
-    title: "Electrical",
-    image: livingRoom,
+    label: "Electrical",
+    imgPath: livingRoom,
   },
   {
-    title: "Plumbing",
-    image: livingRoom,
+    label: "Plumbing",
+    imgPath: livingRoom,
   },
 ];
 
@@ -244,36 +252,43 @@ const characteristics = [
     description:
       "Trust is the number one factor to success in a partnership. This holds equally true for the relationship between a builder and the homeowner.  Trust is not something that can be written into the policy handbook of a company.  It has to be part of the company DNA. And it has to start with team members who value integrity over everything else, including self-preservation.",
     image: trust,
+    sm: 12,
+    lg: 12,
   },
   {
-    title: "Value Engineering",
+    title: "Engineering",
     description:
       "With our long history of building luxury homes combined with our development expertise, we know how to optimize your design to maximize your budget and give you the best home experience. Instead of spending money on expensive structural components or inefficient layouts, your money will be directed to things you see, feel, and encounter daily.",
     image: engineering,
+    size: 6,
   },
   {
-    title: "Proprietary Pricing",
+    title: "Pricing",
     description:
       "Our broad market presence gives us pricing tiers with our partners that other general contractors cannot obtain. And, because of our open book process, the savings go directly to you as the homeowner.",
     image: pricing,
+    size: 6,
   },
   {
     title: "Development",
     description:
       "We have a broad range of experience regarding all aspects of real estate, not just the construction phase.  Most homeowners that approach us to build don’t realize the huge value this brings to their project until they experience the ease with which we can handle everything from financing, budget analysis, acquisition, governing bodies, design, value engineering, and market consulting.",
     image: development,
+    size: 4,
   },
   {
     title: "Bookkeeping",
     description:
-      "Money management is vital when it comes to the success of a business. That is why JSM employs three accounting managers who are dedicated to processing our pay applications and reconciling our budgets with the utmost accuracy.  All facets of construction financing, draw processing, taxes, insurance, and more are performed in-house and available to you at any time.  This aspect of our company’s accountability is the real litmus test of integrity in an industry that has long been shrouded in dishonesty.",
+      "Money management is vital when it comes to the success of a business. That is why JSM employs three accounting managers who are dedicated to processing our pay applications and reconciling our budgets with the utmost accuracy.  All facets of construction financing, draw processing, taxes, insurance, and more are performed in-house and available to you at any time.",
     image: book,
+    size: 4,
   },
   {
     title: "Time Management",
     description:
-      "We have spent years fine tuning JSM to run efficiently by eliminating middlemen, empowering our staff, committing to our partners, not over-committing to work, planning ahead, designing well, scheduling precisely, and clearly communicating expectations with all parties involved.  Whether you are trying to move your family here to get life in the mountains started or you are trying to get here so you can wind-down in your retirement years, time isn’t replaceable. There is no reason to spend three years building a house when it should be done in one or two years.  It simply requires planning, focus, and resources.",
+      "We have spent years fine tuning JSM to run efficiently by eliminating middlemen, empowering our staff, committing to our partners, not over-committing to work, planning ahead, designing well, scheduling precisely, and clearly communicating expectations with all parties involved.",
     image: time,
+    size: 4,
   },
 ];
 
@@ -407,7 +422,7 @@ export {
   quotes,
   mission,
   sections,
-  services,
+  yo,
   work,
   intro,
   sectionImgs,

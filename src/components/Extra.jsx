@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Grid, Typography, Box, Button, Card } from "@mui/material";
+import { Grid, Typography, Box, Button, Card, Paper } from "@mui/material";
 import { sectionImgs } from "../assets/db";
 
 const PortfolioItem = ({ job }) => {
@@ -14,6 +14,70 @@ const PortfolioItem = ({ job }) => {
         </Card>
       </Link>
     </Grid>
+  );
+};
+
+function JobImg({ children }) {
+  return (
+    <Box className="job-box">
+      <Box
+        sx={{
+          zIndex: 2,
+          textAlign: "center",
+        }}
+      >
+        {children}
+      </Box>
+    </Box>
+  );
+}
+
+function ImgBox({ label, children }) {
+  return (
+    <Box
+      className="img-box"
+      sx={{
+        backgroundImage: `url(${label.image})`,
+        height: "200px",
+      }}
+    >
+      <Box
+        sx={{
+          zIndex: 2,
+          textAlign: "center",
+        }}
+      >
+        {children}
+      </Box>
+    </Box>
+  );
+}
+
+const MainTitle = () => {
+  return (
+    <Box
+      sx={{
+        backgroundColor: "#2e2e2e",
+        position: "absolute",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: "60%",
+        maxWidth: "600px",
+      }}
+    >
+      <Box
+        sx={{
+          backgroundColor: "#455a64",
+          m: 0.5,
+          p: 1,
+          textAlign: "center",
+        }}
+      >
+        <Typography variant="h1" color="white">
+          Project 3 TX
+        </Typography>
+      </Box>
+    </Box>
   );
 };
 
@@ -141,4 +205,13 @@ const WhiteButton = ({ p }) => {
   );
 };
 
-export { MainItem, PortfolioItem, SectionImg, BlackButton, WhiteButton };
+export {
+  MainItem,
+  MainTitle,
+  PortfolioItem,
+  SectionImg,
+  ImgBox,
+  JobImg,
+  BlackButton,
+  WhiteButton,
+};

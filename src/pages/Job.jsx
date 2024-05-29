@@ -1,7 +1,5 @@
-import { useLocation } from "react-router-dom";
-import JobImg from "../components/JobImg";
 import { Link } from "react-router-dom";
-import { BlackButton } from "../components/Extra";
+import { JobImg } from "../components/Extra";
 import { Box, Container, Grid, Typography } from "@mui/material";
 
 function Job({ state }) {
