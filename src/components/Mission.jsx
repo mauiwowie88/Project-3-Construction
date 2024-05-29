@@ -6,7 +6,7 @@ import { SectionImg, MainItem, MainTitle } from "../components/Extra";
 function Mission() {
   return (
     <>
-      <Box position="relative" marginBottom={{ xs: 2, md: 7, lg: 13 }}>
+      <Box position="relative" marginBottom={4}>
         <SectionImg title="Intro">
           <Typography variant="body2">A NEW CULTURE OF BUILDERS.</Typography>
         </SectionImg>
@@ -36,11 +36,6 @@ function Mission() {
           <MainItem key={index} section={section} />
         ))}
       </Grid>
-      {/* <Grid container>
-        {work.map((section, index) => (
-          <SectionImg key={index} section={section} />
-        ))}
-      </Grid> */}
     </>
   );
 }

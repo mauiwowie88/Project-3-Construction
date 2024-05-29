@@ -58,6 +58,15 @@ import n from "./images/inside/bg.jpg";
 
 import o from "./images/other/en.jpg";
 
+import demolition from "../assets/images/new/demolition.webp";
+import electric from "../assets/images/new/electric.jpg";
+import flooring from "../assets/images/new/flooring.jpg";
+import framer from "../assets/images/new/framer.jpg";
+import grading from "../assets/images/new/grading.jpg";
+import painter from "../assets/images/new/painter.jpg";
+import plumber from "../assets/images/new/plumber.jpg";
+import welder from "../assets/images/new/welder.webp";
+
 /* Introduction Paragraph */
 const intro = [
   "Project 3 Construction is a San Marcos based commercial general contractor specializing in tenant improvements, renovations, additions, and ground-up construction projects.",
@@ -122,14 +131,14 @@ const sectionImgs = [
   {
     title: "Intro",
     image: galleryImg,
-    size: { xs: 300, sm: 350, md: 400, lg: 700 },
+    size: { xs: 300, sm: 350, md: 400, lg: 600 },
     opacity: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1))",
   },
   {
     title: "Testimonials",
     image: testimonialsImg,
     size: { xs: 300, sm: 300, md: 300, lg: 300 },
-    opacity: "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6))",
+    opacity: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8))",
   },
   {
     title: "About",
@@ -158,7 +167,7 @@ const sectionImgs = [
 
   {
     title: "Gallery",
-    image: galleryImg,
+    image: testimonialsImg,
     size: { xs: 300, sm: 350, md: 400, lg: 450 },
     opacity: "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3))",
   },
@@ -212,36 +221,36 @@ const yo = [
 
 const work = [
   {
-    label: "Demolition",
-    imgPath: livingRoom,
-  },
-  {
-    label: "Welding",
-    imgPath: livingRoom,
-  },
-  {
-    label: "Grading",
-    imgPath: livingRoom,
-  },
-  {
     label: "Framing",
-    imgPath: livingRoom,
+    imgPath: framer,
   },
   {
     label: "Painting",
-    imgPath: livingRoom,
+    imgPath: painter,
   },
   {
     label: "Flooring",
-    imgPath: livingRoom,
+    imgPath: flooring,
   },
   {
     label: "Electrical",
-    imgPath: livingRoom,
+    imgPath: electric,
   },
   {
     label: "Plumbing",
-    imgPath: livingRoom,
+    imgPath: plumber,
+  },
+  {
+    label: "Grading",
+    imgPath: grading,
+  },
+  {
+    label: "Welding",
+    imgPath: welder,
+  },
+  {
+    label: "Demolition",
+    imgPath: demolition,
   },
 ];
 
@@ -252,8 +261,7 @@ const characteristics = [
     description:
       "Trust is the number one factor to success in a partnership. This holds equally true for the relationship between a builder and the homeowner.  Trust is not something that can be written into the policy handbook of a company.  It has to be part of the company DNA. And it has to start with team members who value integrity over everything else, including self-preservation.",
     image: trust,
-    sm: 12,
-    lg: 12,
+    size: 12,
   },
   {
     title: "Engineering",
@@ -272,21 +280,21 @@ const characteristics = [
   {
     title: "Development",
     description:
-      "We have a broad range of experience regarding all aspects of real estate, not just the construction phase.  Most homeowners that approach us to build don’t realize the huge value this brings to their project until they experience the ease with which we can handle everything from financing, budget analysis, acquisition, governing bodies, design, value engineering, and market consulting.",
+      "We have a broad range of experience regarding all aspects of real estate, not just the construction phase.",
     image: development,
     size: 4,
   },
   {
     title: "Bookkeeping",
     description:
-      "Money management is vital when it comes to the success of a business. That is why JSM employs three accounting managers who are dedicated to processing our pay applications and reconciling our budgets with the utmost accuracy.  All facets of construction financing, draw processing, taxes, insurance, and more are performed in-house and available to you at any time.",
+      "Money management is vital when it comes to the success of a business. That is why Project 3 employs three accounting managers who are dedicated to processing our pay applications and reconciling our budgets with the utmost accuracy.",
     image: book,
     size: 4,
   },
   {
     title: "Time Management",
     description:
-      "We have spent years fine tuning JSM to run efficiently by eliminating middlemen, empowering our staff, committing to our partners, not over-committing to work, planning ahead, designing well, scheduling precisely, and clearly communicating expectations with all parties involved.",
+      "We have spent years fine tuning Project 3 to run efficiently by eliminating middlemen, empowering our staff, committing to our partners, not over-committing to work, scheduling precisely, and clearly communicating expectations with all parties involved.",
     image: time,
     size: 4,
   },

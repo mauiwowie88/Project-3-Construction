@@ -26,10 +26,6 @@ body,
   height: 100%;
 }
 
-.img-box {
-  background: center / cover no-repeat;
-}
-
 .job-box {
   position: relative;
   overflow: hidden;

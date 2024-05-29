@@ -57,14 +57,20 @@ const theme = createTheme({
     h6: {
       fontSize: "1rem",
       "@media (min-width:600px)": {
-        fontSize: "1.25rem",
+        fontSize: "1rem",
       },
       "@media (min-width:900px)": {
-        fontSize: "1.5rem",
+        fontSize: "1rem",
+      },
+      "@media (min-width:1200px)": {
+        fontSize: "1rem",
+      },
+      "@media (min-width:1600px)": {
+        fontSize: "1rem",
       },
     },
     body1: {
-      fontSize: "1rem",
+      fontSize: "0.8rem",
       "@media (min-width:600px)": {
         fontSize: "1.1rem",
       },
@@ -73,6 +79,16 @@ const theme = createTheme({
       },
     },
     body2: {
+      fontSize: "1rem",
+      "@media (min-width:600px)": {
+        fontSize: "1rem",
+      },
+      "@media (min-width:900px)": {
+        fontSize: "1.2rem",
+      },
+    },
+    body3: {
+      fontSize: "0.5rem",
       "@media (min-width:600px)": {
         fontSize: "0.75rem",
       },

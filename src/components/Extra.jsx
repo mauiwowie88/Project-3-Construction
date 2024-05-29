@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
 import { Grid, Typography, Box, Button, Card, Paper } from "@mui/material";
 import { sectionImgs } from "../assets/db";
+import { useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 
 const PortfolioItem = ({ job }) => {
   return (
     <Grid item xs={12} sm={6} md={4} xl={3}>
-      <Link to="Job" state={{ job }} style={{ textDecoration: "none" }}>
+      <Link to="../Job" state={{ job }} style={{ textDecoration: "none" }}>
         <Card square>
           <img src={job.image} alt="Project" className="job-pic" />
           <Typography sx={{ display: "flex", justifyContent: "center" }}>
@@ -35,16 +36,23 @@ function JobImg({ children }) {
 function ImgBox({ label, children }) {
   return (
     <Box
-      className="img-box"
       sx={{
+        background: "center / cover no-repeat",
         backgroundImage: `url(${label.image})`,
         height: "200px",
+        position: "relative",
       }}
     >
       <Box
         sx={{
-          zIndex: 2,
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          width: "100%",
           textAlign: "center",
+          zIndex: 2,
+          background: "rgba(0, 0, 0, 0.5)",
+          color: "white",
         }}
       >
         {children}
@@ -78,74 +86,6 @@ const MainTitle = () => {
         </Typography>
       </Box>
     </Box>
-  );
-};
-
-const MainItem = ({ section }) => {
-  return (
-    <Grid
-      item
-      xs={12}
-      sm={6}
-      md={6}
-      lg={4}
-      xl={3}
-      sx={{ display: "flex", p: 2 }}
-    >
-      <Link
-        to={section.route}
-        state={{ section }}
-        style={{ textDecoration: "none" }}
-      >
-        <Card
-          sx={{
-            boxShadow: 7,
-            borderRadius: 2,
-          }}
-        >
-          <Box>
-            <img
-              src={section.image}
-              alt="Project"
-              style={{
-                width: "100%",
-                height: "auto",
-              }}
-            />
-            <Typography
-              variant="h6"
-              sx={{
-                textAlign: "center",
-                p: "1.5rem",
-                fontWeight: "bold",
-                display: "flex",
-                flex: 1,
-                flexGrow: 1,
-              }}
-            >
-              {section.title}
-            </Typography>
-            <Typography
-              variant="body2"
-              sx={{
-                textAlign: "center",
-                p: "0 2rem",
-                display: "flex",
-                flex: 1,
-                flexGrow: 1,
-              }}
-            >
-              {section.description}
-            </Typography>
-          </Box>
-          <Box
-            sx={{ textAlign: "center", display: "flex", flex: 1, flexGrow: 1 }}
-          >
-            <BlackButton label={section.button} width="75%" />
-          </Box>
-        </Card>
-      </Link>
-    </Grid>
   );
 };
 
@@ -205,6 +145,16 @@ const WhiteButton = ({ p }) => {
   );
 };
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 export {
   MainItem,
   MainTitle,
@@ -214,4 +164,75 @@ export {
   JobImg,
   BlackButton,
   WhiteButton,
+  ScrollToTop,
+};
+const MainItem = ({ section }) => {
+  return (
+    <Grid
+      item
+      xs={12}
+      sm={6}
+      md={6}
+      lg={4}
+      xl={3}
+      sx={{ display: "flex", p: 2 }}
+    >
+      <Link
+        to={section.route}
+        state={{ section }}
+        style={{
+          textDecoration: "none",
+        }}
+      >
+        <Card
+          sx={{
+            boxShadow: 7,
+            borderRadius: 2,
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+          }}
+        >
+          <Box sx={{ flexShrink: 0 }}>
+            <img
+              src={section.image}
+              alt="Project"
+              style={{
+                width: "100%",
+              }}
+            />
+          </Box>
+          <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
+            <Typography
+              variant="h6"
+              sx={{
+                textAlign: "center",
+                p: "1.5rem",
+                fontWeight: "bold",
+              }}
+            >
+              {section.title}
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{
+                textAlign: "center",
+                p: "0 2rem",
+              }}
+            >
+              {section.description}
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              textAlign: "center",
+              p: "1rem 0",
+            }}
+          >
+            <BlackButton label={section.button} width="75%" />
+          </Box>
+        </Card>
+      </Link>
+    </Grid>
+  );
 };

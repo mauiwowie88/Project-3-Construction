@@ -6,10 +6,12 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Job from "./pages/Job";
 import Services from "./pages/Services";
+import { ScrollToTop } from "./components/Extra";
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="Gallery" element={<Gallery />} />

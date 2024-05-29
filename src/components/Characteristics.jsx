@@ -11,9 +11,6 @@ function Characteristics({ label }) {
     setSelectedSkill(skill);
   };
 
-  const handleClose = () => {
-    setSelectedSkill(null);
-  };
   return (
     <Container>
       <Grid container>
@@ -31,32 +28,31 @@ function Characteristics({ label }) {
               }}
             >
               <ImgBox label={skill}>
-                <Typography variant="h4" sx={{ bottom: 1, fontWeight: "bold" }}>
-                  {skill.title}
-                </Typography>
-              </ImgBox>
-              {selectedSkill === skill && (
-                <Box
-                  sx={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "rgba(0, 0, 0, 0.8)",
-                    color: "white",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    textAlign: "center",
-                  }}
-                  onClick={handleClose}
-                >
-                  <Typography variant="body2" p={2} sx={{}}>
-                    {skill.description}
+                {selectedSkill === skill ? (
+                  <Box sx={{}}>
+                    <Typography
+                      variant="body2"
+                      p={2}
+                      sx={{
+                        height: "168px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        textAlign: "center",
+                      }}
+                    >
+                      {skill.description}
+                    </Typography>
+                  </Box>
+                ) : (
+                  <Typography
+                    variant="h6"
+                    sx={{ bottom: 1, fontWeight: "bold" }}
+                  >
+                    {skill.title}
                   </Typography>
-                </Box>
-              )}
+                )}
+              </ImgBox>
             </Box>
           </Grid>
         ))}
