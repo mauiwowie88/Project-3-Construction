@@ -13,9 +13,12 @@ const Slanted = () => {
           About Us
         </Typography>
         <Typography variant="body1" sx={styles.description}>
-          ABC Home & Commercial Services has been servicing homes and businesses
-          in the Austin community for over 60 years with the expertise and the
-          experience to get the job done right.
+          We know that our best advertisement comes from you, the satisfied
+          client. That’s why we treat every project as an opportunity to build
+          on our reputation and going above and beyond the expected – of
+          delivering a quality project, both on time and at the best value, all
+          in a manner that assures you that you are in good hands with Project
+          3.
         </Typography>
       </Box>
     </Box>
