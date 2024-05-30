@@ -9,9 +9,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import theme from "./theme";
 import App from "./App.jsx";
-import Navbar from "./components/Navbar.jsx";
+import Navbar from "./components/Navbar/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
-import ScrollUp from "./components/ScrollUp.jsx";
+import { ScrollUp } from "./components/Extra";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

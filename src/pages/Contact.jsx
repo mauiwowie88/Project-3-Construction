@@ -1,4 +1,6 @@
 import React from "react";
+import { SectionImg, PortfolioItem } from "../components/Extra";
+
 import {
   TextField,
   Button,
@@ -8,86 +10,69 @@ import {
   Checkbox,
   FormControlLabel,
 } from "@mui/material";
-import { SectionImg } from "../components/Extra";
+
+const Item = ({ props }) => {
+  return (
+    <Grid item xs={12} sm={props.sm} md={props.md}>
+      <TextField
+        fullWidth
+        label={props.label}
+        variant="outlined"
+        required={props.required}
+        name={props.name}
+        multiline={props.multiline || false}
+        rows={props.rows || 1}
+      />
+    </Grid>
+  );
+};
 
 function Contact() {
+  const formFields = [
+    { name: "first_name", label: "First Name", required: true, md: 6 },
+    { name: "last_name", label: "Last Name", md: 6 },
+    { name: "email", label: "Email", required: true, md: 6, sm: 12 },
+    { name: "phone", label: "Phone", md: 6 },
+    { name: "subject", label: "Subject", md: 12 },
+    {
+      name: "message",
+      label: "Message",
+      required: true,
+      multiline: true,
+      rows: 4,
+      md: 12,
+    },
+  ];
+
   return (
-    <Box>
+    <>
       <SectionImg title="Contact" />
-      <Box sx={{ padding: 3 }}>
-        <Typography variant="h4" sx={{ justifyContent: "center" }}>
-          Contact Us
-        </Typography>
-        <form action="https://formspree.io/f/mjvndzaw" method="POST">
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
-              <TextField
-                fullWidth
-                label="First Name"
-                variant="outlined"
-                required
-                name="first_name"
-              />
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Box sx={{ maxWidth: 1000, p: 3 }}>
+          <form action="https://formspree.io/f/mjvndzaw" method="POST">
+            <Grid container spacing={2}>
+              {formFields.map((field, index) => (
+                <Item key={index} props={field} />
+              ))}
+              <Grid
+                item
+                xs={12}
+                sx={{ display: "flex", justifyContent: "center" }}
+              >
+                <Button variant="contained" type="submit" sx={{ px: 5 }}>
+                  Submit
+                </Button>
+              </Grid>
             </Grid>
-            <Grid item xs={12} md={6}>
-              <TextField
-                fullWidth
-                label="Last Name"
-                variant="outlined"
-                name="last_name"
-              />
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <TextField
-                fullWidth
-                label="Email"
-                variant="outlined"
-                required
-                name="email"
-              />
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <TextField
-                fullWidth
-                label="Phone"
-                variant="outlined"
-                name="phone"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                label="Subject"
-                variant="outlined"
-                name="subject"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                label="Message"
-                variant="outlined"
-                multiline
-                rows={4}
-                required
-                name="message"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox name="newsletter" />}
-                label="Sign up for news and updates"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <Button variant="contained" type="submit">
-                Submit
-              </Button>
-            </Grid>
-          </Grid>
-        </form>
+          </form>
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 }
 

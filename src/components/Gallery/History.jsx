@@ -1,7 +1,7 @@
 import { Grid, Typography, Box, Container } from "@mui/material";
-import { portfolio } from "../assets/db";
+import { portfolio } from "../../assets/db";
 
-import { BlackButton, PortfolioItem } from "../components/Extra";
+import { BlackButton, PortfolioItem } from "../Extra";
 
 function History() {
   return (

@@ -1,5 +1,5 @@
-import Mission from "../components/Mission";
-import Testimonials from "../components/Testimonials";
+import Mission from "../components/Home/Mission";
+import Testimonials from "../components/Home/Testimonials";
 
 function Home() {
   return (

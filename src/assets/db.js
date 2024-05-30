@@ -82,6 +82,9 @@ const mission = [
   "A culture that is constantly learning, adapting, and growing.",
 ];
 
+import dope from "../assets/images/other/dope.jpg";
+import kkk from "../assets/images/other/kkk.jpeg";
+
 /* Customer Testimonials */
 const quotes = [
   {
@@ -152,7 +155,7 @@ const sectionImgs = [
   {
     title: "Testimonials",
     image: testimonialsImg,
-    size: { xs: 300, sm: 300, md: 300, lg: 300 },
+    size: { xs: 200, sm: 200, md: 200, lg: 200 },
     opacity: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8))",
   },
   {
@@ -164,7 +167,7 @@ const sectionImgs = [
   {
     title: "Call Us",
     image: callUsImg,
-    size: { xs: 185, sm: 250, md: 360, lg: 420 },
+    size: { xs: 185, sm: 250, md: 310, lg: 360 },
     opacity: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))",
   },
   {
@@ -175,15 +178,15 @@ const sectionImgs = [
   },
   {
     title: "Contact",
-    image: d,
-    size: { xs: 300, sm: 350, md: 400, lg: 350 },
+    image: kkk,
+    size: { xs: 140, sm: 210, md: 320, lg: 350 },
     opacity: "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3))",
   },
 
   {
     title: "Gallery",
-    image: testimonialsImg,
-    size: { xs: 300, sm: 350, md: 400, lg: 450 },
+    image: iOne,
+    size: { xs: 200, sm: 250, md: 300, lg: 350 },
     opacity: "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3))",
   },
 ];
@@ -196,41 +199,54 @@ const yo = [
       "We build dream kitchens, including custom remodels, new tile and backsplashes, sink replacement, appliance installation, new flooring, and countertops.",
     image: kitchen,
     size: 12,
+    xs: 12,
+    sm: 12,
+    md: 12,
   },
   {
     title: "Bathroom",
     description:
       "Let us build the bathroom you've been dreaming of, including tile work, new fixtures, bathtub and shower installation, painting, cabinets, sinks, countertops, lighting, and flooring.",
     image: bathroom,
-    size: 6,
+    xs: 12,
+    sm: 6,
+    md: 6,
   },
   {
     title: "Interior",
     description:
       "We are skilled at refreshing interiors, including trim & baseboards, flooring repair & replacement, painting, drywall repair and patching, tile work, and custom furniture & carpentry.",
     image: livingRoom,
-    size: 6,
+    xs: 12,
+    sm: 6,
+    md: 6,
   },
   {
     title: "Outbuilding",
     description:
       "We build and renovate all types of outbuildings, including sheds, accessory dwelling units (ADUs), workshops, studios, garages and garage apartments.",
     image: exterior,
-    size: 12,
+    xs: 12,
+    sm: 12,
+    md: 12,
   },
   {
     title: "Exterior",
     description:
       "We do all types of exterior projects, including: decks and deck rebuilding, patio covers, sheds and outbuildings, concrete pads, stairs, sidewalks, wheelchair ramps, porch repairs and additions, catios, pergolas & arbors, siding & dry rot repairs.",
     image: deck,
-    size: 6,
+    xs: 12,
+    sm: 6,
+    md: 6,
   },
   {
     title: "Home Addition",
     description:
       "We can help add more space to your home through custom home additions, garage conversions, room additions, attic loft conversions and more.",
     image: interior,
-    size: 6,
+    xs: 12,
+    sm: 6,
+    md: 6,
   },
 ];
 
@@ -276,42 +292,54 @@ const characteristics = [
     description:
       "Trust is the number one factor to success in a partnership. This holds equally true for the relationship between a builder and the homeowner.  Trust is not something that can be written into the policy handbook of a company.  It has to be part of the company DNA. And it has to start with team members who value integrity over everything else, including self-preservation.",
     image: trust,
-    size: 12,
+    xs: 12,
+    sm: 12,
+    md: 12,
   },
   {
     title: "Engineering",
     description:
-      "With our long history of building luxury homes combined with our development expertise, we know how to optimize your design to maximize your budget and give you the best home experience. Instead of spending money on expensive structural components or inefficient layouts, your money will be directed to things you see, feel, and encounter daily.",
+      "With our long history of building luxury homes combined with our development expertise, we know how to optimize your design to maximize your budget and give you the best home experience. ",
     image: engineering,
-    size: 6,
+    xs: 12,
+    sm: 6,
+    md: 6,
   },
   {
     title: "Pricing",
     description:
       "Our broad market presence gives us pricing tiers with our partners that other general contractors cannot obtain. And, because of our open book process, the savings go directly to you as the homeowner.",
     image: pricing,
-    size: 6,
+    xs: 12,
+    sm: 6,
+    md: 6,
   },
   {
     title: "Development",
     description:
       "We have a broad range of experience regarding all aspects of real estate, not just the construction phase.",
     image: development,
-    size: 4,
+    xs: 12,
+    sm: 12,
+    md: 4,
   },
   {
     title: "Bookkeeping",
     description:
-      "Money management is vital when it comes to the success of a business. That is why Project 3 employs three accounting managers who are dedicated to processing our pay applications and reconciling our budgets with the utmost accuracy.",
+      "Project 3 employs three accounting managers who are dedicated to processing our pay applications and reconciling our budgets with the utmost accuracy.",
     image: book,
-    size: 4,
+    xs: 12,
+    sm: 6,
+    md: 4,
   },
   {
     title: "Time Management",
     description:
-      "We have spent years fine tuning Project 3 to run efficiently by eliminating middlemen, empowering our staff, committing to our partners, not over-committing to work, scheduling precisely, and clearly communicating expectations with all parties involved.",
+      "We have spent years fine tuning Project 3 to run efficiently by eliminating middlemen, scheduling precisely, and clearly communicating expectations with all parties involved.",
     image: time,
-    size: 4,
+    xs: 12,
+    sm: 6,
+    md: 4,
   },
 ];
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import fencing from "../assets/images/other/fencing.png"; // Ensure the path to your image is correct
+import fencing from "../../assets/images/other/fencing.png"; // Ensure the path to your image is correct
 
 const BackgroundImageWithText = () => {
   return (
@@ -10,7 +10,7 @@ const BackgroundImageWithText = () => {
         <Typography variant="h4" sx={styles.title}>
           Our Services
         </Typography>
-        <Typography variant="body2" sx={styles.description}>
+        <Typography variant="body1" sx={styles.description}>
           We have been servicing homes and businesses in the San Marcos
           community for over 20 years with the expertise and the experience to
           get the job done right.

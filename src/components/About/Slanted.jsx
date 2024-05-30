@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import workers from "../assets/images/other/workers.jpg";
+import workers from "../../assets/images/other/workers.jpg";
 
 const Slanted = () => {
   return (
@@ -45,6 +45,7 @@ const styles = {
     width: "100%",
     height: "100%",
     clipPath: "polygon(0 0, 100% 0, 50% 100%, 0% 100%)",
+    loading: "lazy",
   },
   textContainer: {
     padding: "20px",

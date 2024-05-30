@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AppBar, Toolbar, Button, Box } from "@mui/material";
-import logo from "../assets/images/other/new-logo.png";
+import logo from "../../assets/images/other/new-logo.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import NavigationDrawer from "./Drawer";
 

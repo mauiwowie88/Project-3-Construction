@@ -1,7 +1,20 @@
-import { Grid, Typography, Box, Button, Card, Paper } from "@mui/material";
-import { sectionImgs } from "../assets/db";
-import { useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { KeyboardArrowUp } from "@mui/icons-material";
+import { styled } from "@mui/material/styles";
+import {
+  Box,
+  Typography,
+  IconButton,
+  Button,
+  Card,
+  Grid,
+  useMediaQuery,
+  Fab,
+} from "@mui/material";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { sectionImgs } from "../assets/db";
 
 const PortfolioItem = ({ job }) => {
   return (
@@ -33,9 +46,10 @@ function JobImg({ children }) {
   );
 }
 
-function ImgBox({ label, children }) {
+function ImgBox({ label, onClick, children }) {
   return (
     <Box
+      onClick={onClick}
       sx={{
         background: "center / cover no-repeat",
         backgroundImage: `url(${label.image})`,
@@ -51,7 +65,6 @@ function ImgBox({ label, children }) {
           width: "100%",
           textAlign: "center",
           zIndex: 2,
-          background: "rgba(0, 0, 0, 0.5)",
           color: "white",
         }}
       >
@@ -137,14 +150,6 @@ const BlackButton = ({ label, width }) => {
   );
 };
 
-const WhiteButton = ({ p }) => {
-  return (
-    <Button className="btn-dark" onClick={handleClick}>
-      {p}
-    </Button>
-  );
-};
-
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -155,17 +160,6 @@ const ScrollToTop = () => {
   return null;
 };
 
-export {
-  MainItem,
-  MainTitle,
-  PortfolioItem,
-  SectionImg,
-  ImgBox,
-  JobImg,
-  BlackButton,
-  WhiteButton,
-  ScrollToTop,
-};
 const MainItem = ({ section }) => {
   return (
     <Grid
@@ -235,4 +229,193 @@ const MainItem = ({ section }) => {
       </Link>
     </Grid>
   );
+};
+
+const ScrollUp = () => {
+  const [showButton, setShowButton] = useState(false);
+  const ScrollTopButton = styled(Fab)(({ theme }) => ({
+    position: "fixed",
+    bottom: theme.spacing(2),
+    right: theme.spacing(2),
+
+    backgroundColor: "#d4af37",
+    color: "#fff",
+    "&:hover": {
+      backgroundColor: "#b38e30",
+    },
+  }));
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 300) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <>
+      {showButton && (
+        <ScrollTopButton onClick={scrollToTop} size="small">
+          <KeyboardArrowUp />
+        </ScrollTopButton>
+      )}
+    </>
+  );
+};
+
+const BoxSlider = ({ data, sideBySide }) => {
+  const [index, setIndex] = useState(0);
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+
+  const nextQuote = () =>
+    setIndex((prevIndex) => (prevIndex + 1) % data.length);
+  const prevQuote = () =>
+    setIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
+
+  useEffect(() => {
+    const interval = setInterval(nextQuote, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
+  if (sideBySide && !isSmallScreen) {
+    return (
+      <Grid container>
+        {data.map((item, idx) => (
+          <Grid item xs={6}>
+            <Card
+              square
+              key={idx}
+              sx={{
+                backgroundImage: `url(${item.imgPath})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                height: 100,
+                position: "relative",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "white",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                overflow: "hidden",
+                width: "100%",
+                m: "1px",
+              }}
+            >
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background:
+                    "linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0))",
+                }}
+              />
+              <Typography
+                variant="h4"
+                sx={{
+                  position: "relative",
+                  textAlign: "center",
+                  zIndex: 1,
+                  padding: "20px",
+                  fontWeight: "bold",
+                  lineHeight: 1.2,
+                  textShadow: "1px 1px 4px rgba(0, 0, 0, 0.7)",
+                }}
+              >
+                {item.label}
+              </Typography>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    );
+  }
+
+  return (
+    <Box
+      key={index}
+      sx={{
+        height: "40vh",
+        width: "100%",
+        background: "center / cover no-repeat",
+        backgroundImage: `url(${data[index].imgPath})`,
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        color: "white",
+        overflow: "hidden",
+      }}
+    >
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+        }}
+      />
+      <Typography
+        variant="h6"
+        sx={{
+          position: "relative",
+          textAlign: "center",
+          zIndex: 1,
+          padding: "0 20px",
+          fontWeight: "bold",
+          lineHeight: 1.2,
+          textShadow: "1px 1px 4px rgba(0, 0, 0, 0.7)",
+        }}
+      >
+        {data[index].label}
+      </Typography>
+
+      <Box
+        sx={{
+          m: 1,
+          textAlign: "center",
+          position: "relative",
+          zIndex: 1,
+          display: "flex",
+          justifyContent: "center",
+          gap: 2,
+        }}
+      >
+        <IconButton onClick={prevQuote} style={{ color: "white" }}>
+          <ArrowBackIosNewIcon />
+        </IconButton>
+        <IconButton onClick={nextQuote} style={{ color: "white" }}>
+          <ArrowForwardIosIcon />
+        </IconButton>
+      </Box>
+    </Box>
+  );
+};
+
+export {
+  MainItem,
+  MainTitle,
+  PortfolioItem,
+  SectionImg,
+  ImgBox,
+  JobImg,
+  BlackButton,
+  ScrollUp,
+  ScrollToTop,
+  BoxSlider,
 };

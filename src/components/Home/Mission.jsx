@@ -1,8 +1,8 @@
 import { Box, Container, Typography, Grid } from "@mui/material";
-import Characteristics from "../components/Characteristics";
+import Characteristics from "../About/Characteristics";
 
-import { intro, sections, work, yo } from "../assets/db";
-import { SectionImg, MainItem, MainTitle } from "../components/Extra";
+import { intro, sections, work, yo } from "../../assets/db";
+import { SectionImg, MainItem, MainTitle } from "../../components/Extra";
 
 function Mission() {
   return (
@@ -14,7 +14,7 @@ function Mission() {
         <MainTitle />
       </Box>
 
-      <Box sx={{ p: "2rem", textAlign: "center" }}>
+      <Box sx={{ p: ".5rem", textAlign: "center" }}>
         <Typography
           variant="h6"
           sx={{ p: 2, fontWeight: "bold", color: "#cfb13e" }}
