@@ -1,24 +1,36 @@
-import { Grid, Typography, Box, Container } from "@mui/material";
-import { portfolio } from "../assets/db";
-import { SectionImg, PortfolioItem } from "../components/Extra";
+import { Grid, Typography, Container } from "@mui/material";
+import { portfolio } from "../db";
+import { SectionImg } from "../components/Extra";
+import PortfolioItem from "../components/Gallery/PortfolioItem";
 
-function Gallery() {
-  return (
-    <>
-      <SectionImg title="Gallery" />
+const Gallery = () => (
+  <>
+    <SectionImg title="Gallery" />
+    <Container sx={styles.container}>
+      <Typography variant="h4" sx={styles.title}>
+        Our Recent Work
+      </Typography>
+      <Grid container spacing={2.2}>
+        {portfolio.map((job, index) => (
+          <PortfolioItem key={index} job={job} />
+        ))}
+      </Grid>
+    </Container>
+  </>
+);
 
-      <Container
-        sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-      >
-        <Typography variant="h4">Our Recent Work</Typography>
+const styles = {
+  container: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    mt: 4,
+  },
+  title: {
+    width: "100%",
+    textAlign: "center",
+    mb: 4,
+  },
+};
 
-        <Grid container spacing={2.2}>
-          {portfolio.map((job, index) => (
-            <PortfolioItem key={index} job={job} />
-          ))}
-        </Grid>
-      </Container>
-    </>
-  );
-}
 export default Gallery;

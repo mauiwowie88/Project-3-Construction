@@ -1,57 +1,29 @@
 import React from "react";
-import { Container, Typography, Grid, Box } from "@mui/material";
+import FeatureSection from "../components/About/FeatureSection";
 import { SectionImg } from "../components/Extra";
-import Faded from "../components/Services/Faded";
-import { BoxSlider } from "../components/Extra";
-import { work } from "../assets/db";
+import { Box, Grid } from "@mui/material";
+import { work } from "../db";
+import Hesitate from "../components/Services/Hesitate";
+import WorkCards from "../components/Services/WorkCard";
+import LongProcess from "../components/Services/LongProcess";
+import CustomCard from "../components/Services/CustomCard";
 
-function Services() {
-  return (
-    <>
-      <SectionImg title="Services" />
-      <Faded />
-      <Box
-        sx={{
-          display: "flex",
-          // flexDirection: { xs: "column", md: "row" },
-          justifyContent: "flex-start",
-          alignItems: "center",
-          marginBottom: 8,
-        }}
-      >
-        <Box
-          sx={{
-            width: { md: "50%" },
-            marginLeft: { md: 4 },
-            flexGrow: 1,
-            flexBasis: 0,
-          }}
-        >
-          <Typography variant="h4" sx={{ color: "#b71c1c", marginBottom: 2 }}>
-            Our Goal
-          </Typography>
-          <Typography variant="body2">
-            Our goal is not to be the largest contractor, but rather to focus on
-            building relationships with clients now and into the future.
-            <br />
-            <br />
-            Our relationships with the client, our employees, and trade partners
-            come first. We focus on extensive planning, and consistency with
-            processes and procedures that we are always improving upon.
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            width: { md: "50%" },
-            flexGrow: 1,
-            flexBasis: 0,
-          }}
-        >
-          <BoxSlider data={work} sideBySide={true} />
-        </Box>
-      </Box>
-    </>
-  );
-}
+const Services = () => (
+  <>
+    <SectionImg title="Services" />
+    <WorkCards />
+    <FeatureSection />
+    <Grid container>
+      {work.map((el, idx) => (
+        <Grid item key={idx} xs={6} md={4} lg={3} xl={1.5}>
+          <CustomCard data={el} />
+        </Grid>
+      ))}
+    </Grid>
+
+    <LongProcess />
+    <Hesitate />
+  </>
+);
 
 export default Services;

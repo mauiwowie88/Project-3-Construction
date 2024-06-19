@@ -1,42 +1,34 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Box, Typography, Grid, Paper, Container } from "@mui/material";
-import { characteristics } from "../assets/db";
-import { BlackButton, SectionImg, ImgBox } from "../components/Extra";
-import Characteristics from "../components/About/Characteristics";
-import Slanted from "../components/About/Slanted";
-function About() {
-  return (
-    <>
-      <SectionImg title="About">
-        <Typography
-          variant="h5"
-          sx={{
-            position: "absolute",
-            left: 30,
-            bottom: 30,
-            fontWeight: "bold",
-          }}
-        >
-          People, Passion, Process
-        </Typography>
-      </SectionImg>
-      <Slanted />
+import React from "react";
+import { Box, Typography } from "@mui/material";
+import { SectionImg } from "../components/Extra";
+import AboutUs from "../components/About/AboutUs";
+import CallUs from "../components/About/CallUs";
+import Process from "../components/About/Process";
+import Deliver from "../components/Services/Deliver";
+import OurGoal from "../components/Services/OurGoal";
+const About = () => (
+  <>
+    <SectionImg title="About">
+      <Typography variant="h5" sx={styles.sectionText}>
+        People, Passion, Process
+      </Typography>
+    </SectionImg>
 
-      <Characteristics label={characteristics} />
+    <AboutUs />
+    <OurGoal />
+    <Deliver />
+    <Process />
+    <CallUs />
+  </>
+);
 
-      {/* Give Us A Call */}
-      <SectionImg title="Call Us">
-        <Box p="3rem 2rem 0 2rem">
-          <Typography variant="h2">
-            Ready to get started? Give us a call today.
-          </Typography>
-        </Box>
-        <Link to="../Contact" style={{ textDecoration: "none" }}>
-          <BlackButton label="Contact Us" width="250px" m />
-        </Link>
-      </SectionImg>
-    </>
-  );
-}
+const styles = {
+  sectionText: {
+    position: "absolute",
+    left: 30,
+    bottom: 30,
+    fontWeight: "bold",
+  },
+};
+
 export default About;

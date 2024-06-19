@@ -1,51 +1,63 @@
-import { Link, useLocation } from "react-router-dom";
-import { JobImg } from "../components/Extra";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { useLocation } from "react-router-dom";
+import { Box, Grid, Typography } from "@mui/material";
 
-function Job({ state }) {
+const Job = () => {
   const location = useLocation();
   const { job } = location.state || {};
-  return (
-    <>
-      <Box>
-        <JobImg>
-          <img src={job.image} alt="" />
 
-          <Box m={4}>
-            <Typography variant="h4" align="center" p={3} gutterBottom>
-              {job.title}
-            </Typography>
-            <Grid container spacing={4} justifyContent="space-evenly">
-              <Grid item xs={12} sm={3} textAlign="center">
-                <Typography
-                  variant="subtitle1"
-                  sx={{ fontWeight: "bold" }}
-                  gutterBottom
-                >
-                  DESCRIPTION
-                </Typography>
-                <Typography>{job.description}</Typography>
-              </Grid>
-              <Grid item xs={12} sm={3} textAlign="center">
-                <Typography sx={{ fontWeight: "bold" }} gutterBottom>
-                  DATES
-                </Typography>
-                <Typography>{job.dateStarted}</Typography>
-                {"-"}
-                <Typography>{job.dateFinished}</Typography>
-              </Grid>
-              <Grid item xs={12} sm={3} textAlign="center">
-                <Typography sx={{ fontWeight: "bold" }} gutterBottom>
-                  COST
-                </Typography>
-                <Typography>{job.payRange}</Typography>
-              </Grid>
-            </Grid>
-          </Box>
-        </JobImg>
+  return (
+    <Box sx={styles.jobBox}>
+      <Box sx={styles.contentBox}>
+        <img src={job.image} alt={job.title} />
+        <Box sx={styles.infoBox}>
+          <Typography
+            variant="h4"
+            align="center"
+            sx={styles.title}
+            gutterBottom
+          >
+            {job.title}
+          </Typography>
+          <Grid container spacing={4} justifyContent="space-evenly">
+            <JobDetail label="DESCRIPTION" content={job.description} />
+            <JobDetail
+              label="DATES"
+              content={`${job.dateStarted} - ${job.dateFinished}`}
+            />
+            <JobDetail label="COST" content={job.payRange} />
+          </Grid>
+        </Box>
       </Box>
-    </>
+    </Box>
   );
-}
+};
+
+const JobDetail = ({ label, content }) => (
+  <Grid item xs={12} sm={3} textAlign="center">
+    <Typography variant="subtitle1" sx={styles.bold} gutterBottom>
+      {label}
+    </Typography>
+    <Typography>{content}</Typography>
+  </Grid>
+);
+
+const styles = {
+  jobBox: {
+    textAlign: "center",
+    p: 3,
+  },
+  contentBox: {
+    zIndex: 2,
+  },
+  infoBox: {
+    m: 4,
+  },
+  title: {
+    p: 3,
+  },
+  bold: {
+    fontWeight: "bold",
+  },
+};
 
 export default Job;

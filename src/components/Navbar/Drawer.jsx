@@ -18,24 +18,33 @@ import {
 } from "@mui/icons-material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-function NavigationDrawer() {
+const pages = ["Home", "About", "Services", "Gallery", "Contact"];
+
+const SocialLinks = () => (
+  <Box sx={styles.socialBox}>
+    <IconButton aria-label="instagram" href="https://www.instagram.com">
+      <Instagram />
+    </IconButton>
+    <IconButton aria-label="facebook" href="https://www.facebook.com">
+      <Facebook />
+    </IconButton>
+    <IconButton aria-label="pinterest" href="https://www.pinterest.com">
+      <Pinterest />
+    </IconButton>
+    <IconButton aria-label="linkedin" href="https://www.linkedin.com">
+      <LinkedIn />
+    </IconButton>
+  </Box>
+);
+
+const NavigationDrawer = () => {
   const [open, setOpen] = useState(false);
   const smallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
-  const toggleDrawer = (open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-    setOpen(open);
-  };
+  const toggleDrawer = (open) => () => setOpen(open);
 
-  const pages = ["About", "Services", "Gallery", "Contact"];
   return (
     <>
-      {/* Menu Icon */}
       <IconButton
         edge="start"
         color="inherit"
@@ -43,85 +52,52 @@ function NavigationDrawer() {
         onClick={toggleDrawer(true)}
       >
         <Menu
-          style={{
-            color: "#77cbc7",
-            fontSize: smallScreen ? "1.7rem" : "2.2rem",
-          }}
+          sx={{ color: "#77cbc7", fontSize: smallScreen ? "1.7rem" : "2.2rem" }}
         />
       </IconButton>
-      {/* Drop Down Menu */}
-      <Drawer
-        open={open}
-        onClose={toggleDrawer(false)}
-        sx={{
-          "& .MuiDrawer-paper": {
-            backgroundColor: "#fff",
-            color: "#000",
-            width: "100vw",
-            height: "100vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          },
-        }}
-      >
-        {/* Close Menu Icon */}
-        <IconButton
-          onClick={toggleDrawer(false)}
-          sx={{ position: "absolute", top: 16, right: 16 }}
-        >
+      <Drawer open={open} onClose={toggleDrawer(false)} sx={styles.drawer}>
+        <IconButton onClick={toggleDrawer(false)} sx={styles.closeButton}>
           <Close />
         </IconButton>
-        {/* List of Pages */}
-        <List>
-          <ListItem
-            onClick={toggleDrawer(false)}
-            key="Home"
-            sx={{ justifyContent: "center" }}
-          >
-            <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
-              <ListItemText
-                primary="Home"
-                primaryTypographyProps={{ fontSize: 25 }}
-              />
-            </Link>
-          </ListItem>
-          {pages.map((text, index) => (
+        <List sx={styles.list}>
+          {pages.map((page) => (
             <ListItem
-              key={text}
+              key={page}
               onClick={toggleDrawer(false)}
-              sx={{ justifyContent: "center" }}
+              sx={styles.listItem}
             >
-              <Link
-                to={`/${text}`}
-                style={{ textDecoration: "none", color: "black" }}
-              >
+              <Link to={`/${page.toLowerCase()}`} style={styles.link}>
                 <ListItemText
-                  primary={text}
+                  primary={page}
                   primaryTypographyProps={{ fontSize: 25 }}
                 />
               </Link>
             </ListItem>
           ))}
         </List>
-        {/* Socials */}
-        <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
-          <IconButton aria-label="instagram" href="https://www.instagram.com">
-            <Instagram />
-          </IconButton>
-          <IconButton aria-label="facebook" href="https://www.facebook.com">
-            <Facebook />
-          </IconButton>
-          <IconButton aria-label="pinterest" href="https://www.pinterest.com">
-            <Pinterest />
-          </IconButton>
-          <IconButton aria-label="linkedin" href="https://www.linkedin.com">
-            <LinkedIn />
-          </IconButton>
-        </Box>
+        <SocialLinks />
       </Drawer>
     </>
   );
-}
+};
+
+const styles = {
+  drawer: {
+    "& .MuiDrawer-paper": {
+      backgroundColor: "#fff",
+      color: "#000",
+      width: "100vw",
+      height: "100vh",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+  },
+  closeButton: { position: "absolute", top: 16, right: 16 },
+  list: { width: "100%", textAlign: "center" },
+  listItem: { justifyContent: "center" },
+  link: { textDecoration: "none", color: "black" },
+  socialBox: { display: "flex", justifyContent: "center", gap: 2, mt: 2 },
+};
 
 export default NavigationDrawer;

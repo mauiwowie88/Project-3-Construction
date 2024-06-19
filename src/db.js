@@ -1,31 +1,38 @@
 /* Past Projects Images */
-import one from "./images/outside/b.jpg";
-import two from "./images/outside/c.jpg";
-import three from "./images/outside/d.jpg";
-import four from "./images/outside/d.webp";
-import six from "./images/outside/f.jpg";
-import seven from "./images/outside/f.webp";
-import eight from "./images/outside/g.jpg";
-import nine from "./images/outside/h.jpg";
-import ten from "./images/outside/i.jpg";
-import eleven from "./images/outside/j.jpg";
-import twelve from "./images/outside/k.png";
+import one from "../assets/images/outside/b.jpg";
+import two from "../assets/images/outside/c.jpg";
+import three from "../assets/images/outside/d.jpg";
+import four from "../assets/images/outside/d.webp";
+import six from "../assets/images/outside/f.jpg";
+import seven from "../assets/images/outside/f.webp";
+import eight from "../assets/images/outside/g.jpg";
+import nine from "../assets/images/outside/h.jpg";
+import ten from "../assets/images/outside/i.jpg";
+import eleven from "../assets/images/outside/j.jpg";
+import twelve from "../assets/images/outside/k.png";
+
+import EngineeringIcon from "@mui/icons-material/Engineering";
+import PlumbingIcon from "@mui/icons-material/Plumbing";
+import HardwareIcon from "@mui/icons-material/Hardware";
+import RoofingIcon from "@mui/icons-material/Roofing";
+import FoundationIcon from "@mui/icons-material/Foundation";
+import CarpenterIcon from "@mui/icons-material/Carpenter";
 
 /* Our Services Images */
-import bathroom from "./images/inside/bathroom.jpg";
-import livingRoom from "./images/inside/living-room.jpg";
-import kitchen from "./images/inside/kitchen.jpg";
-import exterior from "./images/outside/exterior.jpg";
-import deck from "./images/outside/Deck.jpg";
-import interior from "./images/inside/fancy.jpg";
+import bathroom from "../assets/images/inside/bathroom.jpg";
+import livingRoom from "../assets/images/inside/living-room.jpg";
+import kitchen from "../assets/images/inside/kitchen.jpg";
+import exterior from "../assets/images/outside/exterior.jpg";
+import deck from "../assets/images/outside/Deck.jpg";
+import interior from "../assets/images/inside/fancy.jpg";
 
 /* Our Defining Characteristics Images */
-import book from "./images/other/book.jpg";
-import development from "./images/other/development.jpg";
-import engineering from "./images/other/eee.jpg";
-import pricing from "./images/other/pricing.jpg";
-import trust from "./images/other/trust.jpg";
-import time from "./images/other/time.png";
+import book from "../assets/images/other/book.jpg";
+import development from "../assets/images/other/development.jpg";
+import engineering from "../assets/images/other/eee.jpg";
+import pricing from "../assets/images/other/pricing.jpg";
+import trust from "../assets/images/other/trust.jpg";
+import time from "../assets/images/other/time.png";
 
 /* Section Images */
 import introImg from "../assets/images/outside/theone.jpg";
@@ -41,22 +48,22 @@ import iTwo from "../assets/images/inside/i-2.jpg";
 import iThree from "../assets/images/inside/i-3.jpg";
 import iFour from "../assets/images/inside/i-3.jpg";
 
-import a from "./images/inside/1.jpg";
-import b from "./images/inside/2.webp";
-import c from "./images/inside/3.jpg";
-import d from "./images/inside/4.avif";
-import e from "./images/inside/5.avif";
-import f from "./images/inside/5.jpg";
-import g from "./images/inside/6.jpeg";
-import h from "./images/inside/7.avif";
-import i from "./images/inside/8.jpg";
-import j from "./images/inside/9.avif";
-import k from "./images/inside/10.png";
-import l from "./images/inside/11.jpg";
-import m from "./images/inside/11.webp";
-import n from "./images/inside/bg.jpg";
+import a from "../assets/images/inside/1.jpg";
+import b from "../assets/images/inside/2.webp";
+import c from "../assets/images/inside/3.jpg";
+import d from "../assets/images/inside/4.avif";
+import e from "../assets/images/inside/5.avif";
+import f from "../assets/images/inside/5.jpg";
+import g from "../assets/images/inside/6.jpeg";
+import h from "../assets/images/inside/7.avif";
+import i from "../assets/images/inside/8.jpg";
+import j from "../assets/images/inside/9.avif";
+import k from "../assets/images/inside/10.png";
+import l from "../assets/images/inside/11.jpg";
+import m from "../assets/images/inside/11.webp";
+import n from "../assets/images/inside/bg.jpg";
 
-import o from "./images/other/en.jpg";
+import o from "../assets/images/other/en.jpg";
 
 import demolition from "../assets/images/new/demolition.webp";
 import electric from "../assets/images/new/electric.jpg";
@@ -66,6 +73,83 @@ import grading from "../assets/images/new/grading.jpg";
 import painter from "../assets/images/new/painter.jpg";
 import plumber from "../assets/images/new/plumber.jpg";
 import welder from "../assets/images/new/welder.webp";
+
+// const images.sort(bysection)
+
+const work = [
+  {
+    label: "Framing",
+    imgPath: framer,
+    tasks: [
+      "Measure and cut wood or metal framing materials.",
+      "Assemble and erect the framework for walls and roofs.",
+      "Ensure structural integrity and compliance with building codes.",
+    ],
+  },
+  {
+    label: "Painting",
+    imgPath: painter,
+    tasks: [
+      "Prepare surfaces by cleaning, scraping, and sanding.",
+      "Apply primer and paint using brushes, rollers, or sprayers.",
+      "Ensure even coverage and clean edges.",
+    ],
+  },
+  {
+    label: "Flooring",
+    imgPath: flooring,
+    tasks: [
+      "Measure, cut, and install various flooring materials (e.g., tiles, hardwood, carpet).",
+      "Prepare and level the subfloor.",
+      "Apply finishing touches such as sealing or polishing.",
+    ],
+  },
+  {
+    label: "Electrical",
+    imgPath: electric,
+    tasks: [
+      "Install wiring through conduits and walls.",
+      "Connect electrical panels, outlets, and switches.",
+      "Ensure compliance with electrical codes and safety standards.",
+    ],
+  },
+  {
+    label: "Plumbing",
+    imgPath: plumber,
+    tasks: [
+      "Install, repair, and maintain pipes, valves, fittings, drainage systems, and fixtures.",
+      "Troubleshoot and fix issues with water supply lines.",
+      "Ensure all installations and repairs are up to code.",
+    ],
+  },
+  {
+    label: "Grading",
+    imgPath: grading,
+    tasks: [
+      "Measure and plan the landscape for proper water drainage and structural foundations.",
+      "Operate heavy machinery to level the ground.",
+      "Prepare the site for construction or landscaping projects.",
+    ],
+  },
+  {
+    label: "Welding",
+    imgPath: welder,
+    tasks: [
+      "Cut, shape, and join metal parts using various welding techniques.",
+      "Inspect and test welds and equipment for safety.",
+      "Maintain welding equipment and tools.",
+    ],
+  },
+  {
+    label: "Demolition",
+    imgPath: demolition,
+    tasks: [
+      "Assess the structure and plan the demolition process.",
+      "Use tools and machinery to safely dismantle structures.",
+      "Manage debris removal and recycling of materials.",
+    ],
+  },
+];
 
 /* Introduction Paragraph */
 const intro = [
@@ -85,35 +169,11 @@ const mission = [
 import dope from "../assets/images/other/dope.jpg";
 import kkk from "../assets/images/other/kkk.jpeg";
 
-/* Customer Testimonials */
-const quotes = [
-  {
-    label: `"Working with Project 3 was an absolute delight! Their professionalism and attention to detail exceeded my expectations. From start to finish, the team demonstrated a deep understanding of our needs and delivered exceptional results. I highly recommend their services to anyone seeking top-notch quality and expertise."`,
-    imgPath: testimonialsImg,
-  },
-  {
-    label: `"I can't thank Project 3 enough for their outstanding work. Their dedication to excellence and commitment to customer satisfaction are truly commendable. The entire process was seamless, and the final outcome exceeded our wildest expectations. I wouldn't hesitate to collaborate with them again in the future."`,
-    imgPath: testimonialsImg,
-  },
-  {
-    label: `"Choosing Project 3 was one of the best decisions I've made for my business. Their team of experts went above and beyond to ensure our project's success. Their innovative solutions and strategic approach helped us achieve remarkable results in record time. I'm grateful for their partnership and highly recommend their services to others."`,
-    imgPath: testimonialsImg,
-  },
-  {
-    label: `"I've had the pleasure of working with Project 3 on multiple projects, and each time, they've delivered nothing short of excellence. Their professionalism, creativity, and attention to detail set them apart from the rest. I'm continually impressed by their ability to turn our ideas into reality and would recommend them to anyone seeking top-tier quality and service."`,
-    imgPath: testimonialsImg,
-  },
-  {
-    label: `"I couldn't be happier with the results Project 3 delivered. Their team's expertise and dedication to our project were evident from day one. They took the time to understand our goals and vision, and their strategic guidance was invaluable. Thanks to their efforts, we were able to achieve remarkable success and elevate our brand to new heights."`,
-    imgPath: testimonialsImg,
-  },
-];
-
 const sections = [
   {
     title: "Building Dreams, One Home at a Time",
     description:
-      "With over 25 years of experience, we are dedicated to turning your vision into reality with exceptional craftsmanship and attention to detail.",
+      "With over 25 years of experience, we are dedicated to turning your vision into reality with exceptional craftsmanship and attention to detail.With over 25 years of experience, we are dedicated to turning your vision into reality with exceptional craftsmanship and attention to detail.",
     image: d,
     route: "About",
     button: "About Us",
@@ -179,8 +239,8 @@ const sectionImgs = [
   {
     title: "Contact",
     image: kkk,
-    size: { xs: 140, sm: 210, md: 320, lg: 350 },
-    opacity: "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3))",
+    size: { xs: 140, sm: 210, md: 320, lg: 320 },
+    opacity: "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5))",
   },
 
   {
@@ -247,41 +307,6 @@ const yo = [
     xs: 12,
     sm: 6,
     md: 6,
-  },
-];
-
-const work = [
-  {
-    label: "Framing",
-    imgPath: framer,
-  },
-  {
-    label: "Painting",
-    imgPath: painter,
-  },
-  {
-    label: "Flooring",
-    imgPath: flooring,
-  },
-  {
-    label: "Electrical",
-    imgPath: electric,
-  },
-  {
-    label: "Plumbing",
-    imgPath: plumber,
-  },
-  {
-    label: "Grading",
-    imgPath: grading,
-  },
-  {
-    label: "Welding",
-    imgPath: welder,
-  },
-  {
-    label: "Demolition",
-    imgPath: demolition,
   },
 ];
 
@@ -470,7 +495,6 @@ const portfolio = [
 export {
   portfolio,
   characteristics,
-  quotes,
   mission,
   sections,
   yo,
