@@ -49,9 +49,10 @@ const BlackButton = ({ label, width }) => {
     <Button
       sx={{
         color: "white",
-        backgroundColor: "black",
+        backgroundColor: "#1a202c",
         margin: "2rem auto",
         width: width,
+        boxShadow: 3,
         "&:hover": {
           backgroundColor: "white",
           color: "black",

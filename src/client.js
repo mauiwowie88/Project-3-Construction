@@ -1,10 +1,11 @@
 import { createClient } from "@sanity/client";
+import imageUrlBuilder from "@sanity/image-url";
 
 const client = createClient({
-  projectId: "qjhueo9m", // Ensure this is your actual project ID
+  projectId: "qjhueo9m",
   dataset: "production",
-  useCdn: false, // `false` if you want to ensure fresh data
-  apiVersion: "2023-06-13", // Use the current date or a specific date
+  useCdn: false,
+  apiVersion: "2023-06-13",
 });
 
 const fetchData = async (query, setData) => {
@@ -16,4 +17,8 @@ const fetchData = async (query, setData) => {
   }
 };
 
-export { client, fetchData };
+const builder = imageUrlBuilder(client);
+
+const urlFor = (source) => builder.image(source).url();
+
+export { client, fetchData, urlFor };

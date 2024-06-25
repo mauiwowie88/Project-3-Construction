@@ -18,7 +18,7 @@ import {
 } from "@mui/icons-material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-const pages = ["Home", "About", "Services", "Gallery", "Contact"];
+const pages = ["Home", "About", "Services", "Contact"];
 
 const SocialLinks = () => (
   <Box sx={styles.socialBox}>
@@ -51,9 +51,7 @@ const NavigationDrawer = () => {
         aria-label="menu"
         onClick={toggleDrawer(true)}
       >
-        <Menu
-          sx={{ color: "#77cbc7", fontSize: smallScreen ? "1.7rem" : "2.2rem" }}
-        />
+        <Menu sx={{ color: "#77cbc7", fontSize: "2rem" }} />
       </IconButton>
       <Drawer open={open} onClose={toggleDrawer(false)} sx={styles.drawer}>
         <IconButton onClick={toggleDrawer(false)} sx={styles.closeButton}>

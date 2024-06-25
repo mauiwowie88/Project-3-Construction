@@ -18,9 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <ThemeProvider theme={theme}>
       <Router>
         <Navbar />
-        <main>
-          <App />
-        </main>
+        <App />
         <ScrollUp />
         <Footer />
       </Router>

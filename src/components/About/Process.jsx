@@ -1,17 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Box, Container, Typography, Grid } from "@mui/material";
-import { WorkOutline as DefaultIcon } from "@mui/icons-material";
+import { Box, Container, Typography, Grid, Card } from "@mui/material";
 import { fetchData } from "../../client";
 import { Loading } from "../Extra";
-
-const icons = {
-  1: DefaultIcon,
-  2: DefaultIcon,
-  3: DefaultIcon,
-  4: DefaultIcon,
-  5: DefaultIcon,
-  // Add more mappings as needed
-};
+import HandshakeIcon from "@mui/icons-material/Handshake";
 
 const Process = () => {
   const [steps, setSteps] = useState([]);
@@ -29,41 +20,56 @@ const Process = () => {
   if (loading) return <Loading />;
 
   return (
-    <Container sx={styles.container}>
+    <Box sx={styles.container}>
       <Typography variant="h4" sx={styles.title}>
         Our Process
       </Typography>
       <Box sx={styles.underline}></Box>
-      <Grid container spacing={2}>
+
+      <Grid container spacing={2} sx={styles.box}>
         {steps.map((step, index) => (
-          <Grid item xs={12} sm={6} key={index}>
-            <ProcessStep title={step.title} description={step.description} />
+          <Grid item xs={12} sm={5} md={4} lg={2.4} key={index}>
+            <ProcessStep
+              title={step.title}
+              description={step.description}
+              index={index}
+            />
           </Grid>
         ))}
       </Grid>
-    </Container>
+    </Box>
   );
 };
 
-const ProcessStep = ({ title, description }) => {
+const ProcessStep = ({ title, description, index }) => {
   return (
-    <Box sx={styles.stepContainer}>
-      {/* <Box sx={styles.iconContainer}>
-        <Icon sx={styles.icon} />
-      </Box> */}
-      <Typography variant="h6" sx={styles.stepTitle}>
-        {title}
-      </Typography>
-      <Typography variant="body1" sx={styles.stepDescription}>
-        {description}
-      </Typography>
+    <Box sx={styles.card}>
+      <Box sx={styles.overlay}>
+        <Typography variant="h2">{index + 1}</Typography>
+        <HandshakeIcon sx={{ p: 2 }} />
+        <Typography variant="h6" sx={styles.title}>
+          {title}
+        </Typography>
+      </Box>
+      <Box className="hoverContent" sx={styles.hoverContent}>
+        <Typography variant="body2">{description}</Typography>
+      </Box>
     </Box>
   );
 };
 
 const styles = {
+  box: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  title: {
+    justifyContent: "center",
+  },
   container: {
-    padding: "40px 0",
+    mt: 7,
+    p: 2.5,
   },
   title: {
     textAlign: "center",
@@ -76,28 +82,43 @@ const styles = {
     backgroundColor: "#cfb13e",
     margin: "0 auto 40px",
   },
-  stepContainer: {
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    padding: "16px",
-    textAlign: "center",
-    marginBottom: "16px",
-    backgroundColor: "#f5f5f5",
-  },
-  iconContainer: {
+  card: {
+    position: "relative",
     display: "flex",
+
+    height: "200px",
+    // backgroundColor: "rgba(0,0,0,0.1)",
+    overflow: "hidden",
+
+    "&:hover .hoverContent": {
+      opacity: 1,
+      transform: "translateY(0)",
+    },
+  },
+  overlay: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "right",
+    alignItems: "center",
+    width: "100%",
+    height: "100%",
+    zIndex: 1,
+  },
+  hoverContent: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
-    marginBottom: "8px",
-  },
-  icon: {
-    fontSize: "2rem",
-  },
-  stepTitle: {
-    fontWeight: "bold",
-    marginBottom: "8px",
-  },
-  stepDescription: {
-    color: "#666",
+    backgroundColor: "white",
+    color: "black",
+    opacity: 0,
+    transition: "0.3s",
+    transform: "translateY(100%)",
+    zIndex: 2,
   },
 };
 

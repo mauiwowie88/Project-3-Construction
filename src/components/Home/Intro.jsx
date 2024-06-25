@@ -1,27 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { fetchData } from "../../client";
-import { SectionImg } from "../Extra";
-import { Loading } from "../Extra";
+import { SectionImg, Loading } from "../Extra";
+import { useTheme } from "@emotion/react";
 
-const IntroContent = ({ intro }) => (
-  <Box sx={styles.introBox}>
-    <Typography variant="h6" sx={styles.title}>
-      {intro.title}
-    </Typography>
-    <Typography variant="h5">{intro.description}</Typography>
-    <Container maxWidth="sm">
-      {intro.paragraphs.map((paragraph, index) => (
-        <Typography key={index} sx={styles.paragraph}>
-          {paragraph}
-        </Typography>
-      ))}
-    </Container>
-  </Box>
-);
-
-function Intro() {
+const Intro = () => {
   const [intro, setIntro] = useState([]);
+  const theme = useTheme();
 
   useEffect(() => {
     fetchData(`*[_type == "intro"]{title, description, paragraphs}`, setIntro);
@@ -36,34 +21,55 @@ function Intro() {
       </SectionImg>
       <Box sx={styles.outer}>
         <Box sx={styles.inner}>
-          <Typography variant="h1" color="white">
-            Project 3 Contstruction
+          <Typography variant="h4" color="white">
+            Project 3 Construction
           </Typography>
         </Box>
       </Box>
-      {intro.length > 0 && <IntroContent intro={intro[0]} />}
+      <Box sx={styles.introBox}>
+        <Typography variant="h6" sx={styles.title}>
+          {intro[0].title}
+        </Typography>
+        <Typography variant="h5" color={theme.palette.blue.dark}>
+          {intro[0].description}
+        </Typography>
+        <Container maxWidth="sm">
+          {intro[0].paragraphs.map((paragraph, index) => (
+            <Typography key={index} sx={styles.paragraph}>
+              {paragraph}
+            </Typography>
+          ))}
+        </Container>
+      </Box>
     </>
   );
-}
+};
 
 const styles = {
-  introBox: { p: ".5rem", mt: 4, textAlign: "center" },
-  title: { fontWeight: "bold", color: "#cfb13e" },
-  paragraph: { color: "#424242", pt: 2.5 },
+  introBox: {
+    padding: "0.5rem",
+    m: "10px 0 40px 0",
+    textAlign: "center",
+  },
+  title: {
+    fontWeight: "bold",
+    color: "#cfb13e",
+  },
+  paragraph: {
+    color: "#424242",
+    paddingTop: 2.5,
+  },
   outer: {
-    backgroundColor: "#2e2e2e",
+    backgroundColor: "#1a202c",
     display: "flex",
     justifyContent: "center",
-    // position: "absolute",
-    // left: "50%",
     transform: "translate(50%, -50%)",
     width: "50%",
-    // maxWidth "600px",
   },
   inner: {
-    backgroundColor: "#455a64",
-    m: 0.5,
-    p: 2,
+    backgroundColor: "#2d3748",
+    margin: 0.5,
+    padding: 2,
     textAlign: "center",
     width: "99%",
   },

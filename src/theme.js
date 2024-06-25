@@ -2,54 +2,64 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
-    primary: {
-      main: "#556cd6",
+    blue: {
+      light: "#A0AEC0",
+      default: "#2d5b96",
+      dark: "#1a202c",
     },
-    secondary: {
-      main: "#19857b",
+    red: {
+      light: "#ffcccb",
+      regular: "#ff0000",
+      dark: "#8b0000",
     },
-    error: {
-      main: "#ff1744",
+    gray: {
+      light: "#d3d3d3",
+      default: "#808080",
+      dark: "#505050",
     },
-    background: {
-      default: "#fff",
+    yellow: {
+      light: "#ffffe0",
+      regular: "#ffff00",
+      dark: "#ffd700",
     },
-    text: {
-      primary: "#333",
-      secondary: "#555",
+    green: {
+      light: "#90ee90",
+      regular: "#008000",
+      dark: "#006400",
     },
   },
+
   typography: {
     fontFamily: "Roboto, Open Sans, sans-serif",
     h1: {
-      fontSize: "1.2rem",
+      fontSize: "2rem",
       "@media (min-width:600px)": {
-        fontSize: "1.6rem",
-      },
-      "@media (min-width:900px)": {
-        fontSize: "2rem",
-      },
-      "@media (min-width:1200px)": {
         fontSize: "2.5rem",
       },
-      "@media (min-width:1600px)": {
+      "@media (min-width:900px)": {
         fontSize: "3rem",
+      },
+      "@media (min-width:1200px)": {
+        fontSize: "3.5rem",
+      },
+      "@media (min-width:1600px)": {
+        fontSize: "4rem",
       },
     },
     h2: {
-      fontSize: "1.75rem", // base size for large header
+      fontSize: "1.75rem",
       "@media (min-width:600px)": {
-        fontSize: "2.125rem",
+        fontSize: "2rem",
       },
       "@media (min-width:900px)": {
-        fontSize: "2.5rem",
+        fontSize: "2.25rem",
       },
       "@media (min-width:1200px)": {
-        fontSize: "2.875rem",
+        fontSize: "2.5rem",
       },
     },
     h3: {
-      fontSize: "1.5rem", // medium header
+      fontSize: "1.5rem",
       "@media (min-width:600px)": {
         fontSize: "1.75rem",
       },
@@ -58,7 +68,7 @@ const theme = createTheme({
       },
     },
     h4: {
-      fontSize: "1.25rem", // base medium header
+      fontSize: "1.25rem",
       "@media (min-width:600px)": {
         fontSize: "1.5rem",
       },
@@ -67,16 +77,22 @@ const theme = createTheme({
       },
     },
     h5: {
-      fontSize: "1rem", // small header
+      fontSize: "1rem",
       "@media (min-width:600px)": {
-        fontSize: "1.125rem",
+        fontSize: "1.25rem",
       },
       "@media (min-width:900px)": {
-        fontSize: "1.25rem",
+        fontSize: "1.5rem",
+      },
+      "@media (min-width:1200px)": {
+        fontSize: "1.75rem",
+      },
+      "@media (min-width:1600px)": {
+        fontSize: "2rem",
       },
     },
     h6: {
-      fontSize: "0.875rem", // smallest header
+      fontSize: "0.875rem",
       "@media (min-width:600px)": {
         fontSize: "1rem",
       },
@@ -84,7 +100,6 @@ const theme = createTheme({
         fontSize: "1.125rem",
       },
     },
-    // Continue setting other headings
     body1: {
       fontSize: "0.8rem",
       "@media (min-width:600px)": {
@@ -95,12 +110,30 @@ const theme = createTheme({
       },
     },
     body2: {
-      fontSize: "0.75rem",
+      fontSize: "0.7rem",
       "@media (min-width:600px)": {
         fontSize: "0.8rem",
       },
       "@media (min-width:900px)": {
         fontSize: "1rem",
+      },
+    },
+    body3: {
+      fontSize: "0.6rem",
+      "@media (min-width:600px)": {
+        fontSize: "0.7rem",
+      },
+      "@media (min-width:900px)": {
+        fontSize: "0.8rem",
+      },
+    },
+    body4: {
+      fontSize: "0.5rem",
+      "@media (min-width:600px)": {
+        fontSize: "0.6rem",
+      },
+      "@media (min-width:900px)": {
+        fontSize: "0.7rem",
       },
     },
     button: {
@@ -111,11 +144,10 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 8, // Square edges
+          borderRadius: 8,
         },
       },
     },
-    // Can add other component overrides as necessary
   },
   breakpoints: {
     values: {

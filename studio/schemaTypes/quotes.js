@@ -15,5 +15,10 @@ export default defineType({
       title: 'Quote',
       type: 'text',
     }),
+    defineField({
+      name: 'date',
+      title: 'Date',
+      type: 'string',
+    }),
   ],
 })

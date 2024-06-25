@@ -13,13 +13,18 @@ export default defineType({
     defineField({
       name: 'description',
       title: 'Description',
+      type: 'string',
+    }),
+    defineField({
+      name: 'details',
+      title: 'Details',
       type: 'array',
-      of: [{type: 'string'}],
+      of: [{type: 'text'}],
     }),
     defineField({
       name: 'icon',
       title: 'Icon',
-      type: 'image',
+      type: 'string',
     }),
   ],
 })

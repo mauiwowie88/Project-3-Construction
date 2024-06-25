@@ -1,23 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AppBar, Toolbar, Button, Box } from "@mui/material";
+import { AppBar, Toolbar, Button, Box, Typography } from "@mui/material";
 import logo from "../../../assets/images/other/new-logo.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import NavigationDrawer from "./Drawer";
+import { useTheme } from "@emotion/react";
 
 const pages = ["About", "Services", "Contact"];
 
-const NavLinks = ({ pages }) => (
-  <Box sx={styles.navLinks}>
-    {pages.map((page) => (
-      <Button key={page} sx={styles.button}>
-        <Link to={`/${page.toLowerCase()}`} style={styles.link}>
-          {page}
-        </Link>
-      </Button>
-    ))}
-  </Box>
-);
+const NavLinks = ({ pages }) => {
+  return (
+    <Box sx={styles.navLinks}>
+      {pages.map((page) => (
+        <Button key={page}>
+          <Link to={`/${page.toLowerCase()}`} style={styles.link}>
+            <Typography sx={styles.navText}>{page}</Typography>
+          </Link>
+        </Button>
+      ))}
+    </Box>
+  );
+};
 
 const Navbar = () => {
   const smallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
@@ -44,13 +47,16 @@ const Navbar = () => {
 };
 
 const styles = {
+  navText: {
+    color: "#2d3748",
+  },
   appBar: {
     p: "0 1rem",
     alignItems: "center",
-    backgroundColor: "#2e2e2e",
-    boxShadow: "none",
-    mr: 2.2,
+    backgroundColor: "#fff",
+    mr: 2,
     pl: 4.2,
+    boxShadow: "none",
   },
   toolbar: {
     justifyContent: "space-between",
@@ -63,13 +69,10 @@ const styles = {
   navLinks: {
     display: "flex",
     alignItems: "center",
-  },
-  button: {
-    color: "#fff",
+    color: "black",
   },
   link: {
     textDecoration: "none",
-    color: "#fff",
   },
 };
 

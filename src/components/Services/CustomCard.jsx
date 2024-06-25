@@ -2,21 +2,19 @@ import React from "react";
 import { Typography, Box, List, ListItem } from "@mui/material";
 
 const CardFront = ({ data }) => (
-  <Box sx={styles.gradient}>
-    <Box
-      className="cardFront"
-      sx={{
-        ...styles.card,
-        ...styles.cardFront,
-        backgroundImage: `url(${data.imgPath})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <Typography variant="h4" color="white">
-        {data.label}
-      </Typography>
-    </Box>
+  <Box
+    className="cardFront"
+    sx={{
+      ...styles.card,
+      ...styles.cardFront,
+      backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), url(${data.imgPath})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    <Typography variant="h4" color="white">
+      {data.label}
+    </Typography>
   </Box>
 );
 
@@ -25,9 +23,7 @@ const CardBack = ({ data }) => (
     <Typography>{data.label}</Typography>
     <List>
       {data.tasks.map((task, idx) => (
-        <>
-          <ListItem key={idx}>{task}</ListItem>
-        </>
+        <ListItem key={idx}>{task}</ListItem>
       ))}
     </List>
   </Box>
@@ -36,7 +32,6 @@ const CardBack = ({ data }) => (
 const CustomCard = ({ data }) => {
   return (
     <Box sx={styles.cardContainer}>
-      {console.log(data)}
       <CardFront data={data} />
       <CardBack data={data} />
     </Box>

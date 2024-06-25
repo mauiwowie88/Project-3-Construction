@@ -25,24 +25,31 @@ function LongProcess() {
 
   if (!processes.length) return <Loading />; // Adjust Loading as necessary
 
-  if (isSmallScreen) {
-    return <LPSmall processes={processes} />;
-  }
-
   return (
-    <Box sx={styles.container}>
-      <Grid container gap={10} sx={styles.processContainer}>
-        {processes.map((process, index) => (
-          <Step process={process} index={index} key={index} />
-        ))}
-      </Grid>
-    </Box>
+    <Container sx={styles.container}>
+      <Box sx={styles.box}>
+        <Typography variant="h2" sx={styles.missionTitle}>
+          {"Our Process"}
+        </Typography>
+        <Box sx={styles.underline}></Box>
+      </Box>
+
+      {isSmallScreen ? (
+        <LPSmall processes={processes} />
+      ) : (
+        <Grid container gap={10} sx={styles.processContainer}>
+          {processes.map((process, index) => (
+            <Step process={process} index={index} key={index} />
+          ))}
+        </Grid>
+      )}
+    </Container>
   );
 }
 
 const ImageBox = ({ process }) => {
   return (
-    <Grid item xs={6} sx={styles.imageContainer}>
+    <Grid item xs={12} sm={6} sx={styles.imageContainer}>
       <Box sx={styles.imageOverlay}>
         <img src={process.imageUrl} alt={process.title} style={styles.image} />
       </Box>
@@ -52,7 +59,7 @@ const ImageBox = ({ process }) => {
 
 const TextBox = ({ process, index }) => {
   return (
-    <Grid item xs={6} sx={styles.textContainer}>
+    <Grid item xs={12} sm={6} sx={styles.textContainer}>
       <Container>
         <Box sx={styles.numberBox}>
           <Typography variant="h5" sx={styles.number}>
@@ -78,10 +85,9 @@ const Step = ({ process, index }) => {
     <Grid
       item
       container
-      spacing={2}
+      spacing={10}
       alignItems="center"
       sx={{
-        ...styles.stepContainer,
         backgroundColor: index % 2 === 0 ? "white" : "#eef5f8",
       }}
     >
@@ -101,12 +107,29 @@ const Step = ({ process, index }) => {
 };
 
 const styles = {
-  container: {
-    padding: "16px",
+  box: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    mb: 4,
   },
-  stepContainer: {
-    padding: "16px",
-    borderRadius: "8px",
+  container: {
+    padding: 2,
+  },
+  missionTitle: {
+    color: "#006498",
+    pt: 18,
+    zIndex: 7,
+    textAlign: "center",
+  },
+  underline: {
+    width: "60px",
+    height: "22px",
+    backgroundColor: "#40bc99",
+    // margin: "8px auto",
+  },
+  processContainer: {
+    mt: 4,
   },
   imageContainer: {
     position: "relative",

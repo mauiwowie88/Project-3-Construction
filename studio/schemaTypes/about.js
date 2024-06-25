@@ -14,7 +14,7 @@ export default defineType({
       name: 'description',
       title: 'Description',
       type: 'array',
-      of: [{type: 'string'}],
+      of: [{type: 'text'}],
     }),
   ],
 })
