@@ -64,7 +64,10 @@ const NavigationDrawer = () => {
               onClick={toggleDrawer(false)}
               sx={styles.listItem}
             >
-              <Link to={`/${page.toLowerCase()}`} style={styles.link}>
+              <Link
+                to={page === "Home" ? "/" : `/${page.toLowerCase()}`}
+                style={styles.link}
+              >
                 <ListItemText
                   primary={page}
                   primaryTypographyProps={{ fontSize: 25 }}

@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Box, Container, Typography, Grid, Card } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 import { fetchData } from "../../client";
 import { Loading } from "../Extra";
 import HandshakeIcon from "@mui/icons-material/Handshake";
 
-const Process = () => {
+const ShortProcess = () => {
   const [steps, setSteps] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchData(`*[_type == "process"]{title, description}`, setSteps)
+    fetchData(`*[_type == "shortProcess"]{title, description}`, setSteps)
       .then(() => setLoading(false))
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -25,10 +25,9 @@ const Process = () => {
         Our Process
       </Typography>
       <Box sx={styles.underline}></Box>
-
       <Grid container spacing={2} sx={styles.box}>
         {steps.map((step, index) => (
-          <Grid item xs={12} sm={5} md={4} lg={2.4} key={index}>
+          <Grid item xs={12} sm={6} md={4} lg={2.4} key={index}>
             <ProcessStep
               title={step.title}
               description={step.description}
@@ -45,9 +44,11 @@ const ProcessStep = ({ title, description, index }) => {
   return (
     <Box sx={styles.card}>
       <Box sx={styles.overlay}>
-        <Typography variant="h2">{index + 1}</Typography>
-        <HandshakeIcon sx={{ p: 2 }} />
-        <Typography variant="h6" sx={styles.title}>
+        <Typography variant="h2" sx={styles.number}>
+          {index + 1}
+        </Typography>
+        <HandshakeIcon sx={styles.icon} />
+        <Typography variant="h5" sx={styles.stepTitle}>
           {title}
         </Typography>
       </Box>
@@ -59,17 +60,14 @@ const ProcessStep = ({ title, description, index }) => {
 };
 
 const styles = {
+  container: {
+    mt: 7,
+    p: 2.5,
+  },
   box: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-  },
-  title: {
-    justifyContent: "center",
-  },
-  container: {
-    mt: 7,
-    p: 2.5,
   },
   title: {
     textAlign: "center",
@@ -85,11 +83,11 @@ const styles = {
   card: {
     position: "relative",
     display: "flex",
-
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-between",
     height: "200px",
-    // backgroundColor: "rgba(0,0,0,0.1)",
     overflow: "hidden",
-
     "&:hover .hoverContent": {
       opacity: 1,
       transform: "translateY(0)",
@@ -98,28 +96,39 @@ const styles = {
   overlay: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "right",
+    justifyContent: "center",
     alignItems: "center",
     width: "100%",
     height: "100%",
     zIndex: 1,
   },
+  number: {
+    flexGrow: 1,
+  },
+  icon: {
+    flexGrow: 1,
+    padding: "10px",
+  },
+  stepTitle: {
+    flexGrow: 1,
+    textAlign: "center",
+  },
   hoverContent: {
     position: "absolute",
-    top: 0,
+    bottom: 0,
     left: 0,
     width: "100%",
-    height: "100%",
+    padding: "10px",
     display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    backgroundColor: "white",
-    color: "black",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    backgroundColor: "black",
+    color: "white",
     opacity: 0,
-    transition: "0.3s",
+    transition: "opacity 0.3s, transform 0.3s",
     transform: "translateY(100%)",
     zIndex: 2,
   },
 };
 
-export default Process;
+export default ShortProcess;

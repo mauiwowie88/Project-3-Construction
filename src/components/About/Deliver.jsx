@@ -8,7 +8,7 @@ function Deliver() {
   const [sections, setSections] = useState([]);
 
   useEffect(() => {
-    fetchData(`*[_type == "about"]{title, description}`, setSections);
+    fetchData(`*[_type == "aboutUs"]{title, description}`, setSections);
   }, []);
 
   if (sections.length < 2) return <Loading />;
@@ -24,7 +24,7 @@ function Deliver() {
               </Typography>
               <Box sx={styles.underline}></Box>
               {sections[1].description.map((desc, i) => (
-                <Typography key={i} variant="h5" sx={styles.missionText}>
+                <Typography key={i} variant="h6" sx={styles.missionText}>
                   {desc}
                 </Typography>
               ))}
@@ -45,19 +45,14 @@ function Deliver() {
                 </Box>
               </Box>
               <Box sx={styles.box}>
-                <Box sx={styles.textBox}>
-                  <Typography variant="h3" sx={styles.title}>
-                    {sections[2].title}
+                <Typography variant="h3" sx={styles.title}>
+                  {sections[2].title}
+                </Typography>
+                {sections[2].description.map((desc, i) => (
+                  <Typography key={i} variant="body1" sx={styles.description}>
+                    {desc}
                   </Typography>
-                  {sections[2].description.map((desc, i) => (
-                    <Typography key={i} variant="body1" sx={styles.description}>
-                      {desc}
-                    </Typography>
-                  ))}
-                  <Button variant="contained" sx={styles.button}>
-                    Find Your Next Career
-                  </Button>
-                </Box>
+                ))}
               </Box>
             </Box>
           </Grid>
@@ -73,11 +68,9 @@ const styles = {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    p: "10px 30px",
   },
-  textBox: {
-    width: "80%",
-    position: "relative",
-  },
+
   container: {
     padding: "16px",
     display: "flex",
@@ -146,12 +139,13 @@ const styles = {
   description: {
     mt: 2,
     color: "white",
+    fontWeight: "200",
   },
   button: {
     mt: 3,
     backgroundColor: "#fdd835", // Customize this color to match the design
     color: "#000",
-    alignSelf: "center",
+    alignSelf: "flex-start",
   },
 };
 

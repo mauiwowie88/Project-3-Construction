@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'process',
-  title: 'Process',
+  name: 'shortProcess',
+  title: 'Short Process',
   type: 'document',
   fields: [
     defineField({
@@ -18,10 +18,7 @@ export default defineType({
     defineField({
       name: 'icon',
       title: 'Icon',
-      type: 'image',
-      options: {
-        hotspot: true, // Enables hotspot/crop functionality
-      },
+      type: 'string',
     }),
   ],
 })

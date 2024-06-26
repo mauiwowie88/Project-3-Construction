@@ -4,7 +4,6 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import HomeRepairServiceIcon from "@mui/icons-material/HomeRepairService";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
 
-// Add more icons as needed
 const iconMap = {
   HomeRepairServiceIcon: HomeRepairServiceIcon,
   HomeWorkIcon: HomeWorkIcon,
@@ -23,83 +22,93 @@ const Card = ({ title, description, buttonText, contact, clipPath, icon }) => {
         <Button variant="contained" sx={styles.button}>
           {buttonText} <ArrowForwardIosIcon sx={styles.icon} />
         </Button>
-        <Typography sx={styles.contact}>{contact}</Typography>
+        {contact && <Typography sx={styles.contact}>{contact}</Typography>}
       </Box>
     </Box>
   );
 };
 
-const GetStarted = () => {
-  return (
-    <Container sx={styles.container}>
-      <Card
-        title="Explore Services"
-        description="Check out all our other services we offer."
-        buttonText="MY ACCOUNT"
-        contact=""
-        clipPath="polygon(10% 0%, 90% 0%, 100% 10%, 100% 100%, 0% 100%, 0% 0%)"
-        icon="HomeWorkIcon"
-      />
-      <Card
-        title="Get Started"
-        description="We offer a full range of construction services."
-        buttonText="SCHEDULE NOW"
-        contact="(512) 837-9500"
-        clipPath="polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 10%)"
-        icon="HomeRepairServiceIcon"
-      />
-    </Container>
-  );
-};
+const GetStarted = () => (
+  <Container sx={styles.container}>
+    <Card
+      title="Explore Services"
+      description="Check out all our other services we offer."
+      buttonText="MY ACCOUNT"
+      contact=""
+      clipPath={{
+        xs: "none",
+        sm: "polygon(10% 0%, 90% 0%, 100% 10%, 100% 100%, 0% 100%, 0% 0%)",
+      }}
+      icon="HomeWorkIcon"
+    />
+    <Card
+      title="Get Started"
+      description="We offer a full range of construction services."
+      buttonText="SCHEDULE NOW"
+      contact="(512) 837-9500"
+      clipPath={{
+        xs: "none",
+        sm: "polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 10%)",
+      }}
+      icon="HomeRepairServiceIcon"
+    />
+  </Container>
+);
 
 const styles = {
   container: {
     display: "flex",
     justifyContent: "space-around",
     padding: "20px",
-    flexWrap: "wrap", // Enable wrapping on smaller screens
+    flexWrap: "wrap",
   },
   card: {
     backgroundColor: "#a71d22",
     color: "white",
     padding: "20px",
-    width: "45%", // Default width for larger screens
+    width: "45%",
     textAlign: "center",
-    margin: "10px", // Add some margin for spacing
+    margin: "10px",
     boxSizing: "border-box",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-evenly",
+    flexGrow: 1,
     "@media (max-width: 600px)": {
-      width: "100%", // Full width on smaller screens
+      width: "100%",
     },
   },
   iconBox: {
     marginBottom: "10px",
     "& svg": {
-      fontSize: "50px", // Adjust the size as needed
+      fontSize: "50px",
     },
   },
   title: {
     marginBottom: "10px",
+    fontWeight: "500",
   },
   description: {
     marginBottom: "20px",
+    textAlign: "center",
   },
   buttonBox: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    flexWrap: "wrap", // Allow wrapping for small screens
+    flexWrap: "wrap",
     gap: 1,
   },
   button: {
-    backgroundColor: "transparent", // Transparent background
-    color: "white", // White text color
-    border: "2px solid white", // White border
-    padding: "10px 20px", // Padding for the button
+    backgroundColor: "transparent",
+    color: "white",
+    border: "2px solid white",
+    padding: "10px 20px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    textTransform: "uppercase", // Uppercase text
-    fontWeight: "bold", // Bold text
+    textTransform: "uppercase",
+    fontWeight: "bold",
     "&::before": {
       content: '""',
       position: "absolute",
@@ -115,19 +124,19 @@ const styles = {
       left: 0,
     },
     "&:hover": {
-      backgroundColor: "white", // White background on hover
-      color: "#a71d22", // Change text color to the card background color on hover
+      backgroundColor: "white",
+      color: "#a71d22",
       "& svg": {
-        color: "#a71d22", // Change icon color to the card background color on hover
+        color: "#a71d22",
       },
     },
   },
   icon: {
     marginLeft: "10px",
-    color: "inherit", // Inherit color from the parent
+    color: "inherit",
   },
   contact: {
-    marginLeft: "20px",
+    p: 1,
   },
 };
 

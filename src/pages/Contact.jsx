@@ -1,6 +1,6 @@
 import React from "react";
-import { SectionImg } from "../components/Extra";
-import { TextField, Button, Box, Typography, Grid } from "@mui/material";
+import { Box, TextField, Button, Grid } from "@mui/material";
+import yellow from "../../assets/images/newest/yellow.jpg";
 
 const FormField = ({ field }) => (
   <Grid item xs={12} sm={field.sm} md={field.md}>
@@ -34,7 +34,9 @@ const formFields = [
 
 const Contact = () => (
   <>
-    <SectionImg title="Contact" />
+    <Box sx={styles.imageContainer}>
+      <img src={yellow} alt="Contact" style={styles.image} />
+    </Box>
     <Box sx={styles.outerBox}>
       <Box sx={styles.innerBox}>
         <form action="https://formspree.io/f/mjvndzaw" method="POST">
@@ -59,6 +61,18 @@ const Contact = () => (
 );
 
 const styles = {
+  imageContainer: {
+    width: "100%",
+    height: "300px",
+    overflow: "hidden",
+    mb: 3, // Add some margin to the bottom if needed
+  },
+  image: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    objectPosition: "center 20%",
+  },
   outerBox: {
     display: "flex",
     justifyContent: "center",

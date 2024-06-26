@@ -4,12 +4,15 @@ import { fetchData } from "../../client";
 import { SectionImg, Loading } from "../Extra";
 import { useTheme } from "@emotion/react";
 
-const Intro = () => {
+const Introduction = () => {
   const [intro, setIntro] = useState([]);
   const theme = useTheme();
 
   useEffect(() => {
-    fetchData(`*[_type == "intro"]{title, description, paragraphs}`, setIntro);
+    fetchData(
+      `*[_type == "introduction"]{title, description, paragraphs}`,
+      setIntro
+    );
   }, []);
 
   if (!intro.length) return <Loading />;
@@ -75,4 +78,4 @@ const styles = {
   },
 };
 
-export default Intro;
+export default Introduction;

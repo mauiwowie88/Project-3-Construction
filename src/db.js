@@ -11,6 +11,8 @@ import ten from "../assets/images/outside/i.jpg";
 import eleven from "../assets/images/outside/j.jpg";
 import twelve from "../assets/images/outside/k.png";
 
+import yellow from "../assets/images/newest/yellow.jpg";
+
 import EngineeringIcon from "@mui/icons-material/Engineering";
 import PlumbingIcon from "@mui/icons-material/Plumbing";
 import HardwareIcon from "@mui/icons-material/Hardware";
@@ -75,6 +77,72 @@ import plumber from "../assets/images/new/plumber.jpg";
 import welder from "../assets/images/new/welder.webp";
 
 // const images.sort(bysection)
+
+const services = [
+  {
+    title: "GENERAL CONTRACTING",
+    items: [
+      "Budgeting and cost analysis",
+      "Architect and engineering engagement",
+      "Subcontractor management",
+      "Submittals/Requests for information (RFIs)",
+      "Quality control",
+      "Health Insurance Portability and Accountability Act (HIPAA) noise mitigation",
+      "Monitor and coordinate onsite work performance",
+      "Land use compatibility analysis",
+      "Permitting",
+      "Feasibility Studies",
+      "Ongoing coordination with architects and engineers",
+      "Monthly Owner/Architect/Contractor collaboration",
+      "Weekly progress reports (with photos)",
+      "Closeout and warranty documentation",
+      "Punchlist and completion list",
+      "Certificate of Occupancy",
+    ],
+  },
+  {
+    title: "PRECONSTRUCTION",
+    items: [
+      "Preliminary budgeting and cost estimating",
+      "Scheduling",
+      "Value engineering",
+      "Permitting",
+      "Procurement management",
+      "Bid packaging",
+      "Project material and equipment requisition",
+      "Subcontractor sourcing and allocation",
+      "Safety evaluation",
+    ],
+  },
+  {
+    title: "SPECIALTY DESIGN/BUILD AREAS",
+    items: [
+      "Hospitals; E.g. Emergency rooms, Trauma centers, Operating rooms, N.I.C.U.’s",
+      "Medical Office Buildings; E.g. Dental Offices, General Practitioners",
+      "Specialty Clinics; E.g. Oncology Centers, Cosmetic Surgery Centers",
+      "Testing and Imaging Centers; E.g. Magnetic Resonance imaging, Computerized Tomography scans, X-Ray rooms",
+      "Veterinary clinics, animal resource centers",
+      "Commercial Office Buildings; E.g. mixed use, ground up, tenant improvement",
+    ],
+  },
+  {
+    title: "CONSTRUCTION MANAGEMENT",
+    items: [
+      "Design and construction phase management",
+      "Regular assessments and status reporting",
+      "Budgeting and cost controls",
+      "Cash flow modeling, analysis and forecasting",
+      "Bid evaluation and reconciliation",
+      "Change management",
+      "Schedule controls",
+      "Project recovery solutions",
+      "Quality controls",
+      "Issue resolution",
+      "Punch list coordination",
+      "FF&E procurement and move coordination services",
+    ],
+  },
+];
 
 const work = [
   {
@@ -238,7 +306,7 @@ const sectionImgs = [
   },
   {
     title: "Contact",
-    image: kkk,
+    image: yellow,
     size: { xs: 140, sm: 210, md: 320, lg: 320 },
     opacity: "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5))",
   },
@@ -501,4 +569,5 @@ export {
   work,
   intro,
   sectionImgs,
+  services,
 };

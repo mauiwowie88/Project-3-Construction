@@ -12,7 +12,7 @@ const CardFront = ({ data }) => (
       backgroundPosition: "center",
     }}
   >
-    <Typography variant="h4" color="white">
+    <Typography variant="h4" sx={styles.cardFrontText}>
       {data.label}
     </Typography>
   </Box>
@@ -20,10 +20,14 @@ const CardFront = ({ data }) => (
 
 const CardBack = ({ data }) => (
   <Box className="cardBack" sx={{ ...styles.card, ...styles.cardBack }}>
-    <Typography>{data.label}</Typography>
-    <List>
+    <Typography variant="h5" sx={styles.cardBackTitle}>
+      {data.label}
+    </Typography>
+    <List sx={styles.cardBackList}>
       {data.tasks.map((task, idx) => (
-        <ListItem key={idx}>{task}</ListItem>
+        <ListItem key={idx} sx={styles.cardBackListItem}>
+          {task}
+        </ListItem>
       ))}
     </List>
   </Box>
@@ -40,8 +44,9 @@ const CustomCard = ({ data }) => {
 
 const styles = {
   cardContainer: {
+    perspective: "1000px",
     position: "relative",
-    height: "300px",
+    height: "250px",
     "&:hover .cardFront": {
       transform: "rotateY(180deg)",
     },
@@ -63,10 +68,29 @@ const styles = {
   cardFront: {
     transform: "rotateY(0deg)",
   },
+  cardFrontText: {
+    color: "white",
+    fontWeight: "bold",
+  },
   cardBack: {
     transform: "rotateY(180deg)",
     display: "flex",
-    flexWrap: "wrap",
+    flexDirection: "column",
+    justifyContent: "center",
+    backgroundColor: "#f0f0f0",
+    padding: "20px",
+    boxSizing: "border-box",
+  },
+  cardBackTitle: {
+    marginBottom: "10px",
+    fontWeight: "bold",
+  },
+  cardBackList: {
+    padding: 0,
+    margin: 0,
+  },
+  cardBackListItem: {
+    textAlign: "left",
   },
 };
 

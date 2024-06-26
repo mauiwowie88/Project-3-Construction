@@ -13,7 +13,7 @@ import {
   Plumbing,
   Construction,
   Roofing,
-  Foundation,
+  SquareFoot,
   Carpenter,
   HelpOutline,
 } from "@mui/icons-material";
@@ -25,7 +25,7 @@ const iconMap = {
   Plumbing: Plumbing,
   Construction: Construction,
   Roofing: Roofing,
-  Foundation: Foundation,
+  SquareFoot: SquareFoot,
   Carpenter: Carpenter,
 };
 
@@ -80,7 +80,7 @@ const FeatureSection = () => {
 
   useEffect(() => {
     fetchData(
-      `*[_type == "features"]{title, description, details, icon}`,
+      `*[_type == "qualityServices"]{title, description, details, icon}`,
       setFeatures
     );
   }, []);
@@ -124,7 +124,7 @@ const styles = {
     width: "100%",
     boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
   },
-  icon: { fontSize: 40, color: "#B71C1C" },
+  icon: { fontSize: 50, color: "#B71C1C" },
   cardContent: { flexGrow: 1, display: "flex", flexDirection: "column" },
   details: {
     "& li": {

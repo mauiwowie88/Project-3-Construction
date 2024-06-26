@@ -54,8 +54,6 @@ const styles = {
     p: "0 1rem",
     alignItems: "center",
     backgroundColor: "#fff",
-    mr: 2,
-    pl: 4.2,
     boxShadow: "none",
   },
   toolbar: {

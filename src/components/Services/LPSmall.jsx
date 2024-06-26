@@ -29,7 +29,7 @@ function LPSmall() {
 const Step = ({ process, index }) => {
   return (
     <>
-      <Grid item sx={styles.textContainer}>
+      <Grid item sx={styles.mainContainer}>
         <Box sx={styles.numberBox}>
           <Typography variant="h5" sx={styles.number}>
             {index + 1}
@@ -69,6 +69,7 @@ const styles = {
   },
   imageContainer: {
     position: "relative",
+    mt: 1,
   },
 
   image: {
@@ -78,13 +79,14 @@ const styles = {
     display: "block",
     borderRadius: "8px",
   },
-  textContainer: {
+  mainContainer: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     mt: 6,
   },
+
   numberBox: {
     display: "inline-flex",
     alignItems: "center",
@@ -102,9 +104,10 @@ const styles = {
     m: "16px 0",
     fontWeight: "bold",
     display: "inline-block",
+    mt: 3,
   },
   text: {
-    marginBottom: "16px",
+    marginBottom: 2,
   },
 };
 

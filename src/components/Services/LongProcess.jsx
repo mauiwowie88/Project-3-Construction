@@ -29,7 +29,7 @@ function LongProcess() {
     <Container sx={styles.container}>
       <Box sx={styles.box}>
         <Typography variant="h2" sx={styles.missionTitle}>
-          {"Our Process"}
+          Our Process
         </Typography>
         <Box sx={styles.underline}></Box>
       </Box>
@@ -37,7 +37,7 @@ function LongProcess() {
       {isSmallScreen ? (
         <LPSmall processes={processes} />
       ) : (
-        <Grid container gap={10} sx={styles.processContainer}>
+        <Grid container gap={10} sx={styles.second}>
           {processes.map((process, index) => (
             <Step process={process} index={index} key={index} />
           ))}
@@ -107,6 +107,9 @@ const Step = ({ process, index }) => {
 };
 
 const styles = {
+  second: {
+    mb: 6,
+  },
   box: {
     display: "flex",
     flexDirection: "column",
@@ -115,22 +118,21 @@ const styles = {
   },
   container: {
     padding: 2,
+    pt: 0,
   },
   missionTitle: {
     color: "#006498",
-    pt: 18,
+    pt: 10,
     zIndex: 7,
     textAlign: "center",
   },
   underline: {
     width: "60px",
-    height: "22px",
+    height: "2.5px",
     backgroundColor: "#40bc99",
     // margin: "8px auto",
   },
-  processContainer: {
-    mt: 4,
-  },
+
   imageContainer: {
     position: "relative",
   },
@@ -150,7 +152,8 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    padding: "16px",
+    padding: 2,
+    mt: 2,
   },
   numberBox: {
     display: "inline-flex",

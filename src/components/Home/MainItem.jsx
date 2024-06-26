@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { BlackButton, Loading } from "../Extra";
 import { fetchData, urlFor } from "../../client";
 import { useTheme } from "@mui/material/styles";
+import { Header } from "../../components/Extra";
 
 const MainItem = () => {
   const [sections, setSections] = useState([]);
@@ -21,13 +22,8 @@ const MainItem = () => {
   return (
     <Box sx={styles.mainContainer}>
       <Container>
-        <Typography
-          variant="h3"
-          color={theme.palette.blue.dark}
-          sx={styles.sectionTitle}
-        >
-          Our Services
-        </Typography>
+        <Header title={["Our", "Services"]} />
+
         <Typography variant="body2" sx={styles.sectionDesc}>
           Inspiration and insights for where life happens.
         </Typography>

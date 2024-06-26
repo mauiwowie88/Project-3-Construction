@@ -10,7 +10,7 @@ const Testimonials = () => {
   const [quotes, setQuotes] = useState([]);
 
   useEffect(() => {
-    fetchData(`*[_type == "quotes"]{name, quote, date}`, setQuotes);
+    fetchData(`*[_type == "testimonials"]{name, quote, date}`, setQuotes);
   }, []);
 
   const handlePrev = () => {
