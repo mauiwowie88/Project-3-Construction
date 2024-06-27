@@ -7,7 +7,7 @@ const Header = () => {
     <Box sx={styles.backgroundImage}>
       <Box sx={styles.contentBox}>
         <Typography variant="h5" component="div" sx={styles.title}>
-          Commercial Construction & Contractor Services in West Los Angeles, CA
+          Commercial Construction & Contractor Services in San Marcos, TX
         </Typography>
         <Typography variant="subtitle1" sx={styles.subtitle}>
           Construction, Renovation, & Project Management
