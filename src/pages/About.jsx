@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 import AboutUs from "../components/About/AboutUs";
 import CallUs from "../components/About/CallUs";
@@ -10,22 +10,26 @@ import { SectionImg } from "../components/Extra";
 import ParallaxSection from "../components/About/ParallaxSection";
 import OurVision from "../components/About/OurVision";
 
-const About = () => (
-  <>
-    <SectionImg title="About">
-      <Typography variant="h5" sx={styles.sectionText}>
-        People, Passion, Process
-      </Typography>
-    </SectionImg>
-    <AboutUs />
-    <Deliver />
-    <OurVision />
-    <ParallaxSection />
+const About = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
-    <ShortProcess />
-    <CallUs />
-  </>
-);
+  return (
+    <>
+      <SectionImg title="About">
+        <Typography variant="h5" sx={styles.sectionText}>
+          People, Passion, Process
+        </Typography>
+      </SectionImg>
+      <AboutUs />
+      <Deliver />
+      <OurVision />
+      {!isSmallScreen && <ParallaxSection />}
+      <ShortProcess />
+      <CallUs />
+    </>
+  );
+};
 
 const styles = {
   sectionText: {
