@@ -44,9 +44,8 @@ const styles = {
     display: "flex",
     flexDirection: { xs: "column", md: "row" }, // Column on small screens, row on larger screens
     alignItems: { xs: "stretch", md: "center" },
-    height: { xs: "auto", md: "50vh" },
+    height: { xs: "25vh", md: "50vh" },
     position: "relative",
-    mb: 10,
   },
   imageContainer: {
     width: "50%",
@@ -66,13 +65,13 @@ const styles = {
     loading: "lazy",
   },
   textContainer: {
-    mt: 8,
+    p: 4,
   },
   title: {
-    color: "#b71c1c",
+    color: "#006498",
+    textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
     marginBottom: "10px",
     fontWeight: "bold",
-    textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
   },
   description: {
     color: "#333",

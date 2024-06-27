@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   Typography,
@@ -10,15 +10,14 @@ import {
   List,
   ListItem,
   ListItemText,
-  Divider,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { services } from "../../db"; // Assuming this is where your data is coming from
-import OurServicesHeader from "./OurServicesHeader";
+import { Header } from "../Extra";
 
 const ServicesContent = () => (
   <Container sx={styles.container} maxWidth="md">
-    <OurServicesHeader title={["Our", "Services"]} />
+    <Header title={["Our", "Services"]} />
     {services.map((section, index) => (
       <Box key={index} sx={styles.section}>
         <Accordion>
@@ -28,14 +27,21 @@ const ServicesContent = () => (
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Grid container>
+            <Grid container spacing={2}>
               {section.items.map((item, idx) => (
-                <Grid item xs={12} sm={6} key={idx}>
-                  <List>
-                    <ListItem>
-                      <ListItemText primary={item} />
-                    </ListItem>
-                  </List>
+                <Grid item xs={12} key={idx}>
+                  <Box sx={styles.subSection}>
+                    <Typography variant="h6" sx={styles.subSectionTitle}>
+                      {item.title}
+                    </Typography>
+                    <List>
+                      {item.tasks.map((task, taskIdx) => (
+                        <ListItem key={taskIdx}>
+                          <ListItemText primary={task} />
+                        </ListItem>
+                      ))}
+                    </List>
+                  </Box>
                 </Grid>
               ))}
             </Grid>
@@ -56,6 +62,14 @@ const styles = {
   sectionTitle: {
     fontWeight: "bold",
     color: "#3f51b5",
+    p: 1,
+  },
+  subSection: {
+    p: 2,
+  },
+  subSectionTitle: {
+    fontWeight: "bold",
+    // mb: 1,
   },
 };
 

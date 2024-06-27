@@ -31,21 +31,27 @@ const FeaturedProject = () => {
       <Grid container spacing={4} alignItems="center">
         <Grid item xs={12} md={6}>
           <Typography variant="h6" component="h3" sx={styles.featuredText}>
-            Featured Kitchen Renovation
+            Featured Project
           </Typography>
           <Typography variant="h4" component="h2" sx={styles.projectTitle}>
-            Demona Drive Bee Cave
+            Comprehensive Solutions
           </Typography>
           <Typography variant="subtitle1">
-            New Architectural Style of House in Austin: "Modern Victorian"
+            New Architectural Styles in San Marcos
           </Typography>
           <Typography variant="body1" sx={styles.bodyText}>
-            Revent Builds took this early 2000's kitchen and gave it a
-            much-needed major cosmetic overhaul. The walls dividing the space
-            made it feel tiny, so Revent removed the wall and made the kitchen
-            feel grand and filled with natural light. We added floor-to-ceiling
-            hickory cabinets around the perimeter of the kitchen to give it a
-            modern yet timeless feel.
+            Project 3 Construction specializes in transforming commercial and
+            residential spaces with our comprehensive construction and
+            renovation services. Our latest project showcases our ability to
+            blend modern design with functional efficiency.
+            <br />
+            <br />
+            From initial planning and architectural design to project management
+            and execution, we ensure every detail meets our high standards.
+            Whether it's new constructions or extensive renovations, we focus on
+            delivering results that exceed expectations. Trust Revent Builds to
+            bring your vision to life with quality craftsmanship and expert
+            service.
           </Typography>
           <Button variant="contained" sx={styles.projectButton}>
             VIEW PROJECT

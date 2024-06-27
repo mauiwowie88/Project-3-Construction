@@ -6,21 +6,33 @@ import CallUs from "../components/About/CallUs";
 import ShortProcess from "../components/About/ShortProcess";
 import Deliver from "../components/About/Deliver";
 import Nice from "../components/About/Nice";
-import Header from "../components/Home/Header";
 
+import { SectionImg } from "../components/Extra";
 import FP from "../components/About/FP";
 
 const About = () => (
   <>
-    <Header />
-
+    <SectionImg title="About">
+      <Typography variant="h5" sx={styles.sectionText}>
+        People, Passion, Process
+      </Typography>
+    </SectionImg>
     <AboutUs />
     <Deliver />
-    <FP />
+    {/* <FP /> */}
 
     <ShortProcess />
     <CallUs />
   </>
 );
+
+const styles = {
+  sectionText: {
+    position: "absolute",
+    left: 30,
+    bottom: 30,
+    fontWeight: "bold",
+  },
+};
 
 export default About;

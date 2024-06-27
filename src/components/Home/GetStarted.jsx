@@ -3,16 +3,25 @@ import { Box, Button, Typography, Container } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import HomeRepairServiceIcon from "@mui/icons-material/HomeRepairService";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
+import { Link } from "react-router-dom";
 
 const iconMap = {
   HomeRepairServiceIcon: HomeRepairServiceIcon,
   HomeWorkIcon: HomeWorkIcon,
 };
 
-const Card = ({ title, description, buttonText, contact, clipPath, icon }) => {
+const Card = ({
+  title,
+  description,
+  buttonText,
+  contact,
+  clipPath,
+  icon,
+  to,
+}) => {
   const IconComponent = iconMap[icon];
   return (
-    <Box sx={{ ...styles.card, clipPath }}>
+    <Box component={Link} to={to} sx={{ ...styles.card, clipPath }}>
       <Box sx={styles.iconBox}>{IconComponent && <IconComponent />}</Box>
       <Typography variant="h5" sx={styles.title}>
         {title}
@@ -28,32 +37,37 @@ const Card = ({ title, description, buttonText, contact, clipPath, icon }) => {
   );
 };
 
-const GetStarted = () => (
-  <Container sx={styles.container}>
-    <Card
-      title="Explore Services"
-      description="Check out all our other services we offer."
-      buttonText="MY ACCOUNT"
-      contact=""
-      clipPath={{
-        xs: "none",
-        sm: "polygon(10% 0%, 90% 0%, 100% 10%, 100% 100%, 0% 100%, 0% 0%)",
-      }}
-      icon="HomeWorkIcon"
-    />
-    <Card
-      title="Get Started"
-      description="We offer a full range of construction services."
-      buttonText="SCHEDULE NOW"
-      contact="(512) 837-9500"
-      clipPath={{
-        xs: "none",
-        sm: "polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 10%)",
-      }}
-      icon="HomeRepairServiceIcon"
-    />
-  </Container>
-);
+const GetStarted = () => {
+  return (
+    <Container sx={styles.container}>
+      <Card
+        title="Explore Services"
+        description="Check out all our other services we offer."
+        buttonText="SERVICES"
+        contact=""
+        clipPath={{
+          xs: "none",
+          sm: "polygon(10% 0%, 90% 0%, 100% 10%, 100% 100%, 0% 100%, 0% 0%)",
+        }}
+        icon="HomeWorkIcon"
+        to="/services"
+      />
+
+      <Card
+        title="Get Started"
+        description="We offer a full range of construction services."
+        buttonText="SCHEDULE NOW"
+        contact="(512) 961 - 6042"
+        clipPath={{
+          xs: "none",
+          sm: "polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 10%)",
+        }}
+        icon="HomeRepairServiceIcon"
+        to="/contact"
+      />
+    </Container>
+  );
+};
 
 const styles = {
   container: {
@@ -74,6 +88,10 @@ const styles = {
     flexDirection: "column",
     justifyContent: "space-evenly",
     flexGrow: 1,
+    textDecoration: "none", // Prevents the default link styling
+    "&:hover": {
+      backgroundColor: "#8f1b1e", // Example hover effect for the entire card
+    },
     "@media (max-width: 600px)": {
       width: "100%",
     },

@@ -7,7 +7,7 @@ function ServicesGrid() {
     <Box>
       <Grid container sx={styles.container}>
         {work.map((el, idx) => (
-          <Grid item key={idx} xs={6} md={4} lg={3} xl={1.5}>
+          <Grid item key={idx} xs={12} sm={6} md={4} lg={3} xl={1.5}>
             <CustomCard data={el} />
           </Grid>
         ))}

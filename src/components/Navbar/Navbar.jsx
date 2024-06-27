@@ -4,7 +4,6 @@ import { AppBar, Toolbar, Button, Box, Typography } from "@mui/material";
 import logo from "../../../assets/images/other/new-logo.png";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import NavigationDrawer from "./Drawer";
-import { useTheme } from "@emotion/react";
 
 const pages = ["About", "Services", "Contact"];
 

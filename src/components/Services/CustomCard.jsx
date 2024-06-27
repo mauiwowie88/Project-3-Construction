@@ -20,7 +20,7 @@ const CardFront = ({ data }) => (
 
 const CardBack = ({ data }) => (
   <Box className="cardBack" sx={{ ...styles.card, ...styles.cardBack }}>
-    <Typography variant="h5" sx={styles.cardBackTitle}>
+    <Typography variant="h6" sx={styles.cardBackTitle}>
       {data.label}
     </Typography>
     <List sx={styles.cardBackList}>
@@ -78,7 +78,7 @@ const styles = {
     flexDirection: "column",
     justifyContent: "center",
     backgroundColor: "#f0f0f0",
-    padding: "20px",
+
     boxSizing: "border-box",
   },
   cardBackTitle: {

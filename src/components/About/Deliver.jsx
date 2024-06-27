@@ -24,7 +24,7 @@ function Deliver() {
               </Typography>
               <Box sx={styles.underline}></Box>
               {sections[1].description.map((desc, i) => (
-                <Typography key={i} variant="h6" sx={styles.missionText}>
+                <Typography key={i} variant="body1" sx={styles.missionText}>
                   {desc}
                 </Typography>
               ))}
@@ -63,6 +63,9 @@ function Deliver() {
 }
 
 const styles = {
+  missionText: {
+    py: 1,
+  },
   box: {
     display: "flex",
     flexDirection: "column",
@@ -82,12 +85,13 @@ const styles = {
     backgroundColor: "#ffffff", // white background for left container
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
     height: "100%",
     position: "relative",
   },
   underline: {
     width: "60px",
+    my: 2,
     height: "2px",
     backgroundColor: "#40bc99",
   },
@@ -96,7 +100,7 @@ const styles = {
     backgroundColor: "#2d3748",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
     // height: "100%",
     position: "relative",
     "&::before": {
@@ -131,9 +135,9 @@ const styles = {
   },
   missionTitle: {
     color: "#006498",
+    textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
   },
   title: {
-    margin: "16px 0",
     color: "white",
   },
   description: {

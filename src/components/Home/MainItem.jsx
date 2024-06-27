@@ -24,7 +24,7 @@ const MainItem = () => {
       <Container>
         <Header title={["Our", "Services"]} />
 
-        <Typography variant="body2" sx={styles.sectionDesc}>
+        <Typography variant="body1" sx={styles.sectionDesc}>
           Inspiration and insights for where life happens.
         </Typography>
         <Grid container sx={styles.gridContainer}>

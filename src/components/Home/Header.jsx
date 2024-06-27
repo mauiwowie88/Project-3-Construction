@@ -1,22 +1,22 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
-import one from "../../../assets/images/newest/hall.avif";
+import dark from "../../../assets/images/newest/drawing.jpg";
 
 const Header = () => {
   return (
     <Box sx={styles.backgroundImage}>
       <Box sx={styles.contentBox}>
         <Typography variant="h5" component="div" sx={styles.title}>
-          Home Repair & Handyman Services in West Los Angeles, CA
+          Commercial Construction & Contractor Services in West Los Angeles, CA
         </Typography>
         <Typography variant="subtitle1" sx={styles.subtitle}>
-          Home Improvement, Maintenance, & Repair
+          Construction, Renovation, & Project Management
         </Typography>
         <Typography variant="body2" color="textSecondary" sx={styles.body}>
-          Trust Your Home to Mr. Handyman
+          Trust Your Project to Our Expert Team
         </Typography>
         <Button variant="contained" color="primary" sx={styles.button}>
-          Request Service
+          Request a Quote
         </Button>
       </Box>
     </Box>
@@ -25,7 +25,7 @@ const Header = () => {
 
 const styles = {
   backgroundImage: {
-    backgroundImage: `url(${one})`, // replace with your image path
+    backgroundImage: `url(${dark})`, // replace with your image path
     backgroundSize: "cover",
     backgroundPosition: "center",
     height: "250px",

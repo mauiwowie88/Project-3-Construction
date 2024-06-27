@@ -45,6 +45,9 @@ const theme = createTheme({
       "@media (min-width:1600px)": {
         fontSize: "4rem",
       },
+      "@media (min-width:1900px)": {
+        fontSize: "4.5rem",
+      },
     },
     h2: {
       fontSize: "1.75rem",
@@ -57,6 +60,12 @@ const theme = createTheme({
       "@media (min-width:1200px)": {
         fontSize: "2.5rem",
       },
+      "@media (min-width:1600px)": {
+        fontSize: "2.75rem",
+      },
+      "@media (min-width:1900px)": {
+        fontSize: "3rem",
+      },
     },
     h3: {
       fontSize: "1.5rem",
@@ -66,6 +75,15 @@ const theme = createTheme({
       "@media (min-width:900px)": {
         fontSize: "2rem",
       },
+      "@media (min-width:1200px)": {
+        fontSize: "2.25rem",
+      },
+      "@media (min-width:1600px)": {
+        fontSize: "2.5rem",
+      },
+      "@media (min-width:1900px)": {
+        fontSize: "2.75rem",
+      },
     },
     h4: {
       fontSize: "1.25rem",
@@ -74,6 +92,15 @@ const theme = createTheme({
       },
       "@media (min-width:900px)": {
         fontSize: "1.75rem",
+      },
+      "@media (min-width:1200px)": {
+        fontSize: "2rem",
+      },
+      "@media (min-width:1600px)": {
+        fontSize: "2.25rem",
+      },
+      "@media (min-width:1900px)": {
+        fontSize: "2.5rem",
       },
     },
     h5: {
@@ -90,6 +117,9 @@ const theme = createTheme({
       "@media (min-width:1600px)": {
         fontSize: "2rem",
       },
+      "@media (min-width:1900px)": {
+        fontSize: "2.25rem",
+      },
     },
     h6: {
       fontSize: "0.875rem",
@@ -99,7 +129,17 @@ const theme = createTheme({
       "@media (min-width:900px)": {
         fontSize: "1.125rem",
       },
+      "@media (min-width:1200px)": {
+        fontSize: "1.25rem",
+      },
+      "@media (min-width:1600px)": {
+        fontSize: "1.375rem",
+      },
+      "@media (min-width:1900px)": {
+        fontSize: "1.5rem",
+      },
     },
+
     body1: {
       fontSize: "0.8rem",
       "@media (min-width:600px)": {

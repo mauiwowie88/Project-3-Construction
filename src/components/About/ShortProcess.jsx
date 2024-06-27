@@ -1,15 +1,31 @@
 import React, { useState, useEffect } from "react";
-import { Box, Typography, Grid } from "@mui/material";
+import { Box, Typography, Grid, Container } from "@mui/material";
 import { fetchData } from "../../client";
 import { Loading } from "../Extra";
-import HandshakeIcon from "@mui/icons-material/Handshake";
+
+import {
+  MiscellaneousServices,
+  ReceiptLong,
+  Paid,
+  Handshake,
+  Hardware,
+  HelpOutline,
+} from "@mui/icons-material";
+
+const iconMap = {
+  MiscellaneousServices: MiscellaneousServices,
+  ReceiptLong: ReceiptLong,
+  Paid: Paid,
+  Handshake: Handshake,
+  Hardware: Hardware,
+};
 
 const ShortProcess = () => {
   const [steps, setSteps] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchData(`*[_type == "shortProcess"]{title, description}`, setSteps)
+    fetchData(`*[_type == "shortProcess"]{title, description, icon}`, setSteps)
       .then(() => setLoading(false))
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -20,34 +36,38 @@ const ShortProcess = () => {
   if (loading) return <Loading />;
 
   return (
-    <Box sx={styles.container}>
-      <Typography variant="h4" sx={styles.title}>
+    <Container sx={styles.container}>
+      <Typography variant="h3" sx={styles.title}>
         Our Process
       </Typography>
-      <Box sx={styles.underline}></Box>
-      <Grid container spacing={2} sx={styles.box}>
+      <Box sx={styles.parentContainer}>
+        <Box sx={styles.underline} />
+      </Box>
+      <Grid container sx={styles.box} spacing={3}>
         {steps.map((step, index) => (
           <Grid item xs={12} sm={6} md={4} lg={2.4} key={index}>
             <ProcessStep
               title={step.title}
               description={step.description}
+              icon={step.icon}
               index={index}
             />
           </Grid>
         ))}
       </Grid>
-    </Box>
+    </Container>
   );
 };
 
-const ProcessStep = ({ title, description, index }) => {
+const ProcessStep = ({ title, description, icon, index }) => {
+  const IconComponent = iconMap[icon] || HelpOutline;
+
   return (
     <Box sx={styles.card}>
       <Box sx={styles.overlay}>
-        <Typography variant="h2" sx={styles.number}>
-          {index + 1}
-        </Typography>
-        <HandshakeIcon sx={styles.icon} />
+        <Typography variant="h2">{index + 1}</Typography>
+
+        <IconComponent sx={styles.icon} />
         <Typography variant="h5" sx={styles.stepTitle}>
           {title}
         </Typography>
@@ -67,26 +87,26 @@ const styles = {
   box: {
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
+    my: 5,
   },
   title: {
     textAlign: "center",
     fontWeight: "bold",
     marginBottom: "16px",
   },
+  parentContainer: {
+    display: "flex",
+    justifyContent: "center",
+  },
   underline: {
     width: "60px",
     height: "4px",
     backgroundColor: "#cfb13e",
-    margin: "0 auto 40px",
   },
   card: {
+    height: "100%",
+
     position: "relative",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "space-between",
-    height: "200px",
     overflow: "hidden",
     "&:hover .hoverContent": {
       opacity: 1,
@@ -98,19 +118,11 @@ const styles = {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    width: "100%",
-    height: "100%",
-    zIndex: 1,
-  },
-  number: {
-    flexGrow: 1,
   },
   icon: {
-    flexGrow: 1,
     padding: "10px",
   },
   stepTitle: {
-    flexGrow: 1,
     textAlign: "center",
   },
   hoverContent: {
@@ -118,16 +130,15 @@ const styles = {
     bottom: 0,
     left: 0,
     width: "100%",
-    padding: "10px",
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
+    height: "70%",
     backgroundColor: "black",
     color: "white",
     opacity: 0,
     transition: "opacity 0.3s, transform 0.3s",
     transform: "translateY(100%)",
     zIndex: 2,
+    p: 2,
+    boxSizing: "border-box",
   },
 };
 

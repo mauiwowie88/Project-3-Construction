@@ -102,9 +102,7 @@ const Header = ({ title }) => {
   return (
     <Box sx={styles.container}>
       <Box sx={styles.inner}>
-        <Typography variant="h2" sx={styles.title}>
-          {title[0]}
-        </Typography>
+        <Typography variant="h3">{title[0]}</Typography>
 
         <Box sx={styles.linesContainer}>
           <Box sx={styles.line1} />
@@ -182,15 +180,13 @@ const styles = {
   },
   container: {
     textAlign: "center",
-    my: 5,
+    my: 3,
   },
   inner: {
     justifyContent: "center",
     display: "flex",
   },
-  title: {
-    fontWeight: 400,
-  },
+
   boldTitle: {
     fontWeight: "bold",
   },

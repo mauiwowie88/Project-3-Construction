@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, TextField, Button, Grid } from "@mui/material";
-import yellow from "../../assets/images/newest/yellow.jpg";
+import paper from "../../assets/images/newest/paper.jpg";
 
 const FormField = ({ field }) => (
   <Grid item xs={12} sm={field.sm} md={field.md}>
@@ -35,7 +35,7 @@ const formFields = [
 const Contact = () => (
   <>
     <Box sx={styles.imageContainer}>
-      <img src={yellow} alt="Contact" style={styles.image} />
+      <img src={paper} alt="Contact" style={styles.image} />
     </Box>
     <Box sx={styles.outerBox}>
       <Box sx={styles.innerBox}>
@@ -63,15 +63,15 @@ const Contact = () => (
 const styles = {
   imageContainer: {
     width: "100%",
-    height: "300px",
+    height: "222px",
     overflow: "hidden",
     mb: 3, // Add some margin to the bottom if needed
+    // Move the image up by 20px
   },
   image: {
     width: "100%",
     height: "100%",
     objectFit: "cover",
-    objectPosition: "center 20%",
   },
   outerBox: {
     display: "flex",

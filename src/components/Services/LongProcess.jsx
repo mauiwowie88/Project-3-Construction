@@ -10,42 +10,7 @@ import {
 import { fetchData } from "../../client"; // Adjust the path as necessary
 import { Loading } from "../Extra";
 import LPSmall from "./LPSmall";
-
-function LongProcess() {
-  const [processes, setProcesses] = useState([]);
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
-
-  useEffect(() => {
-    fetchData(
-      `*[_type == "longProcess"]{title, description, "imageUrl": image.asset->url}`,
-      setProcesses
-    );
-  }, []);
-
-  if (!processes.length) return <Loading />; // Adjust Loading as necessary
-
-  return (
-    <Container sx={styles.container}>
-      <Box sx={styles.box}>
-        <Typography variant="h2" sx={styles.missionTitle}>
-          Our Process
-        </Typography>
-        <Box sx={styles.underline}></Box>
-      </Box>
-
-      {isSmallScreen ? (
-        <LPSmall processes={processes} />
-      ) : (
-        <Grid container gap={10} sx={styles.second}>
-          {processes.map((process, index) => (
-            <Step process={process} index={index} key={index} />
-          ))}
-        </Grid>
-      )}
-    </Container>
-  );
-}
+import { Header } from "../Extra";
 
 const ImageBox = ({ process }) => {
   return (
@@ -106,31 +71,45 @@ const Step = ({ process, index }) => {
   );
 };
 
+function LongProcess() {
+  const [processes, setProcesses] = useState([]);
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+
+  useEffect(() => {
+    fetchData(
+      `*[_type == "longProcess"]{title, description, "imageUrl": image.asset->url}`,
+      setProcesses
+    );
+  }, []);
+
+  if (!processes.length) return <Loading />;
+
+  return (
+    <Container sx={styles.container}>
+      {/* <Box sx={styles.header}> */}
+      <Header title={["Our", "Process"]} />
+      {/* </Box> */}
+
+      {isSmallScreen ? (
+        <LPSmall processes={processes} />
+      ) : (
+        <Grid container gap={10} sx={styles.second}>
+          {processes.map((process, index) => (
+            <Step process={process} index={index} key={index} />
+          ))}
+        </Grid>
+      )}
+    </Container>
+  );
+}
+
 const styles = {
   second: {
-    mb: 6,
-  },
-  box: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    mb: 4,
+    mt: 12,
   },
   container: {
     padding: 2,
-    pt: 0,
-  },
-  missionTitle: {
-    color: "#006498",
-    pt: 10,
-    zIndex: 7,
-    textAlign: "center",
-  },
-  underline: {
-    width: "60px",
-    height: "2.5px",
-    backgroundColor: "#40bc99",
-    // margin: "8px auto",
   },
 
   imageContainer: {

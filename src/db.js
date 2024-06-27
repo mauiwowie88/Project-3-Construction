@@ -28,6 +28,8 @@ import exterior from "../assets/images/outside/exterior.jpg";
 import deck from "../assets/images/outside/Deck.jpg";
 import interior from "../assets/images/inside/fancy.jpg";
 
+import hero from "../assets/images/newest/hero.jpg";
+
 /* Our Defining Characteristics Images */
 import book from "../assets/images/other/book.jpg";
 import development from "../assets/images/other/development.jpg";
@@ -82,64 +84,117 @@ const services = [
   {
     title: "GENERAL CONTRACTING",
     items: [
-      "Budgeting and cost analysis",
-      "Architect and engineering engagement",
-      "Subcontractor management",
-      "Submittals/Requests for information (RFIs)",
-      "Quality control",
-      "Health Insurance Portability and Accountability Act (HIPAA) noise mitigation",
-      "Monitor and coordinate onsite work performance",
-      "Land use compatibility analysis",
-      "Permitting",
-      "Feasibility Studies",
-      "Ongoing coordination with architects and engineers",
-      "Monthly Owner/Architect/Contractor collaboration",
-      "Weekly progress reports (with photos)",
-      "Closeout and warranty documentation",
-      "Punchlist and completion list",
-      "Certificate of Occupancy",
+      {
+        title: "Budget & Coordination",
+        tasks: [
+          "Budgeting and cost analysis",
+          "Architect and engineering engagement",
+          "Subcontractor management",
+          "Submittals/Requests for information (RFIs)",
+          "Quality control",
+        ],
+      },
+      {
+        title: "Onsite Performance",
+        tasks: [
+          "Health Insurance Portability and Accountability Act (HIPAA) noise mitigation",
+          "Monitor and coordinate onsite work performance",
+          "Land use compatibility analysis",
+          "Permitting",
+        ],
+      },
+      {
+        title: "Documentation & Reporting",
+        tasks: [
+          "Feasibility Studies",
+          "Ongoing coordination with architects and engineers",
+          "Monthly Owner/Architect/Contractor collaboration",
+          "Weekly progress reports (with photos)",
+          "Closeout and warranty documentation",
+          "Punchlist and completion list",
+          "Certificate of Occupancy",
+        ],
+      },
     ],
   },
   {
     title: "PRECONSTRUCTION",
     items: [
-      "Preliminary budgeting and cost estimating",
-      "Scheduling",
-      "Value engineering",
-      "Permitting",
-      "Procurement management",
-      "Bid packaging",
-      "Project material and equipment requisition",
-      "Subcontractor sourcing and allocation",
-      "Safety evaluation",
+      {
+        title: "Initial Planning",
+        tasks: [
+          "Preliminary budgeting and cost estimating",
+          "Scheduling",
+          "Value engineering",
+        ],
+      },
+      {
+        title: "Management",
+        tasks: [
+          "Permitting",
+          "Procurement management",
+          "Bid packaging",
+          "Project material and equipment requisition",
+          "Subcontractor sourcing and allocation",
+          "Safety evaluation",
+        ],
+      },
     ],
   },
   {
     title: "SPECIALTY DESIGN/BUILD AREAS",
     items: [
-      "Hospitals; E.g. Emergency rooms, Trauma centers, Operating rooms, N.I.C.U.’s",
-      "Medical Office Buildings; E.g. Dental Offices, General Practitioners",
-      "Specialty Clinics; E.g. Oncology Centers, Cosmetic Surgery Centers",
-      "Testing and Imaging Centers; E.g. Magnetic Resonance imaging, Computerized Tomography scans, X-Ray rooms",
-      "Veterinary clinics, animal resource centers",
-      "Commercial Office Buildings; E.g. mixed use, ground up, tenant improvement",
+      {
+        title: "Healthcare Facilities",
+        tasks: [
+          "Hospitals; E.g. Emergency rooms, Trauma centers, Operating rooms, N.I.C.U.’s",
+          "Medical Office Buildings; E.g. Dental Offices, General Practitioners",
+          "Specialty Clinics; E.g. Oncology Centers, Cosmetic Surgery Centers",
+          "Testing and Imaging Centers; E.g. Magnetic Resonance imaging, Computerized Tomography scans, X-Ray rooms",
+        ],
+      },
+      {
+        title: "Animal Facilities",
+        tasks: ["Veterinary clinics, animal resource centers"],
+      },
+      {
+        title: "Commercial Buildings",
+        tasks: [
+          "Commercial Office Buildings; E.g. mixed use, ground up, tenant improvement",
+        ],
+      },
     ],
   },
   {
     title: "CONSTRUCTION MANAGEMENT",
     items: [
-      "Design and construction phase management",
-      "Regular assessments and status reporting",
-      "Budgeting and cost controls",
-      "Cash flow modeling, analysis and forecasting",
-      "Bid evaluation and reconciliation",
-      "Change management",
-      "Schedule controls",
-      "Project recovery solutions",
-      "Quality controls",
-      "Issue resolution",
-      "Punch list coordination",
-      "FF&E procurement and move coordination services",
+      {
+        title: "Project Planning & Control",
+        tasks: [
+          "Design and construction phase management",
+          "Schedule controls",
+          "Quality controls",
+          "Issue resolution",
+          "Change management",
+        ],
+      },
+      {
+        title: "Financial Management",
+        tasks: [
+          "Budgeting and cost controls",
+          "Cash flow modeling, analysis and forecasting",
+          "Bid evaluation and reconciliation",
+        ],
+      },
+      {
+        title: "Reporting and Documentation",
+        tasks: [
+          "Regular assessments and status reporting",
+          "Punch list coordination",
+          "FF&E procurement and move coordination services",
+          "Project recovery solutions",
+        ],
+      },
     ],
   },
 ];
@@ -276,7 +331,7 @@ const sections = [
 const sectionImgs = [
   {
     title: "Intro",
-    image: galleryImg,
+    image: hero,
     size: { xs: 300, sm: 350, md: 400, lg: 600 },
     opacity: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1))",
   },
