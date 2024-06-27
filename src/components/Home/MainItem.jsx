@@ -1,52 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Box, Typography, Card, Grid, Container } from "@mui/material";
+import { Box, Typography, Card, Grid, Container, Hidden } from "@mui/material";
 import { Link } from "react-router-dom";
 import { BlackButton, Loading } from "../Extra";
 import { fetchData, urlFor } from "../../client";
 import { useTheme } from "@mui/material/styles";
 import { Header } from "../../components/Extra";
-
-const MainItem = () => {
-  const [sections, setSections] = useState([]);
-  const theme = useTheme();
-
-  useEffect(() => {
-    fetchData(
-      `*[_type == "mainSection"]{title, description, image, route, button}`,
-      setSections
-    );
-  }, []);
-
-  if (sections.length < 2) return <Loading />;
-
-  return (
-    <Box sx={styles.mainContainer}>
-      <Container>
-        <Header title={["Our", "Services"]} />
-
-        <Typography variant="body1" sx={styles.sectionDesc}>
-          Inspiration and insights for where life happens.
-        </Typography>
-        <Grid container sx={styles.gridContainer}>
-          {sections.map((section, index) => (
-            <Grid
-              item
-              key={index}
-              xs={12}
-              sm={6}
-              md={6}
-              lg={3}
-              xl={3}
-              sx={styles.gridItem}
-            >
-              <SectionCard section={section} />
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </Box>
-  );
-};
+import four from "../../../assets/images/newest/c4.jpg";
 
 const SectionCard = ({ section }) => {
   const theme = useTheme();
@@ -79,28 +38,128 @@ const SectionCard = ({ section }) => {
   );
 };
 
+const MainItem = () => {
+  const [sections, setSections] = useState([]);
+
+  useEffect(() => {
+    fetchData(
+      `*[_type == "mainSection"]{title, description, image, route, button}`,
+      setSections
+    );
+  }, []);
+
+  if (sections.length < 2) return <Loading />;
+
+  return (
+    <>
+      <Hidden smDown>
+        <Box sx={styles.backgroundContainer}>
+          <Container sx={styles.mainContainer}>
+            <Box sx={styles.header}>
+              <Header title={["Our", "Services"]} />
+              <Typography variant="body1" sx={styles.sectionDesc}>
+                Inspiration and insights for where life happens.
+              </Typography>
+            </Box>
+
+            <Grid container sx={styles.gridContainer}>
+              {sections.map((section, index) => (
+                <Grid
+                  item
+                  key={index}
+                  xs={12}
+                  sm={6}
+                  md={6}
+                  lg={3}
+                  xl={3}
+                  sx={styles.gridItem}
+                >
+                  <SectionCard section={section} />
+                </Grid>
+              ))}
+            </Grid>
+          </Container>
+        </Box>
+      </Hidden>
+      <Hidden smUp>
+        <Container sx={styles.mainContainer}>
+          <Box sx={styles.header}>
+            <Header title={["Our", "Services"]} />
+            <Typography variant="body1" sx={styles.sectionDesc}>
+              Inspiration and insights for where life happens.
+            </Typography>
+          </Box>
+
+          <Grid container sx={styles.gridContainer}>
+            {sections.map((section, index) => (
+              <Grid
+                item
+                key={index}
+                xs={12}
+                sm={6}
+                md={6}
+                lg={3}
+                xl={3}
+                sx={styles.gridItem}
+              >
+                <SectionCard section={section} />
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Hidden>
+    </>
+  );
+};
+
 const styles = {
+  backgroundContainer: {
+    position: "relative",
+    width: "100%",
+    backgroundImage: `url(${four})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    "&::before": {
+      content: '""',
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background:
+        "linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1))",
+      zIndex: 1,
+    },
+  },
+  mainContainer: {
+    position: "relative",
+    zIndex: 2,
+    py: 7,
+  },
+  header: {
+    zIndex: 3,
+    position: "relative",
+  },
   sectionDesc: {
     textAlign: "center",
   },
-  mainContainer: {
-    padding: "2rem 0",
-    backgroundColor: "#edf1fe",
+  gridContainer: {
+    justifyContent: "center",
   },
-  sectionTitle: {
-    textAlign: "center",
-    marginBottom: "2rem",
-    fontWeight: "bold",
-    // color: "#800000",
+  gridItem: {
+    display: "flex",
+    padding: 2,
+    position: "relative",
+    zIndex: 2,
   },
-  gridContainer: { justifyContent: "center" },
-  gridItem: { display: "flex", padding: 2 },
   card: {
     boxShadow: 7,
     borderRadius: 2,
     display: "flex",
     flexDirection: "column",
     height: "100%",
+    position: "relative",
+    zIndex: 2,
   },
   imageContainer: { flexShrink: 0 },
   image: { width: "100%" },

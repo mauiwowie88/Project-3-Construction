@@ -53,12 +53,6 @@ const FeaturedProject = () => {
             bring your vision to life with quality craftsmanship and expert
             service.
           </Typography>
-          <Button variant="contained" sx={styles.projectButton}>
-            VIEW PROJECT
-          </Button>
-          <Button variant="contained" sx={styles.quoteButton}>
-            Get a Quote
-          </Button>
         </Grid>
         <Grid item xs={12} md={6}>
           <Box sx={styles.imageContainer}>
@@ -89,7 +83,7 @@ const FeaturedProject = () => {
 
 const styles = {
   container: {
-    padding: "40px 0",
+    p: 6,
   },
   featuredText: {
     color: "#5BBFBA",
@@ -100,24 +94,13 @@ const styles = {
   bodyText: {
     marginTop: "20px",
   },
-  projectButton: {
-    marginTop: 2,
-    backgroundColor: "#5BBFBA",
-    color: "#fff",
-  },
-  quoteButton: {
-    marginTop: 2,
-    backgroundColor: "#8FC1A9",
-    color: "#fff",
-    marginLeft: 2,
-  },
+
   imageContainer: {
     display: "flex",
     flexDirection: "column",
     gap: 2,
   },
   mainImage: {
-    width: "100%",
     width: "100%",
     height: "300px",
     objectFit: "cover",

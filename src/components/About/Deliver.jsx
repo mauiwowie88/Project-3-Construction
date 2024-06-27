@@ -15,7 +15,7 @@ function Deliver() {
 
   return (
     <>
-      <Box sx={styles.container}>
+      <Container sx={styles.container}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
             <Container sx={styles.leftContainer} maxWidth="sm">
@@ -46,9 +46,9 @@ function Deliver() {
               </Box>
               <Box sx={styles.box}>
                 <Typography variant="h3" sx={styles.title}>
-                  {sections[2].title}
+                  {sections[3].title}
                 </Typography>
-                {sections[2].description.map((desc, i) => (
+                {sections[3].description.map((desc, i) => (
                   <Typography key={i} variant="body1" sx={styles.description}>
                     {desc}
                   </Typography>
@@ -57,7 +57,7 @@ function Deliver() {
             </Box>
           </Grid>
         </Grid>
-      </Box>
+      </Container>
     </>
   );
 }

@@ -181,6 +181,7 @@ const styles = {
   container: {
     textAlign: "center",
     my: 3,
+    zIndex: 2,
   },
   inner: {
     justifyContent: "center",

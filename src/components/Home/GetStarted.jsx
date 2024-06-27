@@ -21,7 +21,7 @@ const Card = ({
 }) => {
   const IconComponent = iconMap[icon];
   return (
-    <Box component={Link} to={to} sx={{ ...styles.card, clipPath }}>
+    <Box component={Link} sx={{ ...styles.card, clipPath }}>
       <Box sx={styles.iconBox}>{IconComponent && <IconComponent />}</Box>
       <Typography variant="h5" sx={styles.title}>
         {title}

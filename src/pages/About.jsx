@@ -5,10 +5,10 @@ import AboutUs from "../components/About/AboutUs";
 import CallUs from "../components/About/CallUs";
 import ShortProcess from "../components/About/ShortProcess";
 import Deliver from "../components/About/Deliver";
-import Nice from "../components/About/Nice";
 
 import { SectionImg } from "../components/Extra";
-import FP from "../components/About/FP";
+import ParallaxSection from "../components/About/ParallaxSection";
+import OurVision from "../components/About/OurVision";
 
 const About = () => (
   <>
@@ -19,7 +19,8 @@ const About = () => (
     </SectionImg>
     <AboutUs />
     <Deliver />
-    {/* <FP /> */}
+    <OurVision />
+    <ParallaxSection />
 
     <ShortProcess />
     <CallUs />
