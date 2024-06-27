@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import dark from "../../../assets/images/newest/drawing.jpg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -15,9 +16,11 @@ const Header = () => {
         <Typography variant="body2" color="textSecondary" sx={styles.body}>
           Trust Your Project to Our Expert Team
         </Typography>
-        <Button variant="contained" color="primary" sx={styles.button}>
-          Request a Quote
-        </Button>
+        <Link to="/contact">
+          <Button variant="contained" color="primary" sx={styles.button}>
+            Request a Quote
+          </Button>
+        </Link>
       </Box>
     </Box>
   );
