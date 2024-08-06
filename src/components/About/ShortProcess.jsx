@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Box, Typography, Grid, Container } from "@mui/material";
 import { fetchData } from "../../client";
 import { Loading } from "../Extra";
+import PropTypes from "prop-types";
 
 import {
   MiscellaneousServices,
@@ -25,7 +26,10 @@ const ShortProcess = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchData(`*[_type == "shortProcess"]{title, description, icon}`, setSteps)
+    fetchData(
+      `*[_type == "shortProcess"]{title, description, icon, step}`,
+      setSteps
+    )
       .then(() => setLoading(false))
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -34,6 +38,11 @@ const ShortProcess = () => {
   }, []);
 
   if (loading) return <Loading />;
+
+  // Sort steps by the 'step' key
+  const sortedSteps = [...steps].sort(
+    (a, b) => parseInt(a.step) - parseInt(b.step)
+  );
 
   return (
     <Container sx={styles.container}>
@@ -44,7 +53,7 @@ const ShortProcess = () => {
         <Box sx={styles.underline} />
       </Box>
       <Grid container sx={styles.box} spacing={3}>
-        {steps.map((step, index) => (
+        {sortedSteps.map((step, index) => (
           <Grid item xs={12} sm={6} md={4} lg={2.4} key={index}>
             <ProcessStep
               title={step.title}
@@ -66,7 +75,6 @@ const ProcessStep = ({ title, description, icon, index }) => {
     <Box sx={styles.card}>
       <Box sx={styles.overlay}>
         <Typography variant="h2">{index + 1}</Typography>
-
         <IconComponent sx={styles.icon} />
         <Typography variant="h5" sx={styles.stepTitle}>
           {title}
@@ -77,6 +85,13 @@ const ProcessStep = ({ title, description, icon, index }) => {
       </Box>
     </Box>
   );
+};
+
+ProcessStep.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 const styles = {
@@ -105,7 +120,6 @@ const styles = {
   },
   card: {
     height: "100%",
-
     position: "relative",
     overflow: "hidden",
     "&:hover .hoverContent": {

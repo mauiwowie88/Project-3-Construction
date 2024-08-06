@@ -16,6 +16,11 @@ export default defineType({
       type: 'text',
     }),
     defineField({
+      name: 'step',
+      title: 'Step',
+      type: 'string',
+    }),
+    defineField({
       name: 'icon',
       title: 'Icon',
       type: 'string',
