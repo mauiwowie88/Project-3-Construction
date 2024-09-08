@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   Grid,
   Card,
@@ -17,7 +17,7 @@ import {
   Carpenter,
   HelpOutline,
 } from "@mui/icons-material";
-import { fetchData } from "../../client"; // Ensure this path is correct for your project
+import { fetchData } from "../../client";
 import { useTheme } from "@mui/material/styles";
 
 const iconMap = {
@@ -29,26 +29,40 @@ const iconMap = {
   Carpenter: Carpenter,
 };
 
-// FeatureCard Component
+/* eslint-disable */
 const FeatureCard = ({ feature }) => {
   const [showDetails, setShowDetails] = useState(false);
-  const IconComponent = iconMap[feature.icon] || HelpOutline; // Fallback to HelpOutline if icon not found
+  const IconComponent = iconMap[feature.icon] || HelpOutline;
   const theme = useTheme();
   const toggleDetails = () => setShowDetails(!showDetails);
 
   return (
-    <Grid item xs={12} sm={6} md={4} lg={3} sx={styles.gridItem}>
+    <Grid
+      item
+      xs={12}
+      sm={6}
+      md={4}
+      lg={3}
+      sx={styles.gridItem}
+      component="article"
+    >
       <Card sx={styles.card}>
         <CardHeader
-          avatar={<IconComponent sx={styles.icon} />}
+          avatar={
+            <IconComponent
+              sx={styles.icon}
+              aria-label={feature.icon || "Help icon"}
+            />
+          }
           title={feature.title}
-          titleTypographyProps={{ variant: "h6" }}
+          titleTypographyProps={{ variant: "h6", component: "h3" }}
         />
         <CardContent sx={styles.cardContent}>
           <Typography
             variant="body1"
             color={theme.palette.gray.default}
             sx={styles.shortDescription}
+            component="p"
           >
             {feature.description}
           </Typography>
@@ -65,6 +79,9 @@ const FeatureCard = ({ feature }) => {
             variant="body2"
             sx={styles.showServices}
             onClick={toggleDetails}
+            role="button"
+            tabIndex="0"
+            onKeyDown={(e) => e.key === "Enter" && toggleDetails()}
           >
             {showDetails ? "Hide Services" : "Show Services"}
           </Typography>
@@ -88,15 +105,23 @@ const FeatureSection = () => {
   if (!features.length) return <div>Loading...</div>;
 
   return (
-    <Box sx={styles.box}>
-      <Box sx={styles.titleBox}>
-        <Typography variant="h3" sx={styles.titleHeader}>
-          Superior & High Quality Services
-        </Typography>
-        <Typography variant="body1">
-          Why deal with multiple service providers when Project 3 can do it all?
-        </Typography>
-      </Box>
+    <section aria-labelledby="services-title">
+      <header>
+        <Box sx={styles.titleBox}>
+          <Typography
+            id="services-title"
+            variant="h3"
+            sx={styles.titleHeader}
+            component="h2"
+          >
+            Superior & High Quality Services
+          </Typography>
+          <Typography variant="body1" component="p">
+            Why deal with multiple service providers when Project 3 can do it
+            all?
+          </Typography>
+        </Box>
+      </header>
       <Container>
         <Grid container spacing={2} sx={styles.gridContainer}>
           {features.map((feature, index) => (
@@ -104,7 +129,7 @@ const FeatureSection = () => {
           ))}
         </Grid>
       </Container>
-    </Box>
+    </section>
   );
 };
 

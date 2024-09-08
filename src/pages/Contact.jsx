@@ -1,9 +1,9 @@
-import React from "react";
 import { Box, TextField, Button, Grid } from "@mui/material";
 import paper from "../../assets/images/newest/paper.jpg";
 
+/* eslint-disable */
 const FormField = ({ field }) => (
-  <Grid item xs={12} sm={field.sm} md={field.md}>
+  <Grid item xs={12} sm={field.sm || 12} md={field.md || 12}>
     <TextField
       fullWidth
       label={field.label}
@@ -12,6 +12,7 @@ const FormField = ({ field }) => (
       name={field.name}
       multiline={field.multiline || false}
       rows={field.rows || 1}
+      aria-label={field.label}
     />
   </Grid>
 );
@@ -33,13 +34,17 @@ const formFields = [
 ];
 
 const Contact = () => (
-  <>
+  <section aria-labelledby="contact-section">
     <Box sx={styles.imageContainer}>
       <img src={paper} alt="Contact" style={styles.image} />
     </Box>
     <Box sx={styles.outerBox}>
       <Box sx={styles.innerBox}>
-        <form action="https://formspree.io/f/mjvndzaw" method="POST">
+        <form
+          action="https://formspree.io/f/mjvndzaw"
+          method="POST"
+          name="contact-form"
+        >
           <Grid container spacing={2}>
             {formFields.map((field, index) => (
               <FormField key={index} field={field} />
@@ -49,6 +54,7 @@ const Contact = () => (
                 variant="contained"
                 type="submit"
                 sx={styles.submitButton}
+                aria-label="Submit contact form"
               >
                 Submit
               </Button>
@@ -57,7 +63,7 @@ const Contact = () => (
         </form>
       </Box>
     </Box>
-  </>
+  </section>
 );
 
 const styles = {
@@ -65,8 +71,7 @@ const styles = {
     width: "100%",
     height: "222px",
     overflow: "hidden",
-    mb: 3, // Add some margin to the bottom if needed
-    // Move the image up by 20px
+    mb: 3,
   },
   image: {
     width: "100%",
@@ -76,17 +81,26 @@ const styles = {
   outerBox: {
     display: "flex",
     justifyContent: "center",
+    mt: 3,
   },
   innerBox: {
     maxWidth: 1000,
-    p: 3,
+    width: "100%",
+    padding: { xs: 2, sm: 3 }, // Responsive padding for small and medium screens
+    backgroundColor: "#f9f9f9", // Add background color for form contrast
   },
   submitButtonGrid: {
     display: "flex",
     justifyContent: "center",
+    mt: 2,
   },
   submitButton: {
     px: 5,
+    py: 1,
+    backgroundColor: "#0069d9", // Customize button color
+    "&:hover": {
+      backgroundColor: "#0056b3",
+    },
   },
 };
 

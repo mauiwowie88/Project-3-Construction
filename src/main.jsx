@@ -17,10 +17,21 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <Router>
-        <Navbar />
-        <App />
+        <header>
+          <nav aria-label="Main navigation">
+            <Navbar />
+          </nav>
+        </header>
+
+        <main role="main">
+          <App />
+        </main>
+
         <ScrollUp />
-        <Footer />
+
+        <footer>
+          <Footer />
+        </footer>
       </Router>
     </ThemeProvider>
   </React.StrictMode>

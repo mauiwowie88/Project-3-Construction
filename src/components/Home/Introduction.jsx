@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { fetchData } from "../../client";
 import { SectionImg, Loading } from "../Extra";
@@ -29,21 +29,23 @@ const Introduction = () => {
           </Typography>
         </Box>
       </Box>
-      <Box sx={styles.introBox}>
-        <Typography variant="h6" sx={styles.title}>
-          {intro[0].title}
-        </Typography>
-        <Typography variant="h5" color={theme.palette.blue.dark}>
-          {intro[0].description}
-        </Typography>
-        <Container maxWidth="sm">
-          {intro[0].paragraphs.map((paragraph, index) => (
-            <Typography key={index} sx={styles.paragraph}>
-              {paragraph}
-            </Typography>
-          ))}
-        </Container>
-      </Box>
+      <section aria-label="Introduction">
+        <Box sx={styles.introBox}>
+          <Typography variant="h6" sx={styles.title}>
+            {intro[0].title}
+          </Typography>
+          <Typography variant="h5" color={theme.palette.blue.dark}>
+            {intro[0].description}
+          </Typography>
+          <Container maxWidth="sm">
+            {intro[0].paragraphs.map((paragraph, index) => (
+              <Typography key={index} sx={styles.paragraph}>
+                {paragraph}
+              </Typography>
+            ))}
+          </Container>
+        </Box>
+      </section>
     </>
   );
 };

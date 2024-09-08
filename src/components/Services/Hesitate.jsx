@@ -1,5 +1,4 @@
 import one from "../../../assets/images/newest/the-one.webp";
-import React from "react";
 
 import { Box, Typography } from "@mui/material";
 

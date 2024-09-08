@@ -1,118 +1,96 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Box, Typography, Button, Grid, Container } from "@mui/material";
 import { fetchData } from "../../client";
-import one from "../../../assets/images/newest/cook.jpg";
-import two from "../../../assets/images/newest/hittin.jpg";
-import three from "../../../assets/images/newest/upper.jpg";
-import four from "../../../assets/images/newest/sam.jpg";
+import eee from "../../../assets/images/other/eee.jpg"; // Ensure this path is correct
 import { Loading } from "../Extra";
-import { Link } from "react-router-dom";
 
-const images = [
-  { src: one, alt: "Vision Image 1" },
-  { src: two, alt: "Vision Image 2" },
-  { src: three, alt: "Vision Image 3" },
-  { src: four, alt: "Vision Image 4" },
-];
-
-function OurVision() {
+function Deliver() {
   const [sections, setSections] = useState([]);
-  const [mainImage, setMainImage] = useState(images[0]);
-  const [smallImages, setSmallImages] = useState(images.slice(1));
 
   useEffect(() => {
     fetchData(`*[_type == "aboutUs"]{title, description}`, setSections);
   }, []);
 
-  const handleImageClick = (index) => {
-    const newMainImage = smallImages[index];
-    const newSmallImages = [
-      mainImage,
-      ...smallImages.filter((_, i) => i !== index),
-    ];
-    setMainImage(newMainImage);
-    setSmallImages(newSmallImages);
-  };
-
-  if (sections.length < 3) return <Loading />;
+  if (sections.length < 4) return <Loading />; // Adjusted to check for correct section length
 
   return (
-    <Container sx={styles.container}>
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-          <Box sx={styles.imageContainer}>
-            <Box
-              component="img"
-              src={mainImage.src}
-              alt={mainImage.alt}
-              sx={styles.mainImage}
-            />
-            <Box sx={styles.smallImagesContainer}>
-              {smallImages.map((image, index) => (
-                <Box
-                  key={index}
-                  component="img"
-                  src={image.src}
-                  alt={image.alt}
-                  sx={styles.smallImage}
-                  onClick={() => handleImageClick(index)}
-                />
-              ))}
-            </Box>
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <Container sx={styles.textContainer} maxWidth="sm">
-            <Typography variant="h2" sx={styles.title}>
-              {sections[2].title}
-            </Typography>
-            <Box sx={styles.underline}></Box>
-            {sections[2].description.map((desc, i) => (
-              <Typography key={i} variant="body1" sx={styles.description}>
-                {desc}
+    <section aria-labelledby="deliver-section">
+      <Container sx={styles.container}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6}>
+            <Container sx={styles.leftContainer} maxWidth="sm">
+              <Typography
+                variant="h2"
+                sx={styles.missionTitle}
+                id="deliver-section"
+              >
+                {sections[1]?.title}
               </Typography>
-            ))}
-          </Container>
+              <Box sx={styles.underline}></Box>
+              {Array.isArray(sections[1]?.description) &&
+                sections[1].description.map((desc, i) => (
+                  <Typography key={i} variant="body1" sx={styles.missionText}>
+                    {desc}
+                  </Typography>
+                ))}
+              <Button variant="contained" sx={styles.button}>
+                Learn More...
+              </Button>
+            </Container>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Box sx={styles.rightContainer}>
+              <Box sx={styles.imageWrapper}>
+                <Box sx={styles.imageContainer}>
+                  <img
+                    src={eee}
+                    alt="Team of professionals"
+                    style={styles.image}
+                    loading="lazy" // Lazy load the image for performance
+                  />
+                </Box>
+              </Box>
+              <Box sx={styles.box}>
+                <Typography variant="h3" sx={styles.title}>
+                  {sections[3]?.title}
+                </Typography>
+                {Array.isArray(sections[3]?.description) &&
+                  sections[3].description.map((desc, i) => (
+                    <Typography key={i} variant="body1" sx={styles.description}>
+                      {desc}
+                    </Typography>
+                  ))}
+              </Box>
+            </Box>
+          </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </section>
   );
 }
 
 const styles = {
+  missionText: {
+    py: 1,
+  },
+  box: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    p: "10px 30px",
+  },
   container: {
     padding: "16px",
     display: "flex",
     alignItems: "stretch",
-    my: 7,
+    mt: 10,
   },
-  imageContainer: {
+  leftContainer: {
+    padding: "16px",
+    backgroundColor: "#ffffff", // white background for left container
     display: "flex",
     flexDirection: "column",
-    gap: 2,
-  },
-  mainImage: {
-    width: "100%",
-    height: "300px",
-    objectFit: "cover",
-  },
-  smallImagesContainer: {
-    display: "flex",
-    gap: 1,
-    marginTop: 2,
-  },
-  smallImage: {
-    width: "32%",
-    borderRadius: "8px",
-    cursor: "pointer",
-    objectFit: "cover",
-  },
-  textContainer: {
-    padding: 4,
-    backgroundColor: "#ffffff",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
     height: "100%",
     position: "relative",
   },
@@ -122,23 +100,60 @@ const styles = {
     height: "2px",
     backgroundColor: "#40bc99",
   },
-  title: {
+  rightContainer: {
+    padding: "16px",
+    backgroundColor: "#2d3748",
+    display: "flex",
+    flexDirection: "column",
+    position: "relative",
+    "&::before": {
+      content: '""',
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      borderStyle: "solid",
+      borderWidth: "0 30px 30px 0px",
+      borderColor: "transparent transparent #ffffff transparent",
+    },
+  },
+  imageWrapper: {
+    position: "relative",
+    paddingTop: "45%",
+    marginBottom: "16px",
+  },
+  imageContainer: {
+    position: "absolute",
+    top: "-20%",
+    left: "50%",
+    transform: "translateX(-50%)",
+    width: "88%",
+    height: "auto",
+    overflow: "hidden",
+  },
+  image: {
+    width: "100%",
+    height: "auto",
+    objectFit: "cover",
+    borderRadius: "8px",
+  },
+  missionTitle: {
     color: "#006498",
     textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
-    marginBottom: "10px",
-    fontWeight: "bold",
+  },
+  title: {
+    color: "white",
   },
   description: {
-    color: "#333",
-    textAlign: "justify",
-    paddingBottom: "10px",
+    mt: 2,
+    color: "white",
+    fontWeight: "200",
   },
   button: {
     mt: 3,
-    backgroundColor: "#fdd835",
+    backgroundColor: "#fdd835", // Customize this color to match the design
     color: "#000",
     alignSelf: "flex-start",
   },
 };
 
-export default OurVision;
+export default Deliver;

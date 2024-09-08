@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Container, Grid, Typography, Box, Button } from "@mui/material";
+import { useState } from "react";
+import { Container, Grid, Typography, Box } from "@mui/material";
 import one from "../../../assets/images/newest/fridge.jpg";
 import two from "../../../assets/images/newest/modern-dining.avif";
 import three from "../../../assets/images/newest/quiet-desk.avif";
@@ -48,9 +48,9 @@ const FeaturedProject = () => {
             <br />
             From initial planning and architectural design to project management
             and execution, we ensure every detail meets our high standards.
-            Whether it's new constructions or extensive renovations, we focus on
-            delivering results that exceed expectations. Trust Revent Builds to
-            bring your vision to life with quality craftsmanship and expert
+            Whether it is a new constructions or extensive renovations, we focus
+            on delivering results that exceed expectations. Trust Revent Builds
+            to bring your vision to life with quality craftsmanship and expert
             service.
           </Typography>
         </Grid>

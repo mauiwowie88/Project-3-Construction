@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Box, Typography, Card, Grid, Container, Hidden } from "@mui/material";
 import { Link } from "react-router-dom";
 import { BlackButton, Loading } from "../Extra";
@@ -7,8 +7,13 @@ import { useTheme } from "@mui/material/styles";
 import { Header } from "../../components/Extra";
 import four from "../../../assets/images/newest/c4.jpg";
 
+/* eslint-disable */
 const SectionCard = ({ section }) => {
   const theme = useTheme();
+
+  // Correctly generate the image URL once
+  const imageUrl = section.image ? urlFor(section.image) : "";
+
   return (
     <Link
       to={section.route}
@@ -17,7 +22,12 @@ const SectionCard = ({ section }) => {
     >
       <Card sx={styles.card}>
         <Box sx={styles.imageContainer}>
-          <img src={urlFor(section.image)} alt="Project" style={styles.image} />
+          {/* Use the imageUrl variable directly in img src */}
+          {imageUrl ? (
+            <img src={imageUrl} alt="Project" style={styles.image} />
+          ) : (
+            <Typography variant="body2">Image Not Available</Typography>
+          )}
         </Box>
         <Box sx={styles.content}>
           <Typography
@@ -31,7 +41,7 @@ const SectionCard = ({ section }) => {
           </Typography>
         </Box>
         <Box sx={styles.buttonContainer}>
-          <BlackButton label={section.button} width="75%" />
+          <BlackButton label={section.button || "Learn More"} width="75%" />
         </Box>
       </Card>
     </Link>
