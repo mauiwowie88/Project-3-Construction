@@ -289,9 +289,6 @@ const mission = [
   "A culture that is constantly learning, adapting, and growing.",
 ];
 
-import dope from "../assets/images/other/dope.jpg";
-import kkk from "../assets/images/other/kkk.jpeg";
-
 const sections = [
   {
     title: "Building Dreams, One Home at a Time",

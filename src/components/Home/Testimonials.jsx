@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Box, Typography, Container, IconButton } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -14,53 +14,64 @@ const Testimonials = () => {
   }, []);
 
   const handlePrev = () => {
-    setIndex((prevIndex) =>
-      prevIndex - 1 + quotes.length < 0
-        ? quotes.length - 1
-        : (prevIndex - 1) % quotes.length
-    );
+    if (quotes.length > 0) {
+      setIndex((prevIndex) =>
+        prevIndex - 1 < 0 ? quotes.length - 1 : prevIndex - 1
+      );
+    }
   };
 
   const handleNext = () => {
-    setIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+    if (quotes.length > 0) {
+      setIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+    }
   };
 
+  const currentQuote = quotes.length > 0 ? quotes[index] : null;
+
   return (
-    <Box sx={styles.box}>
-      <Box sx={styles.titleBox}>
-        <Typography variant="h3" sx={styles.titleHeader}>
-          What Our Customers Are Saying
-          <FormatQuoteIcon sx={styles.quoteIcon} />
-        </Typography>
-      </Box>
-      <Container sx={styles.container} maxWidth="sm">
-        <IconButton onClick={handlePrev} sx={styles.arrow}>
-          <ArrowBackIosIcon />
-        </IconButton>
-        <Box sx={styles.card}>
-          {quotes.length > 0 ? (
-            <>
-              <Typography variant="h6" sx={styles.name}>
-                {quotes[index].name}
-              </Typography>
-              <Typography variant="body2" sx={styles.date}>
-                {quotes[index].date}
-              </Typography>
-              <Typography variant="body1" sx={styles.text}>
-                {quotes[index].quote}
-              </Typography>
-            </>
-          ) : (
-            <Typography variant="body1" sx={styles.text}>
-              Loading...
-            </Typography>
-          )}
+    <section role="region" aria-labelledby="testimonials-header">
+      <Box sx={styles.box}>
+        <Box sx={styles.titleBox}>
+          <Typography variant="h3" sx={styles.titleHeader} component="h2">
+            What Our Customers Are Saying
+            <FormatQuoteIcon sx={styles.quoteIcon} />
+          </Typography>
         </Box>
-        <IconButton onClick={handleNext} sx={styles.arrow}>
-          <ArrowForwardIosIcon />
-        </IconButton>
-      </Container>
-    </Box>
+        <Container sx={styles.container} maxWidth="sm">
+          <IconButton
+            onClick={handlePrev}
+            sx={styles.arrow}
+            aria-label="Previous testimonial"
+            role="button"
+          >
+            <ArrowBackIosIcon />
+          </IconButton>
+          <Box sx={styles.card}>
+            {currentQuote ? (
+              <>
+                <Typography variant="h6" sx={styles.name}>
+                  {currentQuote.name}
+                </Typography>
+                <Typography variant="body2" sx={styles.date}>
+                  {currentQuote.date}
+                </Typography>
+                <Typography variant="body1" sx={styles.text}>
+                  {currentQuote.quote}
+                </Typography>
+              </>
+            ) : (
+              <Typography variant="body1" sx={styles.text}>
+                Loading...
+              </Typography>
+            )}
+          </Box>
+          <IconButton onClick={handleNext} sx={styles.arrow}>
+            <ArrowForwardIosIcon />
+          </IconButton>
+        </Container>
+      </Box>
+    </section>
   );
 };
 

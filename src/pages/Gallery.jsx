@@ -5,17 +5,21 @@ import PortfolioItem from "../components/Gallery/PortfolioItem";
 
 const Gallery = () => (
   <>
-    <SectionImg title="Gallery" />
-    <Container sx={styles.container}>
-      <Typography variant="h4" sx={styles.title}>
-        Our Recent Work
-      </Typography>
-      <Grid container spacing={2.2}>
-        {portfolio.map((job, index) => (
-          <PortfolioItem key={index} job={job} />
-        ))}
-      </Grid>
-    </Container>
+    <section aria-label="Gallery of recent work">
+      <SectionImg title="Gallery" />
+
+      <Container sx={styles.container}>
+        <Typography variant="h4" sx={styles.title}>
+          Our Recent Work
+        </Typography>
+
+        <Grid container spacing={2.2} role="list">
+          {portfolio.map((job, index) => (
+            <PortfolioItem key={index} job={job} role="listitem" />
+          ))}
+        </Grid>
+      </Container>
+    </section>
   </>
 );
 

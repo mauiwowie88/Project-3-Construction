@@ -12,14 +12,17 @@ function App() {
   return (
     <>
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="Gallery" element={<Gallery />} />
-        <Route path="About" element={<About />} />
-        <Route path="Contact" element={<Contact />} />
-        <Route path="Services" element={<Services />} />
-        <Route path="Job" element={<Job />} />
-      </Routes>
+
+      <main role="main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="Gallery" element={<Gallery />} />
+          <Route path="About" element={<About />} />
+          <Route path="Contact" element={<Contact />} />
+          <Route path="Services" element={<Services />} />
+          <Route path="Job" element={<Job />} />
+        </Routes>
+      </main>
     </>
   );
 }

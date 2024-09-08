@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Box, Typography, Button, Grid, Container } from "@mui/material";
 import { fetchData } from "../../client";
 import eee from "../../../assets/images/other/eee.jpg"; // Ensure this path is correct
@@ -11,23 +11,28 @@ function Deliver() {
     fetchData(`*[_type == "aboutUs"]{title, description}`, setSections);
   }, []);
 
-  if (sections.length < 2) return <Loading />;
+  if (sections.length < 4) return <Loading />; // Adjusted to check for correct section length
 
   return (
-    <>
+    <section aria-labelledby="deliver-section">
       <Container sx={styles.container}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
             <Container sx={styles.leftContainer} maxWidth="sm">
-              <Typography variant="h2" sx={styles.missionTitle}>
-                {sections[1].title}
+              <Typography
+                variant="h2"
+                sx={styles.missionTitle}
+                id="deliver-section"
+              >
+                {sections[1]?.title}
               </Typography>
               <Box sx={styles.underline}></Box>
-              {sections[1].description.map((desc, i) => (
-                <Typography key={i} variant="body1" sx={styles.missionText}>
-                  {desc}
-                </Typography>
-              ))}
+              {Array.isArray(sections[1]?.description) &&
+                sections[1].description.map((desc, i) => (
+                  <Typography key={i} variant="body1" sx={styles.missionText}>
+                    {desc}
+                  </Typography>
+                ))}
               <Button variant="contained" sx={styles.button}>
                 Learn More...
               </Button>
@@ -41,24 +46,26 @@ function Deliver() {
                     src={eee}
                     alt="Team of professionals"
                     style={styles.image}
+                    loading="lazy" // Lazy load the image for performance
                   />
                 </Box>
               </Box>
               <Box sx={styles.box}>
                 <Typography variant="h3" sx={styles.title}>
-                  {sections[3].title}
+                  {sections[3]?.title}
                 </Typography>
-                {sections[3].description.map((desc, i) => (
-                  <Typography key={i} variant="body1" sx={styles.description}>
-                    {desc}
-                  </Typography>
-                ))}
+                {Array.isArray(sections[3]?.description) &&
+                  sections[3].description.map((desc, i) => (
+                    <Typography key={i} variant="body1" sx={styles.description}>
+                      {desc}
+                    </Typography>
+                  ))}
               </Box>
             </Box>
           </Grid>
         </Grid>
       </Container>
-    </>
+    </section>
   );
 }
 
@@ -73,7 +80,6 @@ const styles = {
     alignItems: "center",
     p: "10px 30px",
   },
-
   container: {
     padding: "16px",
     display: "flex",
@@ -85,7 +91,6 @@ const styles = {
     backgroundColor: "#ffffff", // white background for left container
     display: "flex",
     flexDirection: "column",
-    // justifyContent: "space-between",
     height: "100%",
     position: "relative",
   },
@@ -100,8 +105,6 @@ const styles = {
     backgroundColor: "#2d3748",
     display: "flex",
     flexDirection: "column",
-    // justifyContent: "space-between",
-    // height: "100%",
     position: "relative",
     "&::before": {
       content: '""',

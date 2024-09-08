@@ -7,12 +7,23 @@ import GetStarted from "../components/Home/GetStarted";
 function Home() {
   return (
     <>
-      <Introduction />
-      <MainItem />
-      <FeatureSection />
-      <GetStarted />
-      <Testimonials />
+      <section aria-label="Introduction">
+        <Introduction />
+      </section>
+      <section aria-label="Main Item">
+        <MainItem />
+      </section>
+      <section aria-label="Features and Quality Services">
+        <FeatureSection />
+      </section>
+      <section aria-label="Get Started">
+        <GetStarted />
+      </section>
+      <section aria-label="Customer Testimonials">
+        <Testimonials />
+      </section>
     </>
   );
 }
+
 export default Home;

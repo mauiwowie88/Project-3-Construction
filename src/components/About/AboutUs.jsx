@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Box, Typography, Container, Hidden } from "@mui/material";
 import { fetchData } from "../../client";
-import { Loading } from "../Extra"; // Ensure you have this component
 import one from "../../../assets/images/inside/3.jpg";
 
 const AboutUs = () => {
@@ -12,37 +11,49 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <Box sx={styles.container}>
-      <Hidden smDown>
-        <Box sx={styles.imageContainer}>
-          <Box sx={styles.image} />
-        </Box>
-      </Hidden>
-      <Container sx={styles.textContainer} maxWidth={"sm"}>
-        {sections.length > 0 && (
-          <>
-            <Typography variant="h2" sx={styles.title}>
-              {sections[0].title}
-            </Typography>
-            {sections[0].description.map((paragraph, index) => (
-              <div key={index}>
-                <Typography variant="body2" sx={styles.description}>
-                  {paragraph}
-                </Typography>
-                <br />
-              </div>
-            ))}
-          </>
-        )}
-      </Container>
-    </Box>
+    <section aria-labelledby="about-us-title">
+      <Box sx={styles.container}>
+        <Hidden smDown>
+          <Box sx={styles.imageContainer}>
+            <Box
+              sx={styles.image}
+              role="img"
+              aria-label="Decorative background image of About Us section"
+            />
+          </Box>
+        </Hidden>
+        <Container sx={styles.textContainer} maxWidth={"sm"}>
+          {sections.length > 0 && (
+            <>
+              <Typography
+                variant="h2"
+                sx={styles.title}
+                id="about-us-title"
+                component="h1"
+              >
+                {sections[0].title}
+              </Typography>
+              {Array.isArray(sections[0].description) &&
+                sections[0].description.map((paragraph, index) => (
+                  <div key={index}>
+                    <Typography variant="body2" sx={styles.description}>
+                      {paragraph}
+                    </Typography>
+                    <br />
+                  </div>
+                ))}
+            </>
+          )}
+        </Container>
+      </Box>
+    </section>
   );
 };
 
 const styles = {
   container: {
     display: "flex",
-    flexDirection: { xs: "column", md: "row" }, // Column on small screens, row on larger screens
+    flexDirection: { xs: "column", md: "row" },
     alignItems: { xs: "stretch", md: "center" },
     height: { xs: "25vh", md: "50vh" },
     position: "relative",

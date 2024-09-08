@@ -45,26 +45,28 @@ const ShortProcess = () => {
   );
 
   return (
-    <Container sx={styles.container}>
-      <Typography variant="h3" sx={styles.title}>
-        Our Process
-      </Typography>
-      <Box sx={styles.parentContainer}>
-        <Box sx={styles.underline} />
-      </Box>
-      <Grid container sx={styles.box} spacing={3}>
-        {sortedSteps.map((step, index) => (
-          <Grid item xs={12} sm={6} md={4} lg={2.4} key={index}>
-            <ProcessStep
-              title={step.title}
-              description={step.description}
-              icon={step.icon}
-              index={index}
-            />
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
+    <section aria-labelledby="process-title">
+      <Container sx={styles.container}>
+        <Typography variant="h3" sx={styles.title} id="process-title">
+          Our Process
+        </Typography>
+        <Box sx={styles.parentContainer}>
+          <Box sx={styles.underline} />
+        </Box>
+        <Grid container sx={styles.box} spacing={3}>
+          {sortedSteps.map((step, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={2.4} key={index}>
+              <ProcessStep
+                title={step.title}
+                description={step.description}
+                icon={step.icon}
+                index={index}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </section>
   );
 };
 
@@ -73,14 +75,18 @@ const ProcessStep = ({ title, description, icon, index }) => {
 
   return (
     <Box sx={styles.card}>
-      <Box sx={styles.overlay}>
+      <Box sx={styles.overlay} aria-labelledby={`process-step-${index}`}>
         <Typography variant="h2">{index + 1}</Typography>
-        <IconComponent sx={styles.icon} />
-        <Typography variant="h5" sx={styles.stepTitle}>
+        <IconComponent sx={styles.icon} aria-label={icon || "Help icon"} />
+        <Typography
+          variant="h5"
+          sx={styles.stepTitle}
+          id={`process-step-${index}`}
+        >
           {title}
         </Typography>
       </Box>
-      <Box className="hoverContent" sx={styles.hoverContent}>
+      <Box className="hoverContent" sx={styles.hoverContent} tabIndex={0}>
         <Typography variant="body2">{description}</Typography>
       </Box>
     </Box>
@@ -123,6 +129,10 @@ const styles = {
     position: "relative",
     overflow: "hidden",
     "&:hover .hoverContent": {
+      opacity: 1,
+      transform: "translateY(0)",
+    },
+    "&:focus .hoverContent": {
       opacity: 1,
       transform: "translateY(0)",
     },
