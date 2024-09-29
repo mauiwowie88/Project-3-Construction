@@ -1,16 +1,7 @@
-# Commercial Contractor Company
+# Overview
 
-Welcome to the repository of [Company Name], a freelancing commercial construction contractor company. This repository contains information about our services, projects, and other essential details.
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Services](#services)
-- [License](#license)
-
-## Overview
-
-Project 3 Construction specializes in providing high-quality construction services for commercial projects.
+Welcome to the repository of Project 3 Construction, a freelancing commercial construction contractor company. 
+This repository contains information about our services, projects, and other essential details.
 
 ## Services
 
@@ -20,10 +11,10 @@ Project 3 Construction specializes in providing high-quality construction servic
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
 
 ---
 
-Feel free to explore the repository and reach out to us for any further information or collaboration opportunities.
+_This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details._
 
 ---
